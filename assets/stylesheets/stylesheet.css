@@ -96,10 +96,10 @@ pre.example {
 
 /* navigator */
 .nav {
-  margin-top: 30px;
 }
 .nav ul {
   list-style: none;
+  margin-top: 30px;
 }
 .nav li {
   /* horizontal one line navigator */
@@ -303,6 +303,7 @@ div.org-src-container {
   border-color: #ccc;
   margin: 0px 30px;
   padding: 1px;
+  background-color: white;
 }
 pre.src {
   background-color: transparent;
@@ -320,7 +321,6 @@ pre.src {
 /* src block hover language */
 pre.src::before, pre.src:hover::before {
   /* content: "lang"; */
-  color: #ccc;
   
   display: inline;
   float: right;
@@ -328,12 +328,15 @@ pre.src::before, pre.src:hover::before {
   position: relative;
 
   top: 2px;
-  right: 5px;
+  right: 0px;
   z-index: 2;
   padding: 1px;
+  margin: -5px 2px 0px 20px;
 
-  opacity: 0.7;
+  opacity: 0.9;
+  color: black;
   border: 1px solid black;
+  background-colo: transparent;
 
   white-space: nowrap;
 }
