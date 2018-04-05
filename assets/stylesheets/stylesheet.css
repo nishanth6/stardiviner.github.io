@@ -284,8 +284,7 @@ pre {
   /* shadow */
   box-shadow: inset 2px 2px 2px #80808080;
 
-  /* white-space */
-  white-space: pre;
+  /* auto wrap */
   white-space: pre-wrap;
 
   /* word wrap */
@@ -335,6 +334,8 @@ pre.src::before, pre.src:hover::before {
 
   opacity: 0.7;
   border: 1px solid black;
+
+  white-space: nowrap;
 }
 
 /* inline code */
