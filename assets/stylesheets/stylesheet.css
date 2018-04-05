@@ -319,18 +319,15 @@ pre.src {
 }
 
 /* src block hover language */
-pre.src:hover::before, code::before {
-  /* content: "="; */
-
+pre.src::before, pre.src:hover::before {
+  /* content: "lang"; */
   color: #ccc;
-
+  
   display: inline;
   float: right;
   overflow: visible;
   position: relative;
 
-  color: #000000;
-  background-color: #FFFFFF;
   top: 2px;
   right: 5px;
   z-index: 2;
@@ -353,8 +350,14 @@ table {
   max-width: 100%;
   width: 100%;
 }
+table thead {
+  background-color: #7575751a;
+}
 table td, table th {
-  padding: 0 15px;
+  padding: 2px 5px;
+  border-style: solid;
+  border-width: thin;
+  border-color: #ccc;
 }
 table th.left, table td.left {
   text-align: left;
@@ -382,7 +385,7 @@ sup a:after {
   background-color: #fff;
 }
 
-/* table of content */
+/* org-infojs: table of content */
 #table-of-contents {
   position: fixed;
   right: 0em;
