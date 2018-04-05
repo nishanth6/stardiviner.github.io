@@ -319,18 +319,13 @@ pre.src {
 }
 
 /* src block hover language */
-pre.src:hover:before {
-  display: inline;
-  float: right;
-  
-  /* content: "Code"; */
-}
-pre.src:before, code:after {
+pre.src:hover::before, code::before {
   /* content: "="; */
 
   color: #ccc;
 
-  display: none;
+  display: inline;
+  float: right;
   overflow: visible;
   position: relative;
 
