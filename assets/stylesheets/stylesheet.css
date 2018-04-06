@@ -72,12 +72,29 @@ body {
 
 /* drawers */
 pre.example {
-  color: #ccc;
-  font-size: 10px;
-  padding-left: 30px;
-  margin: 0 0 14px;
+  color: #b3b3b3;
+  border-color: #ccc;
+  font-size: 7px;
+  padding: 1px 1px 1px 30px;
+  margin: 0 0 10px 10px;
   border-radius: 5px;
-  box-shadow: inset 1px 1px 2px #80808080;
+  box-shadow: none;
+}
+
+/* MathJax */
+div.MathJax_Display {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  font-size: 170%;
+}
+div.MathJax_Display::before {
+  content: "| ";
+  display: inline;
+  position: relative;
+  float: left;
+  padding-right: 10px;
+  color: red;
 }
 
 /* preamble */
