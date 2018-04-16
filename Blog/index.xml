@@ -14,8 +14,8 @@
   <link>https://stardiviner.github.io/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Mon, 16 Apr 2018 14:51:07 +0800</pubDate>
-  <lastBuildDate>Mon, 16 Apr 2018 14:51:07 +0800</lastBuildDate>
+  <pubDate>Mon, 16 Apr 2018 16:11:45 +0800</pubDate>
+  <lastBuildDate>Mon, 16 Apr 2018 16:11:45 +0800</lastBuildDate>
   <generator>Emacs 27.0 Org-mode 9.1.9</generator>
   <webMaster>numbchild@gmail.com (stardiviner)</webMaster>
   <image>
@@ -28,11 +28,11 @@
     <h2>Table of Contents</h2>
     <div id="text-table-of-contents">
       <ul>
-        <li><a href="#org178127f">2016</a>
+        <li><a href="#orge894436">2016</a>
         <ul>
-          <li><a href="#orgb7a8726">2016-04 April</a>
+          <li><a href="#org9be3d8b">2016-04 April</a>
           <ul>
-            <li><a href="#orgc9f7f76">2016-04-22 Friday</a></li>
+            <li><a href="#org5d388bf">2016-04-22 Friday</a></li>
           </ul>
           </li>
         </ul>
@@ -43,9 +43,9 @@
 
   <item>
     <title>2016</title>
-    <link>https://stardiviner.github.io/index.html#org178127f</link>
+    <link>https://stardiviner.github.io/index.html#orge894436</link>
     <author>numbchild@gmail.com (stardiviner)</author>
-    <guid isPermaLink="false">https://stardiviner.github.io/index.html#org178127f</guid>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#orge894436</guid>
     <pubDate>Sat, 23 Apr 2016 17:03:00 +0800</pubDate>
 
     <description><![CDATA[<pre class="example">
@@ -53,25 +53,25 @@
     PUBDATE: <2016-04-23 Sat 17:03>
     </pre>
 
-    <div id="outline-container-orgb7a8726" class="outline-3">
-    <h3 id="orgb7a8726">2016-04 April</h3>
-    <div class="outline-text-3" id="text-orgb7a8726">
+    <div id="outline-container-org9be3d8b" class="outline-3">
+    <h3 id="org9be3d8b">2016-04 April</h3>
+    <div class="outline-text-3" id="text-org9be3d8b">
     <pre class="example">
     ID: 0b1a19cd-cf46-4d80-897d-cd5a7856fa52
     </pre>
     </div>
 
-    <div id="outline-container-orgc9f7f76" class="outline-4">
-    <h4 id="orgc9f7f76">2016-04-22 Friday</h4>
-    <div class="outline-text-4" id="text-orgc9f7f76">
+    <div id="outline-container-org5d388bf" class="outline-4">
+    <h4 id="org5d388bf">2016-04-22 Friday</h4>
+    <div class="outline-text-4" id="text-org5d388bf">
     <pre class="example">
     ID: 2f9f4005-1913-41a0-866a-0f45b67ec2ee
     </pre>
     </div>
 
     <ul class="org-ul">
-    <li><a id="org0e87189"></a>test org-mode ox-publish<br>
-    <div class="outline-text-5" id="text-org0e87189">
+    <li><a id="orge24f0b0"></a>test org-mode ox-publish<br>
+    <div class="outline-text-5" id="text-orge24f0b0">
     <pre class="example">
     TIME: [2016-04-22 Fri 22:54]
     ID: b80c8cad-9403-4533-9cd4-cb2fd5b92678
