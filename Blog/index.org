@@ -1,4 +1,4 @@
-# Created 2018-04-16 Mon 16:11
+# Created 2018-04-17 Tue 20:00
 #+TITLE: Blog
 #+AUTHOR: stardiviner
 
