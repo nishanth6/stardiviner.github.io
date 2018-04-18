@@ -1,10 +1,12 @@
-# Created 2018-04-18 Wed 14:13
+# Created 2018-04-18 Wed 14:49
 #+TITLE: Blog
 #+AUTHOR: stardiviner
 
 * How to BANISH myself
 :PROPERTIES:
 :DATE:     [2018-04-18 Wed]
+:ID:       ecd128b5-33b0-42f8-bfa1-8a9134d697fa
+:PUBDATE:  <2018-04-18 Wed 14:13>
 :END:
 
 [[file:How%20to%20BANISH%20myself.org][How to BANISH myself]]
@@ -14,6 +16,7 @@
 :PROPERTIES:
 :TIME:     [2016-04-22 Fri 22:54]
 :ID:       b80c8cad-9403-4533-9cd4-cb2fd5b92678
+:PUBDATE:  <2018-04-18 Wed 14:13>
 :END:
 
 [[file:2016-04-22 22:54.org][test org-mode ox-publish]]
