@@ -14,8 +14,8 @@
   <link>https://stardiviner.github.io/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Tue, 17 Apr 2018 20:00:08 +0800</pubDate>
-  <lastBuildDate>Tue, 17 Apr 2018 20:00:08 +0800</lastBuildDate>
+  <pubDate>Wed, 18 Apr 2018 14:13:51 +0800</pubDate>
+  <lastBuildDate>Wed, 18 Apr 2018 14:13:51 +0800</lastBuildDate>
   <generator>Emacs 27.0 Org-mode 9.1.9</generator>
   <webMaster>numbchild@gmail.com (stardiviner)</webMaster>
   <image>
@@ -28,63 +28,48 @@
     <h2>Table of Contents</h2>
     <div id="text-table-of-contents">
       <ul>
-        <li><a href="#orge7f78b7">2016</a>
-        <ul>
-          <li><a href="#org0fd3730">2016-04 April</a>
-          <ul>
-            <li><a href="#org1ea976d">2016-04-22 Friday</a></li>
-          </ul>
-          </li>
-        </ul>
-        </li>
+        <li><a href="#org9b260df">How to BANISH myself</a></li>
+        <li><a href="#org3fe7a01">test org-mode ox-publish</a></li>
       </ul>
     </div>
   </nav>
 
   <item>
-    <title>2016</title>
-    <link>https://stardiviner.github.io/index.html#orge7f78b7</link>
+    <title>How to BANISH myself</title>
+    <link>https://stardiviner.github.io/index.html#org9b260df</link>
     <author>numbchild@gmail.com (stardiviner)</author>
-    <guid isPermaLink="false">https://stardiviner.github.io/index.html#orge7f78b7</guid>
-    <pubDate>Sat, 23 Apr 2016 17:03:00 +0800</pubDate>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#org9b260df</guid>
+    <pubDate>Wed, 18 Apr 2018 14:13:00 +0800</pubDate>
 
     <description><![CDATA[<pre class="example">
-    ID: bc5e06a2-08bd-49ef-ab42-449a641cdaee
-    PUBDATE: <2016-04-23 Sat 17:03>
+    DATE: [2018-04-18 Wed]
+    ID: ecd128b5-33b0-42f8-bfa1-8a9134d697fa
+    PUBDATE: <2018-04-18 Wed 14:13>
     </pre>
 
-    <div id="outline-container-org0fd3730" class="outline-3">
-    <h3 id="org0fd3730">2016-04 April</h3>
-    <div class="outline-text-3" id="text-org0fd3730">
-    <pre class="example">
-    ID: 0b1a19cd-cf46-4d80-897d-cd5a7856fa52
-    </pre>
-    </div>
+    <p>
+    <a href="How%20to%20BANISH%20myself.html">How to BANISH myself</a>
+    </p>
+    ]]></description>
+  </item>
 
-    <div id="outline-container-org1ea976d" class="outline-4">
-    <h4 id="org1ea976d">2016-04-22 Friday</h4>
-    <div class="outline-text-4" id="text-org1ea976d">
-    <pre class="example">
-    ID: 2f9f4005-1913-41a0-866a-0f45b67ec2ee
-    </pre>
-    </div>
 
-    <ul class="org-ul">
-    <li><a id="org3fe7a01"></a>test org-mode ox-publish<br>
-    <div class="outline-text-5" id="text-org3fe7a01">
-    <pre class="example">
+  <item>
+    <title>test org-mode ox-publish</title>
+    <link>https://stardiviner.github.io/index.html#org3fe7a01</link>
+    <author>numbchild@gmail.com (stardiviner)</author>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#org3fe7a01</guid>
+    <pubDate>Wed, 18 Apr 2018 14:13:00 +0800</pubDate>
+
+    <description><![CDATA[<pre class="example">
     TIME: [2016-04-22 Fri 22:54]
     ID: b80c8cad-9403-4533-9cd4-cb2fd5b92678
+    PUBDATE: <2018-04-18 Wed 14:13>
     </pre>
 
     <p>
     <a href="2016-04-22 22:54.html">test org-mode ox-publish</a>
     </p>
-    </div>
-    </li>
-    </ul>
-    </div>
-    </div>
     ]]></description>
   </item>
 </channel>
