@@ -1,4 +1,4 @@
-# Created 2018-04-20 Fri 13:27
+# Created 2018-04-20 Fri 13:59
 #+OPTIONS: num:t toc:1 H:4
 #+TITLE: Org-mode exporter template for testing
 #+AUTHOR: stardiviner
@@ -478,7 +478,7 @@ set grid
 plot sin(x)
 #+end_src
 
-#+results[<2018-04-20 13:27:24> ce90822308a6be744bf2c31d4b0e061641b4b549]: 
+#+results[<2018-04-20 13:59:58> ce90822308a6be744bf2c31d4b0e061641b4b549]: 
 [[file:data/images/babel-gnuplot-graphics-test.png]]
 
 * 中文测试
