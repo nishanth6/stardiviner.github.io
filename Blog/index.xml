@@ -14,8 +14,8 @@
   <link>https://stardiviner.github.io/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 18 Apr 2018 15:09:03 +0800</pubDate>
-  <lastBuildDate>Wed, 18 Apr 2018 15:09:03 +0800</lastBuildDate>
+  <pubDate>Fri, 20 Apr 2018 13:04:05 +0800</pubDate>
+  <lastBuildDate>Fri, 20 Apr 2018 13:04:05 +0800</lastBuildDate>
   <generator>Emacs 27.0 Org-mode 9.1.9</generator>
   <webMaster>numbchild@gmail.com (stardiviner)</webMaster>
   <image>
@@ -28,11 +28,31 @@
     <h2>Table of Contents</h2>
     <div id="text-table-of-contents">
       <ul>
+        <li><a href="#orge84a4ad">Needlework: Setup the sewing machine</a></li>
         <li><a href="#orgad864f1">How to BANISH myself</a></li>
         <li><a href="#org8055cbf">test org-mode ox-publish</a></li>
       </ul>
     </div>
   </nav>
+
+  <item>
+    <title>Needlework: Setup the sewing machine</title>
+    <link>https://stardiviner.github.io/index.html#orge84a4ad</link>
+    <author>numbchild@gmail.com (stardiviner)</author>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#orge84a4ad</guid>
+    <pubDate>Fri, 20 Apr 2018 12:32:00 +0800</pubDate>
+
+    <description><![CDATA[<pre class="example">
+    DATE: [2018-04-20 Fri 11:41]
+    ID: 62bcea74-3133-4a44-adda-bd71f977c8fc
+    PUBDATE: <2018-04-20 Fri 12:32>
+    </pre>
+
+    <p>
+    <a href="setup%20the%20sewing%20machine%20for%20needlework.html">setup the sewing machine for needlework</a>
+    </p>
+    ]]></description>
+  </item>
 
   <item>
     <title>How to BANISH myself</title>
@@ -52,7 +72,6 @@
     </p>
     ]]></description>
   </item>
-
 
   <item>
     <title>test org-mode ox-publish</title>
