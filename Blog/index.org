@@ -1,6 +1,13 @@
-# Created 2018-04-20 Fri 14:00
+# Created 2018-04-21 Sat 11:32
 #+TITLE: Blog
 #+AUTHOR: stardiviner
+
+* Learned basic skateboard
+:PROPERTIES:
+:DATE:     [2018-04-21 Sat 11:15]
+:END:
+
+[[file:Learned basic skateboard.org][Learned basic skateboard]]
 
 * Needlework: Setup the sewing machine
 :PROPERTIES:
