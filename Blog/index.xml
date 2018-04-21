@@ -14,8 +14,8 @@
   <link>https://stardiviner.github.io/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Sat, 21 Apr 2018 11:32:23 +0800</pubDate>
-  <lastBuildDate>Sat, 21 Apr 2018 11:32:23 +0800</lastBuildDate>
+  <pubDate>Sat, 21 Apr 2018 16:30:20 +0800</pubDate>
+  <lastBuildDate>Sat, 21 Apr 2018 16:30:20 +0800</lastBuildDate>
   <generator>Emacs 27.0 Org-mode 9.1.9</generator>
   <webMaster>numbchild@gmail.com (stardiviner)</webMaster>
   <image>
@@ -28,6 +28,7 @@
     <h2>Table of Contents</h2>
     <div id="text-table-of-contents">
       <ul>
+        <li><a href="#orgc90f400">multilingual support with ob-translate and google-translate</a></li>
         <li><a href="#org36ee18d">Learned basic skateboard</a></li>
         <li><a href="#org948b5a9">Needlework: Setup the sewing machine</a></li>
         <li><a href="#orgf0a8d06">How to BANISH myself</a></li>
@@ -35,6 +36,25 @@
       </ul>
     </div>
   </nav>
+
+  <item>
+    <title>multilingual support with ob-translate and google-translate</title>
+    <link>https://stardiviner.github.io/index.html#orgc90f400</link>
+    <author>numbchild@gmail.com (stardiviner)</author>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#orgc90f400</guid>
+    <pubDate>Sat, 21 Apr 2018 16:30:00 +0800</pubDate>
+
+    <description><![CDATA[<pre class="example">
+    DATE: [2018-04-21 Sat 15:57]
+    ID: b7e86ca8-367c-4ba0-8ebb-ba37860958c0
+    PUBDATE: <2018-04-21 Sat 16:30>
+    </pre>
+
+    <p>
+    <a href="multilingual support with ob-translate and google-translate.html">multilingual support with ob-translate and google-translate</a>
+    </p>
+    ]]></description>
+  </item>
 
   <item>
     <title>Learned basic skateboard</title>
