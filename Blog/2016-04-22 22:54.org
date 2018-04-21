@@ -1,4 +1,4 @@
-# Created 2018-04-20 Fri 13:59
+# Created 2018-04-21 Sat 22:16
 #+OPTIONS: num:t toc:1 H:4
 #+TITLE: Org-mode exporter template for testing
 #+AUTHOR: stardiviner
@@ -441,6 +441,9 @@ const double pi = 3.1415926535
 (hello "stardiviner")
 #+end_src
 
+#+results[<2018-03-20 16:55:50> a7374e16f518f05926eef97e5ab37b1e7bf72167]: 
+: Hello, stardiviner
+
 ** escape math formulas in src block
 :PROPERTIES:
 :ID:       cbed519a-be32-47f8-a7c4-beb408f632e9
@@ -478,7 +481,7 @@ set grid
 plot sin(x)
 #+end_src
 
-#+results[<2018-04-20 13:59:58> ce90822308a6be744bf2c31d4b0e061641b4b549]: 
+#+results[<2018-04-03 21:54:38> ed8d07c969050af99dda8a1e782e7aa404b80da0]: 
 [[file:data/images/babel-gnuplot-graphics-test.png]]
 
 * 中文测试
