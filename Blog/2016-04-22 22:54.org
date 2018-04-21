@@ -1,4 +1,4 @@
-# Created 2018-04-21 Sat 22:16
+# Created 2018-04-21 Sat 23:55
 #+OPTIONS: num:t toc:1 H:4
 #+TITLE: Org-mode exporter template for testing
 #+AUTHOR: stardiviner
@@ -46,8 +46,6 @@ BBBBBBBBBBBBB
 
 - *bold text*
 - /italic text/
-- /italic *bold text* test/
-- *bold /italic/ test*
 
 ** monospace, superscript and subscript
 :PROPERTIES:
