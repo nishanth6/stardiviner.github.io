@@ -552,6 +552,7 @@ sup a:after {
   position: fixed;
   bottom: 20px;
   left: 20px;
+  border-radius: 30px;
 }
 .payment img:hover {
   width: auto;                  /* auto large when hover on */
