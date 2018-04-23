@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2018-04-22 Sun 16:32 -->
+<!-- 2018-04-23 Mon 22:45 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About</title>
@@ -191,7 +191,7 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="/assets/stylesheets/stylesheet.css"/><link rel="stylesheet" type="text/css" href="/assets/stylesheets/syntax-highlight.css"/><link ref="icon" type="image/x-icon" href="/assets/images/favicon-16x16.png" sizes="16x16"><link ref="icon" type="image/x-icon" href="/assets/images/favicon-32x32.png" sizes="32x32">
+<link rel="stylesheet" type="text/css" href="/assets/stylesheets/stylesheet.css"/><link rel="stylesheet" type="text/css" href="/assets/stylesheets/syntax-highlight.css"/><link ref="icon" type="image/png" href="/assets/images/favicon-16x16.png" sizes="16x16"><link ref="icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32">
 <script type="text/javascript" src="https://orgmode.org/org-info.js">
 /**
  *
@@ -257,7 +257,7 @@ org_html_manager.set("LINK_UP", "");
 org_html_manager.set("LOCAL_TOC", "2");
 org_html_manager.set("VIEW_BUTTONS", "0");
 org_html_manager.set("MOUSE_HINT", "underline");
-org_html_manager.set("FIXED_TOC", "2");
+org_html_manager.set("FIXED_TOC", "1");
 org_html_manager.set("TOC", "0");
 org_html_manager.set("VIEW", "info");
 org_html_manager.setup();  // activate after the parameters are set
@@ -335,16 +335,21 @@ for the JavaScript code in this tag.
 <li><a href="#Contact">1. Contact</a></li>
 <li><a href="#Resume">2. Resume</a>
 <ul>
-<li><a href="#orgf780d15">2.1. Linux</a></li>
-<li><a href="#org02d22be">2.2. Emacs + Org-mode</a></li>
-<li><a href="#org953ce80">2.3. Programming Languages</a>
+<li><a href="#org7dc2551">2.1. Profiles</a></li>
+<li><a href="#orgf780d15">2.2. Linux</a></li>
+<li><a href="#org02d22be">2.3. Emacs + Org-mode</a>
 <ul>
-<li><a href="#org0d482f8">2.3.1. C</a></li>
-<li><a href="#org1fef672">2.3.2. Lisp family: Clojure</a></li>
-<li><a href="#orgd1626b1">2.3.3. Know a little about Python, Ruby, HTML, CSS, JavaScript</a></li>
+<li><a href="#org7c4e202">2.3.1. contributed commits on Org-mode</a></li>
 </ul>
 </li>
-<li><a href="#org0308691">2.4. Data Structures &amp; Algorithms</a></li>
+<li><a href="#org953ce80">2.4. Programming Languages</a>
+<ul>
+<li><a href="#org0d482f8">2.4.1. C</a></li>
+<li><a href="#org1fef672">2.4.2. Lisp family: Clojure</a></li>
+<li><a href="#orgd1626b1">2.4.3. Know a little about Python, Ruby, HTML, CSS, JavaScript</a></li>
+</ul>
+</li>
+<li><a href="#org0308691">2.5. Data Structures &amp; Algorithms</a></li>
 </ul>
 </li>
 <li><a href="#orgdc28971">3. My Tools</a>
@@ -406,9 +411,19 @@ CUSTOM_ID: Resume
 </pre>
 </div>
 
-<div id="outline-container-orgf780d15" class="outline-3">
-<h3 id="orgf780d15"><span class="section-number-3">2.1</span> Linux</h3>
+<div id="outline-container-org7dc2551" class="outline-3">
+<h3 id="org7dc2551"><span class="section-number-3">2.1</span> Profiles</h3>
 <div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>GitHub: <a href="https://github.com/stardiviner/">https://github.com/stardiviner/</a></li>
+<li>豆瓣: <a href="https://www.douban.com/people/stardiviner/">https://www.douban.com/people/stardiviner/</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf780d15" class="outline-3">
+<h3 id="orgf780d15"><span class="section-number-3">2.2</span> Linux</h3>
+<div class="outline-text-3" id="text-2-2">
 <p>
 I've been use Linux for a long time from <span class="timestamp-wrapper"><span class="timestamp">[2011-10-10 Mon]</span></span>. It is a hard start,
 but awesome path for being more good on Linux machine.
@@ -421,8 +436,8 @@ but awesome path for being more good on Linux machine.
 </div>
 
 <div id="outline-container-org02d22be" class="outline-3">
-<h3 id="org02d22be"><span class="section-number-3">2.2</span> Emacs + Org-mode</h3>
-<div class="outline-text-3" id="text-2-2">
+<h3 id="org02d22be"><span class="section-number-3">2.3</span> Emacs + Org-mode</h3>
+<div class="outline-text-3" id="text-2-3">
 <p>
 Now, I use Emcs + Org-mode a lot, I try to do many things under Emacs, and with
 Org-mode.
@@ -445,15 +460,348 @@ Emacs下了。确实很赞。之后一直都是用Org-mode组织内容。GTD, Wi
 给很多Emacs插件和Org-mode贡献过一些代码。
 </p>
 </div>
+
+<div id="outline-container-org7c4e202" class="outline-4">
+<h4 id="org7c4e202"><span class="section-number-4">2.3.1</span> contributed commits on Org-mode</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<div class="org-src-container">
+<pre class="src src-shell">git log --author=stardiviner                             
+</pre>
+</div>
+
+<pre class="example">
+commit 596da7b0384d64f3c1c22a49bc9bced8d0d8abf8
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Sun Apr 22 09:37:40 2018 +0800
+
+    ob-eshell.el: Add Eshell support for Babel.
+    
+    * lisp/ob-eshell.el (org-babel-execute:eshell): Execute Eshell code in Babel.
+    (org-babel-prep-session:eshell):
+    (ob-eshell-session-live-p):
+    (org-babel-eshell-initiate-session):
+    (org-babel-variable-assignments:eshell):
+    (org-babel-load-session:eshell):
+    
+    * testing/test-ob-eshell.el: Write test for ob-eshell.
+    
+    * doc/org-manual.org (Languages): Add document for ob-eshell.
+
+commit 280e3c9b530b94a4c3c8392a975fc1d5b8797335
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Sun Apr 15 21:29:04 2018 +0800
+
+    ob-clojure-literate: Remove dependency on Dash
+    
+    * contrib/lisp/ob-clojure-literate.el (ob-clojure-literate-get-session-list):
+    (ob-clojure-literate-set-session):
+    (ob-clojure-literate-auto-jackin):
+    (ob-clojure-literate-set-local-cider-connections): Remove dependency
+    on Dash library.
+
+commit 2a315ab59d3365bb3e1150d763f4094d95041411
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Mon Apr 2 13:47:28 2018 +0800
+
+    ob-clojure-literate: Handle no :file specified file is nil case
+    
+    * ob-clojure-literate.el (ob-clojure-literate-inject-code): Handle
+      no :file specified file is nil case.
+
+commit 46d841d064cd7de4d918abe5d61cec980a061f24
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Mon Apr 2 11:58:28 2018 +0800
+
+    * ob-clojure-literate: Get session from global connections list
+    
+    * contrib/lisp/ob-clojure-literate.el (ob-clojure-literate-get-session-list):
+    (org-babel-map): Get session from global connections list.
+    (ob-clojure-literate-specify-session): Renamed from
+    `ob-clojure-literate-specify-session-header-argument'.
+
+commit d7e12d1df7091563c5f0fe0bd8b2db634d3e87ba
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Mon Mar 26 11:35:21 2018 +0800
+
+    * ob-clojure: Support :ns header argument
+    
+    * lisp/ob-clojure.el (org-babel-clojure-default-ns): New variable.
+    (org-babel-clojure-cider-current-ns): New function.
+    (org-babel-expand-body:clojure):
+    (org-babel-execute:clojure): Support :ns header argument.
+    
+    Remove optional parameter (cider-current-ns) to better handle
+    namespaces.
+
+commit 8835ee750ed6581fc04f4e9b16b7291d6846ad7f
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Mon Mar 26 09:47:54 2018 +0800
+
+    * ob-clojure-literate: Support vars initialization when prepare session
+    
+    * contrib/lisp/ob-clojure-literate.el (org-babel-clojure-var-to-clojure):
+    (org-babel-variable-assignments:clojure): Support vars initialization
+    when prepare session.
+
+commit 0104bea3ad2ac3285d18eb29dac85d08425c4cc7
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Thu Mar 22 01:43:18 2018 +0800
+
+    * ob-clojure-literate: Support use :ns header argument
+    
+    * contrib/lisp/ob-clojure-literate.el (ob-clojure-literate-set-ns):
+      Renamed from `ob-clojure-literate-cider-do-not-find-ns'
+    (ob-clojure-literate-enable):
+    (ob-clojure-literate-disable): Support use :ns header argument.
+
+commit 5a1a1f3d9a03ae55775666899f72ea9cb0edf0cf
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Thu Mar 22 01:21:22 2018 +0800
+
+    * ob-clojure-literate: CIDER jack-in outside of project by default
+    
+    * contrib/lisp/ob-clojure-literate.el (ob-clojure-literate-project-location):
+    (ob-clojure-literate-default-session):
+    (ob-clojure-literate-auto-jackin): CIDER jack-in outside of project by
+    default.
+
+commit b088389c6b4eead4d41528b18a273b8a2cd47eb3
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Thu Apr 12 15:13:02 2018 +0200
+
+    ob-core: Add document and test for "graphics" format
+    
+    * doc/org-manual.org: Document value.
+    
+    * lisp/ob-core.el (org-babel-common-header-args-w-values): Handle
+      symbol "graphics".
+    
+    * testing/lisp/test-ob.el (test-ob/result-graphics-link-type-header-argument):
+      New test.
+
+commit 296b0de4e881b6bd8657dadf7e73fd323f961d8c
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Sun Apr 8 20:56:28 2018 +0800
+
+    ob-core: Add "link" results format
+    
+    * lisp/ob-core.el (org-babel-execute-src-block): Handle "link" :results
+      format.
+    
+    * doc/org-manual.org: Add document for new result format "link".
+    
+    * testing/lisp/test-ob.el (test-ob/result-file-link-type-header-argument):
+      New test.
+
+commit 174e9d1ec94caaa1a13f9f0d37d6483456677ec7
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Sun Apr 1 17:42:07 2018 +0800
+
+    Fix org-babel-js-initiate-session
+    
+    * ob-js.el (org-babel-js-initiate-session): Add required optional
+     second argument.
+
+commit f57df8fc74df1b76aca35bcf0315636b4d3071f3
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Sun Apr 1 14:27:01 2018 +0800
+
+    ob-shell: Add zsh and fish shells.
+    
+    * ob-shell.el (org-babel-shell-names) add "zsh" and "fish".
+
+commit 6bb4134cdd4027ae94ac710fc3b1ed433858a4d1
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Sun Mar 25 11:26:37 2018 +0800
+
+    ob-js: Small refactoring.
+    
+    * lisp/ob-js.el (org-babel-prep-session:js): Replace `mapc' + `lambda'
+      with `dolist'.
+
+commit 5ee6c459531b7d010b9825eab38822dec00e02d2
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Sun Mar 18 01:33:12 2018 +0800
+
+    ob-js: support :session for js-comint REPL.
+    
+    * lisp/ob-js.el (org-babel-js-cmd): Add js-comint.
+    (org-babel-js-initiate-session): Add support for js-comint.
+
+commit b4e2fed77e1b656141bf4283b4b674e7e7fe895a
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Sun Mar 18 01:19:29 2018 +0800
+
+    ob-js: support :session for Indium Node REPL.
+    
+    * lisp/ob-js.el (org-babel-js-cmd): Add "indium".
+    (org-babel-execute:js): Handle Indium REPL.
+
+commit 1a1e2286baf41a898c1cf5235d3b6f3a8a81655b
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Thu Mar 8 17:15:58 2018 +0800
+
+    ob-js: support :session for skewer-mode REPL.
+    
+    * lisp/ob-js.el (org-babel-js-cmd): Add "skewer-mode".
+    (org-babel-execute:js):
+    (org-babel-js-initiate-session): Handle skewer mode.
+
+commit 00938bc98bb3ce7d14bdc400ad9f4e0ac9d04d8b
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Tue Mar 13 01:23:52 2018 +0800
+
+    org-src: New option for `org-src-window-setup'.
+    
+    org-src.el: (org-src-window-setup) support open edit src window below.
+    
+    TINYCHANGE
+
+commit 6cf5fc0fc162534832e5f36ee2c532147e3be6de
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Wed Mar 14 16:13:05 2018 +0800
+
+    ob-clojure-litterate: Fix trigger functions.
+    
+    * ob-clojure-literate.el (ob-clojure-literate-enable,
+      ob-clojure-literate-disable): Put advice into
+      ob-clojure-literate-mode trigger functions.
+
+commit 49a8de4ffd2d0fc50c975ff3edac15d2bb37a809
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Tue Mar 6 14:41:20 2018 +0800
+
+    * ob-core.el (org-babel-result-to-file): relative file link result.
+    
+    Respect option `org-link-file-path-type`.
+
+commit 39bd69b08d22dc734c9cb8b8f03445ee6eb76baa
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Fri Mar 2 14:01:01 2018 +0800
+
+    * ob-core.el: (org-babel-execute-src-block) handle :results graphics :file case.
+    
+    Don't write result to file if result is graphics.
+
+commit 6f976f1947099f15bf82940465bb28a5ee582705
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Fri Mar 2 12:18:20 2018 +0800
+
+    * ob-clojure-literate.el support graphics inline image link result.
+    
+    (ob-clojure-literate-inject-code): save Clojure image variable to :file.
+    
+    (ob-clojure-literate-support-graphics-result): fix src block does handle
+    graphics file result issue.
+    
+    Use it like this:
+    
+    ,#+begin_src clojure :cache no :dir "data/images" :results graphics :file "ob-clojure-literate.png"
+    (use '(incanter core stats datasets charts io pdf))
+    (def ob-clojure-literate (histogram (sample-normal 1000)))
+    ,#+end_src
+
+commit 2e6922191e82546ec47b07a1272597e196e16e93
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Wed Feb 14 18:22:45 2018 +0800
+
+    * ob-lua.el: remove it.
+    
+    original ob-lua exists already.
+
+commit 90dfba15a6d53ca7503b07fb988ff3e0cb08971c
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Sat Feb 10 08:31:06 2018 +0800
+
+    * ob-clojure-literate.el (Clojure Literate Programming in Org-mode): Add.
+    
+    Stable version.
+
+commit 1c60511672115d94ec17527233b5030ccb0b79de
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Sat Feb 10 08:28:40 2018 +0800
+
+    * ob-spice.el (supporting spice in Org-mode Babel): Add.
+    
+    Copied version.
+
+commit 8b50e6cf5add8857abdb1c1c5175a73fcea70d33
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Sat Feb 10 08:25:53 2018 +0800
+
+    * ob-smiles.el (supporting SMILES in Org-mode Babel): Add.
+    
+    Copied version.
+
+commit f643a75bd13c9c8d04452512b0452489a999c112
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Sat Feb 10 08:17:36 2018 +0800
+
+    * ob-redis.el (supporting Redis in Org-mode Babel): Add.
+    
+    First version.
+
+commit 8a58a9fd46485b7f27f006af306b792baa887776
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Sat Feb 10 08:16:29 2018 +0800
+
+    * ob-php.el (supporting PHP in Org-mode Babel): Add.
+    
+    First version.
+
+commit 43c035481126ff68ab1df57a16f0bc67d72cd8f3
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Sat Feb 10 08:13:53 2018 +0800
+
+    * ob-lua.el (supporting Lua in Org-mode Babel): Add.
+    
+    First version.
+
+commit 2f2d7552b942ff495ade6c2998d1b9131d1b0a48
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Wed Feb 7 17:36:31 2018 +0800
+
+    * ob-arduino.el (supporting Arduino in Org-mode Babel): Add.
+    
+    First version.
+
+commit 4030b7b907135190403d0dcd8c033a78c15aa872
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Thu Jun 8 18:24:53 2017 +0800
+
+    ob-sclang.el: add ob-sclang for sclang Org-mode babel support
+    
+    * ob-sclang.el (org-babel-execute:sclang): support evaluating sclang
+      code in Org-mode Babel.
+    
+    Support sclang evaluation in Org-mode Babel.
+
+commit d79835a821f24fdc32a0f46630f1b31c58fbbb4a
+Author: stardiviner &lt;numbchild@gmail.com&gt;
+Date:   Sat Apr 2 00:46:36 2016 +0800
+
+    ob-lisp: Add SLY support
+    
+    * ob-lisp.el (org-babel-lisp-eval-fn): New variable.
+    (org-babel-execute:lisp): Support using SLY to evaluate lisp src block.
+    
+    Let user can evaluate Lisp src block with SLY.
+    
+    Modified from a patch proposal by stardiviner.
+    
+    TINYCHANGE
+</pre>
+</div>
+</div>
 </div>
 
 <div id="outline-container-org953ce80" class="outline-3">
-<h3 id="org953ce80"><span class="section-number-3">2.3</span> Programming Languages</h3>
-<div class="outline-text-3" id="text-2-3">
+<h3 id="org953ce80"><span class="section-number-3">2.4</span> Programming Languages</h3>
+<div class="outline-text-3" id="text-2-4">
 </div>
 <div id="outline-container-org0d482f8" class="outline-4">
-<h4 id="org0d482f8"><span class="section-number-4">2.3.1</span> C</h4>
-<div class="outline-text-4" id="text-2-3-1">
+<h4 id="org0d482f8"><span class="section-number-4">2.4.1</span> C</h4>
+<div class="outline-text-4" id="text-2-4-1">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2009-07-16 Thu] </span></span> Already forgot C programming language after a little touch in college.
 </p>
@@ -465,8 +813,8 @@ Emacs下了。确实很赞。之后一直都是用Org-mode组织内容。GTD, Wi
 </div>
 
 <div id="outline-container-org1fef672" class="outline-4">
-<h4 id="org1fef672"><span class="section-number-4">2.3.2</span> Lisp family: Clojure</h4>
-<div class="outline-text-4" id="text-2-3-2">
+<h4 id="org1fef672"><span class="section-number-4">2.4.2</span> Lisp family: Clojure</h4>
+<div class="outline-text-4" id="text-2-4-2">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2017-08-16 Wed] </span></span> I mainly learning and use Clojure currently. Also like Lisp
 (Common Lisp) (not good at it yet).
@@ -479,8 +827,8 @@ Emacs下了。确实很赞。之后一直都是用Org-mode组织内容。GTD, Wi
 </div>
 
 <div id="outline-container-orgd1626b1" class="outline-4">
-<h4 id="orgd1626b1"><span class="section-number-4">2.3.3</span> Know a little about Python, Ruby, HTML, CSS, JavaScript</h4>
-<div class="outline-text-4" id="text-2-3-3">
+<h4 id="orgd1626b1"><span class="section-number-4">2.4.3</span> Know a little about Python, Ruby, HTML, CSS, JavaScript</h4>
+<div class="outline-text-4" id="text-2-4-3">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2015-03-16 Mon] </span></span> I learned a little of Python, Ruby, HTML, CSS, JavaScript when
 some small things used them.
@@ -494,8 +842,8 @@ some small things used them.
 </div>
 
 <div id="outline-container-org0308691" class="outline-3">
-<h3 id="org0308691"><span class="section-number-3">2.4</span> Data Structures &amp; Algorithms</h3>
-<div class="outline-text-3" id="text-2-4">
+<h3 id="org0308691"><span class="section-number-3">2.5</span> Data Structures &amp; Algorithms</h3>
+<div class="outline-text-3" id="text-2-5">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2018-04-16 Mon] </span></span> Those days, I try to learn some Data Structures and Algorithms
 to be a better programmer.
@@ -635,7 +983,7 @@ qr7gc5z0zml5g2tj2d88yzxqx7t2wd0gtucugd2fdl
 <div id="postamble" class="status">
 <div class='footer'>
   Copyright 2011, Author: stardiviner (<a href="mailto:numbchild@gmail.com">numbchild@gmail.com</a>).<br>
-  Last update date: 2018-04-20 Fri 13:22.<br>
+  Last update date: 2018-04-23 Mon 22:45.<br>
   Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.0.50 (<a href="https://orgmode.org">Org</a> mode 9.1.9). <a href="http://orgmode.org" alt="Made with Emacs Org-Mode" style="float:left; margin 20px 0px 20px 20px;"><img src="/assets/images/made_with_emacs_org-mode.jpg"></a> (<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML)  
 </div>
 
