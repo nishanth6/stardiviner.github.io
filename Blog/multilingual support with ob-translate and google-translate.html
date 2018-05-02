@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2018-05-02 Wed 20:20 -->
+<!-- 2018-05-02 Wed 21:40 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>multilingual support with ob-translate and google-translate</title>
@@ -254,10 +254,10 @@ for the JavaScript code in this tag.
 org_html_manager.set("TOC_DEPTH", "3");
 org_html_manager.set("LINK_HOME", "https://stardiviner.github.io/");
 org_html_manager.set("LINK_UP", "");
-org_html_manager.set("LOCAL_TOC", "1");
+org_html_manager.set("LOCAL_TOC", "3");
 org_html_manager.set("VIEW_BUTTONS", "0");
 org_html_manager.set("MOUSE_HINT", "underline");
-org_html_manager.set("FIXED_TOC", "0");
+org_html_manager.set("FIXED_TOC", "2");
 org_html_manager.set("TOC", "0");
 org_html_manager.set("VIEW", "info");
 org_html_manager.setup();  // activate after the parameters are set
@@ -332,33 +332,33 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgcef983a">1. Why multilingual support?</a></li>
-<li><a href="#orgc98f1d5">2. How it looks like</a></li>
-<li><a href="#org12efad3">3. Multilingual support setup</a>
+<li><a href="#org48364b3">1. Why multilingual support?</a></li>
+<li><a href="#orgdbc9df1">2. How it looks like</a></li>
+<li><a href="#orgb4f6a6d">3. Multilingual support setup</a>
 <ul>
-<li><a href="#org62102f5">3.1. configure ob-translate</a>
+<li><a href="#org1cf228f">3.1. configure ob-translate</a>
 <ul>
-<li><a href="#org320a618">3.1.1. require org-mode export src blocks export with results</a></li>
-<li><a href="#orgc78fa5c">3.1.2. create a snippet for easy inserting template</a></li>
+<li><a href="#orgca070b1">3.1.1. require org-mode export src blocks export with results</a></li>
+<li><a href="#orgf29add3">3.1.2. create a snippet for easy inserting template</a></li>
 </ul>
 </li>
-<li><a href="#orgd228929">3.2. configure google-translate if you use it interactively</a></li>
-<li><a href="#org166ae89">3.3. about Google Translate service not accessible issue</a></li>
+<li><a href="#org7bc70c7">3.2. configure google-translate if you use it interactively</a></li>
+<li><a href="#orgb7289d9">3.3. about Google Translate service not accessible issue</a></li>
 </ul>
 </li>
-<li><a href="#org0254748">4. Some issues</a>
+<li><a href="#org430a8ad">4. Some issues</a>
 <ul>
-<li><a href="#org204b858">4.1. the Babel result output type is table</a></li>
-<li><a href="#org6ce3ced">4.2. ob-translate can't be used anywhere in Org-mode buffer</a></li>
+<li><a href="#org287192f">4.1. the Babel result output type is table</a></li>
+<li><a href="#org341e117">4.2. ob-translate can't be used anywhere in Org-mode buffer</a></li>
 </ul>
 </li>
-<li><a href="#org5ea62c0">5. Any updates will updated in this post</a></li>
+<li><a href="#org8162bb7">5. Any updates will updated in this post</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgcef983a" class="outline-2">
-<h2 id="orgcef983a"><span class="section-number-2">1</span> Why multilingual support?</h2>
+<div id="outline-container-org48364b3" class="outline-2">
+<h2 id="org48364b3"><span class="section-number-2">1</span> Why multilingual support?</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-translate">On the internet, English is the main language. But currently translation is good
@@ -401,8 +401,8 @@ much time. I want t a simpler automatic way to do this.
 </div>
 
 
-<div id="outline-container-orgc98f1d5" class="outline-2">
-<h2 id="orgc98f1d5"><span class="section-number-2">2</span> How it looks like</h2>
+<div id="outline-container-orgdbc9df1" class="outline-2">
+<h2 id="orgdbc9df1"><span class="section-number-2">2</span> How it looks like</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-org"><span style="color: #827591; background-color: #4d3150f5569b;">#+begin_src translate :src zh-CN :dest en,zh-TW,ja,ko</span>
@@ -424,8 +424,8 @@ much time. I want t a simpler automatic way to do this.
 </div>
 </div>
 
-<div id="outline-container-org12efad3" class="outline-2">
-<h2 id="org12efad3"><span class="section-number-2">3</span> Multilingual support setup</h2>
+<div id="outline-container-orgb4f6a6d" class="outline-2">
+<h2 id="orgb4f6a6d"><span class="section-number-2">3</span> Multilingual support setup</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Multilingual support is simple to integrate. Especially like great tool Emacs
@@ -435,8 +435,8 @@ and Org-mode. I remember a great tool "ob-translate" which use
 </p>
 </div>
 
-<div id="outline-container-org62102f5" class="outline-3">
-<h3 id="org62102f5"><span class="section-number-3">3.1</span> configure ob-translate</h3>
+<div id="outline-container-org1cf228f" class="outline-3">
+<h3 id="org1cf228f"><span class="section-number-3">3.1</span> configure ob-translate</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 My sample config here:
@@ -458,8 +458,8 @@ I added ob-translate src block into Org-mode new structure template alist.
 </p>
 </div>
 
-<div id="outline-container-org320a618" class="outline-4">
-<h4 id="org320a618"><span class="section-number-4">3.1.1</span> require org-mode export src blocks export with results</h4>
+<div id="outline-container-orgca070b1" class="outline-4">
+<h4 id="orgca070b1"><span class="section-number-4">3.1.1</span> require org-mode export src blocks export with results</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>add-to-list 'org-babel-default-header-args '<span style="color: #bc6ec5;">(</span><span style="color: #4f97d7;">:eval</span> . <span style="color: #2d9574;">"never-export"</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
@@ -474,8 +474,8 @@ I added ob-translate src block into Org-mode new structure template alist.
 </div>
 </div>
 
-<div id="outline-container-orgc78fa5c" class="outline-4">
-<h4 id="orgc78fa5c"><span class="section-number-4">3.1.2</span> create a snippet for easy inserting template</h4>
+<div id="outline-container-orgf29add3" class="outline-4">
+<h4 id="orgf29add3"><span class="section-number-4">3.1.2</span> create a snippet for easy inserting template</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <div class="org-src-container">
 <pre class="src src-snippet"><span style="color: #2aa1ae; background-color: #292e34;"># -*- mode: snippet -*-</span>
@@ -493,8 +493,8 @@ I added ob-translate src block into Org-mode new structure template alist.
 </div>
 </div>
 
-<div id="outline-container-orgd228929" class="outline-3">
-<h3 id="orgd228929"><span class="section-number-3">3.2</span> configure google-translate if you use it interactively</h3>
+<div id="outline-container-org7bc70c7" class="outline-3">
+<h3 id="org7bc70c7"><span class="section-number-3">3.2</span> configure google-translate if you use it interactively</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 Here is my config example:
@@ -536,8 +536,8 @@ You should explore google-translate features on its readme page, really convinie
 </div>
 </div>
 
-<div id="outline-container-org166ae89" class="outline-3">
-<h3 id="org166ae89"><span class="section-number-3">3.3</span> about Google Translate service not accessible issue</h3>
+<div id="outline-container-orgb7289d9" class="outline-3">
+<h3 id="orgb7289d9"><span class="section-number-3">3.3</span> about Google Translate service not accessible issue</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 I'm writing a simple global minor mode to toggle proxy (support HTTP, socks)
@@ -591,12 +591,12 @@ For now, you can simply use my helper function:
 </div>
 
 
-<div id="outline-container-org0254748" class="outline-2">
-<h2 id="org0254748"><span class="section-number-2">4</span> Some issues</h2>
+<div id="outline-container-org430a8ad" class="outline-2">
+<h2 id="org430a8ad"><span class="section-number-2">4</span> Some issues</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org204b858" class="outline-3">
-<h3 id="org204b858"><span class="section-number-3">4.1</span> the Babel result output type is table</h3>
+<div id="outline-container-org287192f" class="outline-3">
+<h3 id="org287192f"><span class="section-number-3">4.1</span> the Babel result output type is table</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 The Babel result output type is table, it seems is forced, I will try to figure
@@ -605,8 +605,8 @@ a way to fix this problem. Might add an PR to "ob-translate".
 </div>
 </div>
 
-<div id="outline-container-org6ce3ced" class="outline-3">
-<h3 id="org6ce3ced"><span class="section-number-3">4.2</span> ob-translate can't be used anywhere in Org-mode buffer</h3>
+<div id="outline-container-org341e117" class="outline-3">
+<h3 id="org341e117"><span class="section-number-3">4.2</span> ob-translate can't be used anywhere in Org-mode buffer</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 Like headlines, ob-translate can't apply on them. But google-translate does not
@@ -619,26 +619,27 @@ current buffer (insert at point).
 </div>
 
 
-<div id="outline-container-org5ea62c0" class="outline-2">
-<h2 id="org5ea62c0"><span class="section-number-2">5</span> Any updates will updated in this post</h2>
+<div id="outline-container-org8162bb7" class="outline-2">
+<h2 id="org8162bb7"><span class="section-number-2">5</span> Any updates will updated in this post</h2>
 </div>
 </div>
 <div id="postamble" class="status">
-<div class='footer'>
+<footer>
   Copyright 2011, Author: stardiviner (<a href="mailto:numbchild@gmail.com">numbchild@gmail.com</a>).<br>
   Last update date: 2018-04-21 Sat 17:14.<br>
-  Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.0.50 (<a href="https://orgmode.org">Org</a> mode 9.1.9). <a href="http://orgmode.org" alt="Made with Emacs Org-Mode" style="float:left; margin 20px 0px 20px 20px;"><img src="/assets/images/made_with_emacs_org-mode.jpg"></a> (<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML)  
-</div>
+  Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.0.50 (<a href="https://orgmode.org">Org</a> mode 9.1.9). <a href="http://orgmode.org" alt="Made with Emacs Org-Mode" style="float:left; margin 20px 0px 20px 20px;"><img src="/assets/images/made_with_emacs_org-mode.jpg"></a> (<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML)
+  
+  <!-- Show Org Source -->
+  <script>
+   var url = document.location.href;
+   var orgsource = url.substring(0, url.lastIndexOf("."))+".org.html";
+   function show_org_source(){
+     document.location.href = orgsource;
+   }
+  </script>
+  <div id="show_source"><input type="button" value="Show Org source" onClick='show_org_source()'></div>
 
-<!-- Show Org Source -->
-<script>
- var url = document.location.href;
- var orgsource = url.substring(0, url.lastIndexOf("."))+".org.html";
- function show_org_source(){
-   document.location.href = orgsource;
- }
-</script>
-<div id="show_source"><input type="button" value="Show Org source" onClick='show_org_source()'></div>
+</footer>
 
 <!-- payment -->
 <div class='payment'>
@@ -653,15 +654,17 @@ current buffer (insert at point).
 </div>
 
 <!-- Disqus -->
-<div id="disqus_thread"></div>
-<script>
- (function() {
-   var d = document, s = d.createElement('script');
-   s.src = 'https://stardiviner.disqus.com/embed.js';
-   s.setAttribute('data-timestamp', +new Date());
-   (d.head || d.body).appendChild(s);
- })();
-</script>
+<div class="comments">
+  <div id="disqus_thread"></div>
+  <script>
+   (function() {
+     var d = document, s = d.createElement('script');
+     s.src = 'https://stardiviner.disqus.com/embed.js';
+     s.setAttribute('data-timestamp', +new Date());
+     (d.head || d.body).appendChild(s);
+   })();
+  </script>
+</div>
 </div>
 <script>window.klipse_settings = {selector_eval_html: '.src-html',
                              selector_eval_js: '.src-js',

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2018-05-02 Wed 20:20 -->
+<!-- 2018-05-02 Wed 21:40 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learned basic skateboard</title>
@@ -254,10 +254,10 @@ for the JavaScript code in this tag.
 org_html_manager.set("TOC_DEPTH", "3");
 org_html_manager.set("LINK_HOME", "https://stardiviner.github.io/");
 org_html_manager.set("LINK_UP", "");
-org_html_manager.set("LOCAL_TOC", "1");
+org_html_manager.set("LOCAL_TOC", "3");
 org_html_manager.set("VIEW_BUTTONS", "0");
 org_html_manager.set("MOUSE_HINT", "underline");
-org_html_manager.set("FIXED_TOC", "0");
+org_html_manager.set("FIXED_TOC", "2");
 org_html_manager.set("TOC", "0");
 org_html_manager.set("VIEW", "info");
 org_html_manager.setup();  // activate after the parameters are set
@@ -332,14 +332,14 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1e4c50b">1. I want to learn skateboard from colledge</a></li>
-<li><a href="#org74ef9ac">2. Some points of learning skateboard from zero</a></li>
+<li><a href="#orgaaf4efa">1. I want to learn skateboard from colledge</a></li>
+<li><a href="#orgd196197">2. Some points of learning skateboard from zero</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org1e4c50b" class="outline-2">
-<h2 id="org1e4c50b"><span class="section-number-2">1</span> I want to learn skateboard from colledge</h2>
+<div id="outline-container-orgaaf4efa" class="outline-2">
+<h2 id="orgaaf4efa"><span class="section-number-2">1</span> I want to learn skateboard from colledge</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 I think skateboard is cool. And it is simpler and portable for walk around. Not
@@ -354,8 +354,8 @@ think skateboard is the best fit for my need when I'm in college.
 </div>
 </div>
 
-<div id="outline-container-org74ef9ac" class="outline-2">
-<h2 id="org74ef9ac"><span class="section-number-2">2</span> Some points of learning skateboard from zero</h2>
+<div id="outline-container-orgd196197" class="outline-2">
+<h2 id="orgd196197"><span class="section-number-2">2</span> Some points of learning skateboard from zero</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>Try to feel your balance on skateboard when you stand on the skateboard.</li>
@@ -385,21 +385,22 @@ sport.</li>
 </div>
 </div>
 <div id="postamble" class="status">
-<div class='footer'>
+<footer>
   Copyright 2011, Author: stardiviner (<a href="mailto:numbchild@gmail.com">numbchild@gmail.com</a>).<br>
   Last update date: 2018-04-21 Sat 11:31.<br>
-  Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.0.50 (<a href="https://orgmode.org">Org</a> mode 9.1.9). <a href="http://orgmode.org" alt="Made with Emacs Org-Mode" style="float:left; margin 20px 0px 20px 20px;"><img src="/assets/images/made_with_emacs_org-mode.jpg"></a> (<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML)  
-</div>
+  Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.0.50 (<a href="https://orgmode.org">Org</a> mode 9.1.9). <a href="http://orgmode.org" alt="Made with Emacs Org-Mode" style="float:left; margin 20px 0px 20px 20px;"><img src="/assets/images/made_with_emacs_org-mode.jpg"></a> (<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML)
+  
+  <!-- Show Org Source -->
+  <script>
+   var url = document.location.href;
+   var orgsource = url.substring(0, url.lastIndexOf("."))+".org.html";
+   function show_org_source(){
+     document.location.href = orgsource;
+   }
+  </script>
+  <div id="show_source"><input type="button" value="Show Org source" onClick='show_org_source()'></div>
 
-<!-- Show Org Source -->
-<script>
- var url = document.location.href;
- var orgsource = url.substring(0, url.lastIndexOf("."))+".org.html";
- function show_org_source(){
-   document.location.href = orgsource;
- }
-</script>
-<div id="show_source"><input type="button" value="Show Org source" onClick='show_org_source()'></div>
+</footer>
 
 <!-- payment -->
 <div class='payment'>
@@ -414,15 +415,17 @@ sport.</li>
 </div>
 
 <!-- Disqus -->
-<div id="disqus_thread"></div>
-<script>
- (function() {
-   var d = document, s = d.createElement('script');
-   s.src = 'https://stardiviner.disqus.com/embed.js';
-   s.setAttribute('data-timestamp', +new Date());
-   (d.head || d.body).appendChild(s);
- })();
-</script>
+<div class="comments">
+  <div id="disqus_thread"></div>
+  <script>
+   (function() {
+     var d = document, s = d.createElement('script');
+     s.src = 'https://stardiviner.disqus.com/embed.js';
+     s.setAttribute('data-timestamp', +new Date());
+     (d.head || d.body).appendChild(s);
+   })();
+  </script>
+</div>
 </div>
 <script>window.klipse_settings = {selector_eval_html: '.src-html',
                              selector_eval_js: '.src-js',

@@ -14,8 +14,8 @@
   <link>https://stardiviner.github.io/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 02 May 2018 20:20:36 +0800</pubDate>
-  <lastBuildDate>Wed, 02 May 2018 20:20:36 +0800</lastBuildDate>
+  <pubDate>Wed, 02 May 2018 21:40:17 +0800</pubDate>
+  <lastBuildDate>Wed, 02 May 2018 21:40:17 +0800</lastBuildDate>
   <generator>Emacs 27.0 Org-mode 9.1.9</generator>
   <webMaster>numbchild@gmail.com (stardiviner)</webMaster>
   <image>
@@ -28,20 +28,20 @@
     <h2>Table of Contents</h2>
     <div id="text-table-of-contents">
       <ul>
-        <li><a href="#orge6290d2">multilingual support with ob-translate and google-translate</a></li>
-        <li><a href="#orgeb178d3">Learned basic skateboard</a></li>
-        <li><a href="#org82f97b2">Needlework: Setup the sewing machine</a></li>
-        <li><a href="#orgde2cc3f">How to BANISH myself</a></li>
-        <li><a href="#org4d7d8ed">test org-mode ox-publish</a></li>
+        <li><a href="#org1da6b89">multilingual support with ob-translate and google-translate</a></li>
+        <li><a href="#org487617b">Learned basic skateboard</a></li>
+        <li><a href="#org9ab2952">Needlework: Setup the sewing machine</a></li>
+        <li><a href="#orgd820e2a">How to BANISH myself</a></li>
+        <li><a href="#orga5a7b7e">test org-mode ox-publish</a></li>
       </ul>
     </div>
   </nav>
 
   <item>
     <title>multilingual support with ob-translate and google-translate</title>
-    <link>https://stardiviner.github.io/index.html#orge6290d2</link>
+    <link>https://stardiviner.github.io/index.html#org1da6b89</link>
     <author>numbchild@gmail.com (stardiviner)</author>
-    <guid isPermaLink="false">https://stardiviner.github.io/index.html#orge6290d2</guid>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#org1da6b89</guid>
     <pubDate>Sat, 21 Apr 2018 16:30:00 +0800</pubDate>
 
     <description><![CDATA[<pre class="example">
@@ -58,9 +58,9 @@
 
   <item>
     <title>Learned basic skateboard</title>
-    <link>https://stardiviner.github.io/index.html#orgeb178d3</link>
+    <link>https://stardiviner.github.io/index.html#org487617b</link>
     <author>numbchild@gmail.com (stardiviner)</author>
-    <guid isPermaLink="false">https://stardiviner.github.io/index.html#orgeb178d3</guid>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#org487617b</guid>
     <pubDate>Sat, 21 Apr 2018 11:32:00 +0800</pubDate>
 
     <description><![CDATA[<pre class="example">
@@ -77,9 +77,9 @@
 
   <item>
     <title>Needlework: Setup the sewing machine</title>
-    <link>https://stardiviner.github.io/index.html#org82f97b2</link>
+    <link>https://stardiviner.github.io/index.html#org9ab2952</link>
     <author>numbchild@gmail.com (stardiviner)</author>
-    <guid isPermaLink="false">https://stardiviner.github.io/index.html#org82f97b2</guid>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#org9ab2952</guid>
     <pubDate>Fri, 20 Apr 2018 12:32:00 +0800</pubDate>
 
     <description><![CDATA[<pre class="example">
@@ -96,9 +96,9 @@
 
   <item>
     <title>How to BANISH myself</title>
-    <link>https://stardiviner.github.io/index.html#orgde2cc3f</link>
+    <link>https://stardiviner.github.io/index.html#orgd820e2a</link>
     <author>numbchild@gmail.com (stardiviner)</author>
-    <guid isPermaLink="false">https://stardiviner.github.io/index.html#orgde2cc3f</guid>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#orgd820e2a</guid>
     <pubDate>Wed, 18 Apr 2018 14:13:00 +0800</pubDate>
 
     <description><![CDATA[<pre class="example">
@@ -115,9 +115,9 @@
 
   <item>
     <title>test org-mode ox-publish</title>
-    <link>https://stardiviner.github.io/index.html#org4d7d8ed</link>
+    <link>https://stardiviner.github.io/index.html#orga5a7b7e</link>
     <author>numbchild@gmail.com (stardiviner)</author>
-    <guid isPermaLink="false">https://stardiviner.github.io/index.html#org4d7d8ed</guid>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#orga5a7b7e</guid>
     <pubDate>Wed, 18 Apr 2018 14:13:00 +0800</pubDate>
 
     <description><![CDATA[<pre class="example">
