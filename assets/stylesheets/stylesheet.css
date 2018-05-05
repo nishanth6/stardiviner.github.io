@@ -88,7 +88,24 @@ h2, h3, h4, h5, h6 {
   line-height: 1.2;
   margin-bottom: .8em;
   margin-top: .8em;
-  font-family: 'Lobster',cursive;
+}
+/* first level */
+h2 {
+  font-size: 25px;
+  font-family: 'Lobster', Helvetica, cursive;
+}
+h3 {
+  font-size: 25px;
+  font-family: unset;
+}
+h4 {
+  font-size: 20px;
+  font-family: unset;
+  font-style: oblique;
+}
+h5, h6 {
+  font-size: 15px;
+  font-family: unset;
 }
 
 /* drawers */
