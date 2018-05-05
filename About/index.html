@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2018-05-05 Sat 15:14 -->
+<!-- 2018-05-05 Sat 15:55 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About</title>
@@ -922,13 +922,30 @@ Having an awesome desktop is a cool thing.
 <pre class="example">
 CUSTOM_ID: Payment
 </pre>
-<p>
-<img src="/assets/images/alipay_payment.jpg" title="打赏" />
-</p>
-
-<p>
-<img src="/assets/images/wechat_payment.png" title="打赏" />
-</p>
+<div id="payment-qr">
+  <div id="payment-alipay">
+    <img src="/assets/images/alipay_payment.jpg" title="打赏" />
+  </div>
+  <div id="payment-wechat">
+    <img src="/assets/images/wechat_payment.png" title="打赏" />
+  </div>
+</div>
+<style>
+ #payment-qr {
+   display: flex;
+   justify-content: space-around;
+ }
+ #payment-alipay {
+   display: inline-flex;
+   width: 30%;
+   height: auto;
+ }
+ #payment-wechat {
+   display: inline-flex;
+   width: 30%;
+   height: auto;
+ }
+</style>
 
 
 <p>
@@ -983,7 +1000,7 @@ qr7gc5z0zml5g2tj2d88yzxqx7t2wd0gtucugd2fdl
 <div id="postamble" class="status">
 <footer>
   Copyright 2011, Author: stardiviner (<a href="mailto:numbchild@gmail.com">numbchild@gmail.com</a>).<br>
-  Last update date: 2018-04-23 Mon 22:45.<br>
+  Last update date: 2018-05-05 Sat 15:52.<br>
   Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.0.50 (<a href="https://orgmode.org">Org</a> mode 9.1.9). <a href="http://orgmode.org" alt="Made with Emacs Org-Mode" style="float:left; margin 20px 0px 20px 20px;"><img src="/assets/images/made_with_emacs_org-mode.jpg"></a> (<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML)
   
   <!-- Show Org Source -->
