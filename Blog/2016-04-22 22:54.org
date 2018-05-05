@@ -1,4 +1,4 @@
-# Created 2018-05-02 Wed 21:52
+# Created 2018-05-05 Sat 10:24
 #+OPTIONS: num:t toc:1 H:4
 #+TITLE: Org-mode exporter template for testing
 #+AUTHOR: stardiviner
@@ -420,6 +420,24 @@ circle of diameter $d$.
 */
 const double pi = 3.1415926535
 \end{minted}
+
+* Blocks
+
+** Quote block
+
+#+begin_quote
+This is a quote block.
+#+end_quote
+
+** LaTeX export block
+
+** ASCII export block
+
+#+begin_src shell
+tree .
+#+end_src
+
+** HTML export block
 
 * src blocks
 :PROPERTIES:

@@ -6,158 +6,193 @@
     <style type="text/css">
     <!--
       body {
-        color: #b2b2b2;
-        background-color: #292b2e;
+        color: #333333;
+        background-color: #FFFFFF;
       }
       .bold {
         /* bold */
-        color: #ffffff;
+        color: #000000;
         font-weight: bold;
       }
       .comment {
         /* font-lock-comment-face */
-        color: #2aa1ae;
-        background-color: #292e34;
+        color: #8D8D84;
+        font-style: italic;
       }
       .comment-delimiter {
         /* font-lock-comment-delimiter-face */
-        color: #2aa1ae;
-        background-color: #292e34;
+        color: #8D8D84;
       }
       .constant {
         /* font-lock-constant-face */
-        color: #a45bad;
+        color: #D0372D;
       }
       .custom {
         /* (:strike-through t) */
         text-decoration: line-through;
       }
       .custom-1 {
-        /* (:foreground "#292b2e") */
-        color: #292b2e;
+        /* (:foreground "#FFFFFF") */
+        color: #FFFFFF;
+      }
+      .font-latex-math {
+        /* font-latex-math-face */
+        color: #0000ff;
+      }
+      .font-latex-script-char {
+        /* font-latex-script-char-face */
+        color: #fa8072;
+      }
+      .font-latex-sedate {
+        /* font-latex-sedate-face */
+        color: #FF5500;
+      }
+      .font-latex-superscript {
+        /* font-latex-superscript-face */
+        font-size: 85%;
       }
       .function-name {
         /* font-lock-function-name-face */
-        color: #bc6ec5;
-        font-weight: bold;
+        color: #006699;
       }
       .italic {
         /* italic */
-        color: #ffffff;
+        color: #000000;
         font-style: italic;
       }
       .keyword {
         /* font-lock-keyword-face */
-        color: #4f97d7;
-        font-weight: bold;
+        color: #0000FF;
       }
       .org-block {
         /* org-block */
-        color: #cbc1d5;
-        background-color: #303d3297361f;
+        color: #000088;
+        background-color: #f9e1f9e1f9e1;
       }
       .org-block-begin-line {
         /* org-block-begin-line */
-        color: #827591;
-        background-color: #4d3150f5569b;
+        color: #555555;
+        background-color: #f4c2f4c2f4c2;
       }
       .org-block-end-line {
         /* org-block-end-line */
-        color: #827591;
-        background-color: #4d3150f5569b;
+        color: #555555;
+        background-color: #f4c2f4c2f4c2;
       }
       .org-checkbox {
+        /* org-checkbox */
+        color: #123555;
+        background-color: #A3A3A3;
       }
       .org-code {
         /* org-code */
-        color: #00ffff;
-        background-color: #303d3297361f;
+        color: #ff6347;
+        background-color: #ed14ed14ed14;
       }
       .org-date {
         /* org-date */
-        color: #7590db;
-        background-color: #1cef1e582076;
+        color: #00459E;
+        background-color: #f233f233f233;
       }
       .org-document-info {
         /* org-document-info */
-        color: #191970;
+        color: #484848;
       }
       .org-document-info-keyword {
         /* org-document-info-keyword */
-        color: #9f8766;
+        color: #008ED1;
+        background-color: #EAEAFF;
       }
       .org-document-title {
         /* org-document-title */
-        color: #bc6ec5;
+        color: #000000;
         font-size: 150%;
         font-weight: bold;
         text-decoration: underline;
       }
       .org-footnote {
         /* org-footnote */
-        color: #b2b2b2;
+        color: #008ED1;
         text-decoration: underline;
       }
       .org-formula {
         /* org-formula */
         color: #000000;
-        background-color: #00ff00;
+        background-color: #adff2f;
       }
       .org-latex-and-related {
         /* org-latex-and-related */
-        color: #85dc47378d95;
+        color: #a5e82bde23e4;
+        background-color: #ffffff;
       }
       .org-level-1 {
         /* org-level-1 */
-        color: #4f97d7;
-        background-color: #303d3297361f;
+        color: #3C3C3C;
+        background-color: #f233f233f233;
         font-weight: bold;
+        text-decoration: overline;
       }
       .org-level-2 {
         /* org-level-2 */
-        color: #2d9574;
-        background-color: #303d3297361f;
+        color: #123555;
+        background-color: #E5F4FB;
         font-weight: bold;
+        text-decoration: overline;
       }
       .org-level-3 {
         /* org-level-3 */
-        color: #67b11d;
-        background-color: #303d3297361f;
+        color: #005522;
+        background-color: #EFFFEF;
+        font-weight: bold;
+        text-decoration: overline;
       }
       .org-level-4 {
         /* org-level-4 */
-        color: #b1951d;
-        background-color: #303d3297361f;
+        color: #EA6300;
+        background-color: #EFFFEF;
+        font-weight: bold;
+        text-decoration: overline;
       }
       .org-link {
         /* org-link */
-        color: #2aa1ae;
-        background-color: #351037a73b89;
+        color: #006DAF;
+        background-color: #e566e566e566;
         text-decoration: underline;
       }
       .org-list-dt {
         /* org-list-dt */
+        color: #335EA8;
         font-weight: bold;
       }
       .org-meta-line {
         /* org-meta-line */
-        color: #9f8766;
-        background-color: #292b2e;
+        color: #008ED1;
+        background-color: #FFFFFF;
       }
       .org-property-value {
+        /* org-property-value */
+        color: #00A000;
+      }
+      .org-quote {
+        /* org-quote */
+        color: #696969;
+        background-color: #e566e566e566;
+        font-style: italic;
       }
       .org-special-keyword {
         /* org-special-keyword */
-        color: #bc6ec5;
-        background-color: #351037a73b89;
+        color: #00BB00;
+        background-color: #e566e566e566;
+        font-weight: bold;
       }
       .org-table {
         /* org-table */
-        color: #b2b2b2;
-        background-color: #351037a73b89;
+        color: #006400;
+        background-color: #f233f233f233;
       }
       .org-target {
         /* org-target */
+        color: #FF6DAF;
         font-weight: bold;
         text-decoration: underline;
       }
@@ -168,11 +203,12 @@
       }
       .org-verbatim {
         /* org-verbatim */
-        color: #4f97d7;
+        color: #0066CC;
+        background-color: #F7FDFF;
       }
       .string {
         /* font-lock-string-face */
-        color: #2d9574;
+        color: #008000;
       }
       .underline {
         /* underline */
@@ -180,12 +216,12 @@
       }
       .variable-name {
         /* font-lock-variable-name-face */
-        color: #7590db;
+        color: #BA36A5;
       }
       .warning {
         /* font-lock-warning-face */
-        color: #dc752f;
-        background-color: #292b2e;
+        color: #ff0000;
+        font-weight: bold;
       }
 
       a {
@@ -655,6 +691,61 @@ circle of diameter $d$.
 const double pi = 3.1415926535
 \end{minted}</span>
 
+<span class="org-level-1">* Blocks
+</span>
+<span class="custom-1">*</span><span class="org-level-2">* Quote block
+</span>
+<span class="org-block-begin-line">#+begin_quote
+</span><span class="org-quote">This is a quote block.</span><span class="org-quote"><span class="org-meta-line">
+</span></span><span class="org-block-end-line">#+end_quote
+</span>
+<span class="custom-1">*</span><span class="org-level-2">* LaTeX export block
+</span>
+<span class="org-block-begin-line">#+begin_export latex
+</span><span class="org-block"><span class="font-latex-sedate"><span class="keyword">\begin</span></span></span><span class="org-block">{</span><span class="org-block"><span class="function-name">equation</span></span><span class="org-block">}</span><span class="org-block"><span class="font-latex-math"> </span></span><span class="org-block"><span class="font-latex-sedate"><span class="font-latex-math"><span class="keyword">\label</span></span></span></span><span class="org-block"><span class="font-latex-math">{</span></span><span class="org-block"><span class="font-latex-math"><span class="constant">sqrt equation</span></span></span><span class="org-block"><span class="font-latex-math">}
+y = </span></span><span class="org-block"><span class="font-latex-sedate"><span class="font-latex-math">\sqrt</span></span></span><span class="org-block"><span class="font-latex-math">{r</span></span><span class="org-block"><span class="font-latex-math"><span class="font-latex-script-char">^</span></span></span><span class="org-block"><span class="font-latex-superscript"><span class="font-latex-math">2</span></span></span><span class="org-block"><span class="font-latex-math"> - x</span></span><span class="org-block"><span class="font-latex-math"><span class="font-latex-script-char">^</span></span></span><span class="org-block"><span class="font-latex-superscript"><span class="font-latex-math">2</span></span></span><span class="org-block"><span class="font-latex-math">}
+</span></span><span class="org-block"><span class="font-latex-sedate"><span class="keyword">\end</span></span></span><span class="org-block">{</span><span class="org-block"><span class="function-name">equation</span></span><span class="org-block">}
+</span><span class="org-block-end-line">#+end_export
+</span>
+<span class="custom-1">*</span><span class="org-level-2">* ASCII export block
+</span>
+<span class="org-block-begin-line">#+begin_src shell :results output :wrap export ascii
+</span><span class="org-block">tree .
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+RESULTS[&lt;2018-05-05 10:22:24&gt; feb81823312f6bb7d87a20d8c191515dd9a4a332]:</span>
+<span class="org-block-begin-line">#+begin_export ascii
+</span>.
+&#9500;&#9472;&#9472; 2016-04-22 22:54.org
+&#9500;&#9472;&#9472; data
+&#9474;&#160;&#160; &#9500;&#9472;&#9472; ce
+&#9474;&#160;&#160; &#9474;&#160;&#160; &#9492;&#9472;&#9472; 6423b8-3283-4cb9-843a-022a5e2a7124
+&#9474;&#160;&#160; &#9474;&#160;&#160;     &#9492;&#9472;&#9472; &#33459;&#21326; 700.jpg
+&#9474;&#160;&#160; &#9492;&#9472;&#9472; images
+&#9474;&#160;&#160;     &#9500;&#9472;&#9472; babel-gnuplot-graphics-test.png
+&#9474;&#160;&#160;     &#9492;&#9472;&#9472; babel_lang_dot_example1.png
+&#9500;&#9472;&#9472; How to BANISH myself.org
+&#9500;&#9472;&#9472; index.org
+&#9500;&#9472;&#9472; Learned basic skateboard.org
+&#9500;&#9472;&#9472; multilingual support with ob-translate and google-translate.org
+&#9500;&#9472;&#9472; setup the sewing machine for needlework.org
+&#9500;&#9472;&#9472; sitemap.org
+&#9500;&#9472;&#9472; theindex.inc
+&#9492;&#9472;&#9472; theindex.org
+
+4 directories, 12 files<span class="org-meta-line">
+</span><span class="org-block-end-line">#+end_export
+</span>
+<span class="custom-1">*</span><span class="org-level-2">* HTML export block
+</span>
+<span class="org-block-begin-line">#+begin_export html
+</span><span class="org-block">&lt;div id="html-export"&gt;
+  &lt;p&gt;
+    helllo, worlllld!!!
+  &lt;/p&gt;
+&lt;/div&gt;
+</span><span class="org-block-end-line">#+end_export
+</span>
 <span class="org-level-1">* src blocks
 </span><span class="org-special-keyword">:PROPERTIES:</span>
 <span class="org-special-keyword">:ID:</span>       <span class="org-property-value">0bbfd97e-52f8-4e75-968b-79a71f5a316a</span>
