@@ -1,4 +1,4 @@
-# Created 2018-05-05 Sat 16:52
+# Created 2018-05-09 Wed 01:42
 #+OPTIONS: num:t toc:1 H:4
 #+TITLE: Org-mode exporter template for testing
 #+AUTHOR: stardiviner
