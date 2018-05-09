@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2018-05-09 Wed 01:42 -->
+<!-- 2018-05-09 Wed 14:04 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>multilingual support with ob-translate and google-translate</title>
@@ -254,12 +254,12 @@ for the JavaScript code in this tag.
 org_html_manager.set("TOC_DEPTH", "3");
 org_html_manager.set("LINK_HOME", "https://stardiviner.github.io/");
 org_html_manager.set("LINK_UP", "");
-org_html_manager.set("LOCAL_TOC", "3");
+org_html_manager.set("LOCAL_TOC", "1");
 org_html_manager.set("VIEW_BUTTONS", "0");
 org_html_manager.set("MOUSE_HINT", "underline");
-org_html_manager.set("FIXED_TOC", "2");
+org_html_manager.set("FIXED_TOC", "0");
 org_html_manager.set("TOC", "0");
-org_html_manager.set("VIEW", "info");
+org_html_manager.set("VIEW", "showall");
 org_html_manager.setup();  // activate after the parameters are set
 /*]]>*///-->
 </script>
@@ -332,38 +332,38 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7e72cef">1. Why multilingual support?</a></li>
-<li><a href="#org3ef35fe">2. How it looks like</a></li>
-<li><a href="#org832435a">3. Multilingual support setup</a>
+<li><a href="#org5cfd47e">1. Why multilingual support?</a></li>
+<li><a href="#orgbbfcbe9">2. How it looks like</a></li>
+<li><a href="#org5e5fce3">3. Multilingual support setup</a>
 <ul>
-<li><a href="#org5fe5b13">3.1. configure ob-translate</a>
+<li><a href="#org814a255">3.1. configure ob-translate</a>
 <ul>
-<li><a href="#orgbce913a">3.1.1. require org-mode export src blocks export with results</a></li>
-<li><a href="#orgc164d5f">3.1.2. create a snippet for easy inserting template</a></li>
+<li><a href="#orgaa638bf">3.1.1. require org-mode export src blocks export with results</a></li>
+<li><a href="#org538b4c0">3.1.2. create a snippet for easy inserting template</a></li>
 </ul>
 </li>
-<li><a href="#org0a084ba">3.2. configure google-translate if you use it interactively</a></li>
-<li><a href="#org24dc297">3.3. about Google Translate service not accessible issue</a></li>
+<li><a href="#orgd4cdb1c">3.2. configure google-translate if you use it interactively</a></li>
+<li><a href="#org956b3a2">3.3. about Google Translate service not accessible issue</a></li>
 </ul>
 </li>
-<li><a href="#org9aee4ff">4. Some issues</a>
+<li><a href="#org47db642">4. Some issues</a>
 <ul>
-<li><a href="#org5f675d0">4.1. the Babel result output type is table</a></li>
-<li><a href="#org39bce3a">4.2. ob-translate can't be used anywhere in Org-mode buffer</a></li>
+<li><a href="#org3bec7ae">4.1. the Babel result output type is table</a></li>
+<li><a href="#orgafbeed4">4.2. ob-translate can't be used anywhere in Org-mode buffer</a></li>
 </ul>
 </li>
-<li><a href="#orgfadafb2">5. Any updates will updated in this post</a></li>
+<li><a href="#org0ac2e91">5. Any updates will updated in this post</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org7e72cef" class="outline-2">
-<h2 id="org7e72cef"><span class="section-number-2">1</span> Why multilingual support?</h2>
+<div id="outline-container-org5cfd47e" class="outline-2">
+<h2 id="org5cfd47e"><span class="section-number-2">1</span> Why multilingual support?</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-translate">On the internet, English is the main language. But currently translation is good
 enough now. In my previous blog posts I use two languages to write, it is take
-much time. I want t a simpler automatic way to do this.
+much time. I want t a simpler automatic way to do this.                             
 </pre>
 </div>
 
@@ -401,19 +401,19 @@ much time. I want t a simpler automatic way to do this.
 </div>
 
 
-<div id="outline-container-org3ef35fe" class="outline-2">
-<h2 id="org3ef35fe"><span class="section-number-2">2</span> How it looks like</h2>
+<div id="outline-container-orgbbfcbe9" class="outline-2">
+<h2 id="orgbbfcbe9"><span class="section-number-2">2</span> How it looks like</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
-<pre class="src src-org"><span style="color: #827591; background-color: #4d3150f5569b;">#+begin_src translate :src zh-CN :dest en,zh-TW,ja,ko</span>
-<span style="color: #cbc1d5; background-color: #303d3297361f;">&#20320;&#22909;&#65292;&#25105;&#21483;&#38463;&#22269;&#12290;</span>
-<span style="color: #827591; background-color: #4d3150f5569b;">#+end_src</span>
+<pre class="src src-org"><span style="color: #555555; background-color: #f4c2f4c2f4c2;">#+begin_src translate :src zh-CN :dest en,zh-TW,ja,ko</span>
+<span style="color: #000088; background-color: #f9e1f9e1f9e1;">&#20320;&#22909;&#65292;&#25105;&#21483;&#38463;&#22269;&#12290;</span>
+<span style="color: #555555; background-color: #f4c2f4c2f4c2;">#+end_src</span>
 
-<span style="color: #9f8766; background-color: #292b2e;">#+RESULTS[&lt;2018-04-21 16:17:39&gt; 7982d9e369a56107e0b9252c5b1a7753bd6ecef0]:</span>
-<span style="color: #b2b2b2; background-color: #351037a73b89;">| en    | Hello, my name is Aguo.              |</span>
-<span style="color: #b2b2b2; background-color: #351037a73b89;">| zh-TW | &#20320;&#22909;&#65292;&#25105;&#21483;&#38463;&#22283;&#12290;                     |</span>
-<span style="color: #b2b2b2; background-color: #351037a73b89;">| ja    | &#12371;&#12435;&#12395;&#12385;&#12399;&#12289;&#31169;&#12398;&#21517;&#21069;&#12399;&#12450;&#12464;&#12540;&#12458;&#12391;&#12377;&#12290; |</span>
-<span style="color: #b2b2b2; background-color: #351037a73b89;">| ko    | &#50504;&#45397;, &#45236; &#51060;&#47492;&#51008; &#50500;&#44396;&#50500; &#50556;.           |</span>
+<span style="color: #008ED1; background-color: #FFFFFF;">#+RESULTS[&lt;2018-04-21 16:17:39&gt; 7982d9e369a56107e0b9252c5b1a7753bd6ecef0]:</span>
+<span style="color: #006400; background-color: #f233f233f233;">| en    | Hello, my name is Aguo.              |</span>
+<span style="color: #006400; background-color: #f233f233f233;">| zh-TW | &#20320;&#22909;&#65292;&#25105;&#21483;&#38463;&#22283;&#12290;                     |</span>
+<span style="color: #006400; background-color: #f233f233f233;">| ja    | &#12371;&#12435;&#12395;&#12385;&#12399;&#12289;&#31169;&#12398;&#21517;&#21069;&#12399;&#12450;&#12464;&#12540;&#12458;&#12391;&#12377;&#12290; |</span>
+<span style="color: #006400; background-color: #f233f233f233;">| ko    | &#50504;&#45397;, &#45236; &#51060;&#47492;&#51008; &#50500;&#44396;&#50500; &#50556;.           |                             </span>
 </pre>
 </div>
 
@@ -424,8 +424,8 @@ much time. I want t a simpler automatic way to do this.
 </div>
 </div>
 
-<div id="outline-container-org832435a" class="outline-2">
-<h2 id="org832435a"><span class="section-number-2">3</span> Multilingual support setup</h2>
+<div id="outline-container-org5e5fce3" class="outline-2">
+<h2 id="org5e5fce3"><span class="section-number-2">3</span> Multilingual support setup</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Multilingual support is simple to integrate. Especially like great tool Emacs
@@ -435,21 +435,21 @@ and Org-mode. I remember a great tool "ob-translate" which use
 </p>
 </div>
 
-<div id="outline-container-org5fe5b13" class="outline-3">
-<h3 id="org5fe5b13"><span class="section-number-3">3.1</span> configure ob-translate</h3>
+<div id="outline-container-org814a255" class="outline-3">
+<h3 id="org814a255"><span class="section-number-3">3.1</span> configure ob-translate</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 My sample config here:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7;">use-package</span> <span style="color: #a45bad;">ob-translate</span>
-  <span style="color: #4f97d7;">:ensure</span> t
-  <span style="color: #4f97d7;">:init</span>
-  <span style="color: #bc6ec5;">(</span>add-to-list 'org-babel-load-languages '<span style="color: #2d9574;">(</span>translate . t<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
-  <span style="color: #bc6ec5;">(</span>org-babel-do-load-languages 'org-babel-load-languages org-babel-load-languages<span style="color: #bc6ec5;">)</span>
-  <span style="color: #8D8D84;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">add translate special block into structure template alist.</span>
-  <span style="color: #bc6ec5;">(</span>add-to-list 'org-structure-template-alist '<span style="color: #2d9574;">(</span><span style="color: #2d9574;">"t"</span> . <span style="color: #2d9574;">"src translate"</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #707183;">(</span><span style="color: #0000FF;">use-package</span> <span style="color: #D0372D;">ob-translate</span>
+  <span style="color: #006FE0;">:ensure</span> t
+  <span style="color: #006FE0;">:init</span>
+  <span style="color: #7388D6;">(</span>add-to-list 'org-babel-load-languages '<span style="color: #909183;">(</span>translate . t<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+  <span style="color: #7388D6;">(</span>org-babel-do-load-languages 'org-babel-load-languages org-babel-load-languages<span style="color: #7388D6;">)</span>
+  <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">add translate special block into structure template alist.</span>
+  <span style="color: #7388D6;">(</span>add-to-list 'org-structure-template-alist '<span style="color: #909183;">(</span><span style="color: #008000;">"t"</span> . <span style="color: #008000;">"src translate"</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)                             </span>
 </pre>
 </div>
 
@@ -458,12 +458,12 @@ I added ob-translate src block into Org-mode new structure template alist.
 </p>
 </div>
 
-<div id="outline-container-orgbce913a" class="outline-4">
-<h4 id="orgbce913a"><span class="section-number-4">3.1.1</span> require org-mode export src blocks export with results</h4>
+<div id="outline-container-orgaa638bf" class="outline-4">
+<h4 id="orgaa638bf"><span class="section-number-4">3.1.1</span> require org-mode export src blocks export with results</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>add-to-list 'org-babel-default-header-args '<span style="color: #bc6ec5;">(</span><span style="color: #4f97d7;">:eval</span> . <span style="color: #2d9574;">"never-export"</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
-<span style="color: #4f97d7;">(</span>add-to-list 'org-babel-default-header-args '<span style="color: #bc6ec5;">(</span><span style="color: #4f97d7;">:exports</span> . <span style="color: #2d9574;">"both"</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #707183;">(</span>add-to-list 'org-babel-default-header-args '<span style="color: #7388D6;">(</span><span style="color: #006FE0;">:eval</span> . <span style="color: #008000;">"never-export"</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>add-to-list 'org-babel-default-header-args '<span style="color: #7388D6;">(</span><span style="color: #006FE0;">:exports</span> . <span style="color: #008000;">"both"</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)                             </span>
 </pre>
 </div>
 
@@ -474,59 +474,59 @@ I added ob-translate src block into Org-mode new structure template alist.
 </div>
 </div>
 
-<div id="outline-container-orgc164d5f" class="outline-4">
-<h4 id="orgc164d5f"><span class="section-number-4">3.1.2</span> create a snippet for easy inserting template</h4>
+<div id="outline-container-org538b4c0" class="outline-4">
+<h4 id="org538b4c0"><span class="section-number-4">3.1.2</span> create a snippet for easy inserting template</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <div class="org-src-container">
-<pre class="src src-snippet"><span style="color: #2aa1ae; background-color: #292e34;"># -*- mode: snippet -*-</span>
-<span style="color: #2aa1ae; background-color: #292e34;"># name: ob-translate</span>
-<span style="color: #2aa1ae; background-color: #292e34;"># key: babel-translate</span>
-<span style="color: #2aa1ae; background-color: #292e34;"># group: babel</span>
-<span style="color: #2aa1ae; background-color: #292e34;"># expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 't))</span>
-<span style="color: #2aa1ae; background-color: #292e34;"># --</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#+begin_src translate :src ${</span><span style="color: #dc752f; background-color: #292b2e; font-weight: bold;">1</span><span style="color: #2aa1ae; background-color: #292e34;">:source: auto, en, zh-CN} :dest ${</span><span style="color: #dc752f; background-color: #292b2e; font-weight: bold;">2</span><span style="color: #2aa1ae; background-color: #292e34;">:en,zh-KW,ja,ko}</span>
-<span style="color: #4f97d7;">$</span><span style="color: #2d9574;">0</span>
-<span style="color: #2aa1ae; background-color: #292e34;">#+end_src</span>
+<pre class="src src-snippet"><span style="color: #8D8D84; font-style: italic;"># -*- mode: snippet -*-</span>
+<span style="color: #8D8D84; font-style: italic;"># name: ob-translate</span>
+<span style="color: #8D8D84; font-style: italic;"># key: babel-translate</span>
+<span style="color: #8D8D84; font-style: italic;"># group: babel</span>
+<span style="color: #8D8D84; font-style: italic;"># expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 't))</span>
+<span style="color: #8D8D84; font-style: italic;"># --</span>
+<span style="color: #8D8D84; font-style: italic;">#+begin_src translate :src ${</span><span style="color: #ff0000; font-weight: bold;">1</span><span style="color: #8D8D84; font-style: italic;">:source: auto, en, zh-CN} :dest ${</span><span style="color: #ff0000; font-weight: bold;">2</span><span style="color: #8D8D84; font-style: italic;">:en,zh-KW,ja,ko}</span>
+<span style="color: #0000FF;">$</span><span style="color: #008000;">0</span>
+<span style="color: #8D8D84; font-style: italic;">#+end_src                             </span>
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org0a084ba" class="outline-3">
-<h3 id="org0a084ba"><span class="section-number-3">3.2</span> configure google-translate if you use it interactively</h3>
+<div id="outline-container-orgd4cdb1c" class="outline-3">
+<h3 id="orgd4cdb1c"><span class="section-number-3">3.2</span> configure google-translate if you use it interactively</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 Here is my config example:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7;">use-package</span> <span style="color: #a45bad;">google-translate</span>
-  <span style="color: #4f97d7;">:ensure</span> t
-  <span style="color: #4f97d7;">:defer</span> t
-  <span style="color: #4f97d7;">:bind</span> <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7;">:map</span> dictionary-prefix
-              <span style="color: #2d9574;">(</span><span style="color: #2d9574;">"t"</span> . google-translate-smooth-translate<span style="color: #2d9574;">)</span>
-              <span style="color: #2d9574;">(</span><span style="color: #2d9574;">"C-t"</span> . google-translate-at-point<span style="color: #2d9574;">)</span>
-              <span style="color: #2d9574;">(</span><span style="color: #2d9574;">"M-t"</span> . google-translate-query-translate<span style="color: #2d9574;">)</span>
-              <span style="color: #2d9574;">(</span><span style="color: #2d9574;">"C-r"</span> . google-translate-at-point-reverse<span style="color: #2d9574;">)</span>
-              <span style="color: #2d9574;">(</span><span style="color: #2d9574;">"M-r"</span> . google-translate-query-translate-reverse<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
-  <span style="color: #4f97d7;">:init</span>
-  <span style="color: #bc6ec5;">(</span>add-to-list 'display-buffer-alist
-               '<span style="color: #2d9574;">(</span><span style="color: #2d9574;">"^\\*Google Translate\\*"</span> . <span style="color: #67b11d;">(</span>display-buffer-below-selected<span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
-  <span style="color: #4f97d7;">:config</span>
-  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7;">setq</span> google-translate-enable-ido-completion nil
+<pre class="src src-emacs-lisp"><span style="color: #707183;">(</span><span style="color: #0000FF;">use-package</span> <span style="color: #D0372D;">google-translate</span>
+  <span style="color: #006FE0;">:ensure</span> t
+  <span style="color: #006FE0;">:defer</span> t
+  <span style="color: #006FE0;">:bind</span> <span style="color: #7388D6;">(</span><span style="color: #006FE0;">:map</span> dictionary-prefix
+              <span style="color: #909183;">(</span><span style="color: #008000;">"t"</span> . google-translate-smooth-translate<span style="color: #909183;">)</span>
+              <span style="color: #909183;">(</span><span style="color: #008000;">"C-t"</span> . google-translate-at-point<span style="color: #909183;">)</span>
+              <span style="color: #909183;">(</span><span style="color: #008000;">"M-t"</span> . google-translate-query-translate<span style="color: #909183;">)</span>
+              <span style="color: #909183;">(</span><span style="color: #008000;">"C-r"</span> . google-translate-at-point-reverse<span style="color: #909183;">)</span>
+              <span style="color: #909183;">(</span><span style="color: #008000;">"M-r"</span> . google-translate-query-translate-reverse<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+  <span style="color: #006FE0;">:init</span>
+  <span style="color: #7388D6;">(</span>add-to-list 'display-buffer-alist
+               '<span style="color: #909183;">(</span><span style="color: #008000;">"^\\*Google Translate\\*"</span> . <span style="color: #709870;">(</span>display-buffer-below-selected<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+  <span style="color: #006FE0;">:config</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">setq</span> google-translate-enable-ido-completion nil
         google-translate-show-phonetic t
-        <span style="color: #8D8D84;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">google-translate-listen-program</span>
-        google-translate-output-destination nil <span style="color: #8D8D84;">; </span><span style="color: #2aa1ae; background-color: #292e34;">'echo-area, 'popup</span>
+        <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">google-translate-listen-program</span>
+        google-translate-output-destination nil <span style="color: #8D8D84;">; </span><span style="color: #8D8D84; font-style: italic;">'echo-area, 'popup</span>
         google-translate-pop-up-buffer-set-focus t
-        <span style="color: #8D8D84;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">`</span><span style="color: #a45bad; background-color: #292e34;">google-translate-supported-languages</span><span style="color: #2aa1ae; background-color: #292e34;">'</span>
-        google-translate-default-target-language <span style="color: #2d9574;">"zh-CN"</span>
-        <span style="color: #8D8D84;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">for `</span><span style="color: #a45bad; background-color: #292e34;">google-translate-smooth-translate</span><span style="color: #2aa1ae; background-color: #292e34;">' + [C-n/p]</span>
-        google-translate-translation-directions-alist '<span style="color: #2d9574;">(</span><span style="color: #67b11d;">(</span><span style="color: #2d9574;">"en"</span> . <span style="color: #2d9574;">"zh-CN"</span><span style="color: #67b11d;">)</span>
-                                                        <span style="color: #67b11d;">(</span><span style="color: #2d9574;">"zh-CN"</span> . <span style="color: #2d9574;">"en"</span><span style="color: #67b11d;">)</span>
-                                                        <span style="color: #67b11d;">(</span><span style="color: #2d9574;">"zh-CN"</span> . <span style="color: #2d9574;">"ja"</span><span style="color: #67b11d;">)</span>
-                                                        <span style="color: #67b11d;">(</span><span style="color: #2d9574;">"zh-CN"</span> . <span style="color: #2d9574;">"ko"</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
-        <span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+        <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">`</span><span style="color: #D0372D; font-style: italic;">google-translate-supported-languages</span><span style="color: #8D8D84; font-style: italic;">'</span>
+        google-translate-default-target-language <span style="color: #008000;">"zh-CN"</span>
+        <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">for `</span><span style="color: #D0372D; font-style: italic;">google-translate-smooth-translate</span><span style="color: #8D8D84; font-style: italic;">' + [C-n/p]</span>
+        google-translate-translation-directions-alist '<span style="color: #909183;">(</span><span style="color: #709870;">(</span><span style="color: #008000;">"en"</span> . <span style="color: #008000;">"zh-CN"</span><span style="color: #709870;">)</span>
+                                                        <span style="color: #709870;">(</span><span style="color: #008000;">"zh-CN"</span> . <span style="color: #008000;">"en"</span><span style="color: #709870;">)</span>
+                                                        <span style="color: #709870;">(</span><span style="color: #008000;">"zh-CN"</span> . <span style="color: #008000;">"ja"</span><span style="color: #709870;">)</span>
+                                                        <span style="color: #709870;">(</span><span style="color: #008000;">"zh-CN"</span> . <span style="color: #008000;">"ko"</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span>
+        <span style="color: #7388D6;">)</span><span style="color: #707183;">)                             </span>
 </pre>
 </div>
 
@@ -536,8 +536,8 @@ You should explore google-translate features on its readme page, really convinie
 </div>
 </div>
 
-<div id="outline-container-org24dc297" class="outline-3">
-<h3 id="org24dc297"><span class="section-number-3">3.3</span> about Google Translate service not accessible issue</h3>
+<div id="outline-container-org956b3a2" class="outline-3">
+<h3 id="org956b3a2"><span class="section-number-3">3.3</span> about Google Translate service not accessible issue</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 I'm writing a simple global minor mode to toggle proxy (support HTTP, socks)
@@ -549,41 +549,41 @@ For now, you can simply use my helper function:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7;">defvar</span> <span style="color: #7590db;">my:proxy-toggle-p</span> nil
-  <span style="color: #9f8766;">"A global variable indicate current proxy toggle status.</span>
-<span style="color: #9f8766;">Used by function `</span><span style="color: #a45bad;">my:proxy-toggle</span><span style="color: #9f8766;">'."</span><span style="color: #4f97d7;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #707183;">(</span><span style="color: #0000FF;">defvar</span> <span style="color: #BA36A5;">my:proxy-toggle-p</span> nil
+  <span style="color: #036A07;">"A global variable indicate current proxy toggle status.</span>
+<span style="color: #036A07;">Used by function `</span><span style="color: #D0372D;">my:proxy-toggle</span><span style="color: #036A07;">'."</span><span style="color: #707183;">)</span>
 
-<span style="color: #4f97d7;">(</span><span style="color: #4f97d7;">defun</span> <span style="color: #bc6ec5;">my:proxy-toggle</span> <span style="color: #bc6ec5;">(</span>proxy<span style="color: #bc6ec5;">)</span>
-  <span style="color: #9f8766;">"A command to toggle `</span><span style="color: #a45bad;">PROXY</span><span style="color: #9f8766;">' for Emacs."</span>
-  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7;">interactive</span> <span style="color: #2d9574;">(</span>list <span style="color: #67b11d;">(</span><span style="color: #4f97d7;">unless</span> my:proxy-toggle-p
-                       <span style="color: #b1951d;">(</span>completing-read <span style="color: #2d9574;">"Select a proxy routine: "</span> '<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"socks"</span> <span style="color: #2d9574;">"url_proxy_services"</span> <span style="color: #2d9574;">"env HTTP_PROXY"</span><span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
-  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7;">if</span> my:proxy-toggle-p
-      <span style="color: #2d9574;">(</span><span style="color: #4f97d7;">setq</span> my:proxy-toggle-p nil<span style="color: #2d9574;">)</span>
-    <span style="color: #2d9574;">(</span><span style="color: #4f97d7;">setq</span> my:proxy-toggle-p proxy<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
-  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7;">pcase</span> my:proxy-toggle-p
-    <span style="color: #2d9574;">(</span><span style="color: #2d9574;">"socks"</span>
-     <span style="color: #67b11d;">(</span><span style="color: #4f97d7;">setq</span> url-gateway-method 'socks
-           socks-noproxy '<span style="color: #b1951d;">(</span><span style="color: #2d9574;">"localhost"</span><span style="color: #b1951d;">)</span>
-           socks-server '<span style="color: #b1951d;">(</span><span style="color: #2d9574;">"Default server"</span> <span style="color: #2d9574;">"127.0.0.1"</span> 1086 5<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
-    <span style="color: #2d9574;">(</span><span style="color: #2d9574;">"url_proxy_services"</span>
-     <span style="color: #67b11d;">(</span><span style="color: #4f97d7;">setq</span> url-proxy-services
-           '<span style="color: #b1951d;">(</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"http"</span>  . <span style="color: #2d9574;">"127.0.0.1:8118"</span><span style="color: #4f97d7;">)</span>
-             <span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"https"</span> . <span style="color: #2d9574;">"127.0.0.1:8118"</span><span style="color: #4f97d7;">)</span>
-             <span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"ftp"</span>   . <span style="color: #2d9574;">"127.0.0.1:8118"</span><span style="color: #4f97d7;">)</span>
-             <span style="color: #8D8D84;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">don't use `</span><span style="color: #a45bad; background-color: #292e34;">localhost</span><span style="color: #2aa1ae; background-color: #292e34;">', avoid robe server (For Ruby) can't response.</span>
-             <span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"no_proxy"</span> . <span style="color: #2d9574;">"127.0.0.1"</span><span style="color: #4f97d7;">)</span>
-             <span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"no_proxy"</span> . <span style="color: #2d9574;">"^.*</span><span style="color: #2d9574; font-weight: bold;">\\</span><span style="color: #2d9574; font-weight: bold;">(</span><span style="color: #2d9574;">baidu</span><span style="color: #2d9574; font-weight: bold;">\\</span><span style="color: #2d9574; font-weight: bold;">|</span><span style="color: #2d9574;">sina)\\.com"</span><span style="color: #4f97d7;">)</span>
-             <span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
-    <span style="color: #2d9574;">(</span><span style="color: #2d9574;">"env HTTP_PROXY"</span>
-     <span style="color: #8D8D84;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">Privoxy</span>
-     <span style="color: #67b11d;">(</span>setenv <span style="color: #2d9574;">"HTTP_PROXY"</span>  <span style="color: #2d9574;">"http://localhost:8118"</span><span style="color: #67b11d;">)</span>
-     <span style="color: #67b11d;">(</span>setenv <span style="color: #2d9574;">"HTTPS_PROXY"</span> <span style="color: #2d9574;">"http://localhost:8118"</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
-    <span style="color: #2d9574;">(</span>_
-     <span style="color: #67b11d;">(</span><span style="color: #4f97d7;">setq</span> url-gateway-method 'native<span style="color: #67b11d;">)</span>
-     <span style="color: #67b11d;">(</span><span style="color: #4f97d7;">setq</span> url-proxy-services nil<span style="color: #67b11d;">)</span>
-     <span style="color: #67b11d;">(</span>setenv <span style="color: #2d9574;">"HTTP_PROXY"</span>  nil<span style="color: #67b11d;">)</span>
-     <span style="color: #67b11d;">(</span>setenv <span style="color: #2d9574;">"HTTPS_PROXY"</span> nil<span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
-    <span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">defun</span> <span style="color: #006699;">my:proxy-toggle</span> <span style="color: #7388D6;">(</span>proxy<span style="color: #7388D6;">)</span>
+  <span style="color: #036A07;">"A command to toggle `</span><span style="color: #D0372D;">PROXY</span><span style="color: #036A07;">' for Emacs."</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">interactive</span> <span style="color: #909183;">(</span>list <span style="color: #709870;">(</span><span style="color: #0000FF;">unless</span> my:proxy-toggle-p
+                       <span style="color: #907373;">(</span>completing-read <span style="color: #008000;">"Select a proxy routine: "</span> '<span style="color: #6276BA;">(</span><span style="color: #008000;">"socks"</span> <span style="color: #008000;">"url_proxy_services"</span> <span style="color: #008000;">"env HTTP_PROXY"</span><span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">if</span> my:proxy-toggle-p
+      <span style="color: #909183;">(</span><span style="color: #0000FF;">setq</span> my:proxy-toggle-p nil<span style="color: #909183;">)</span>
+    <span style="color: #909183;">(</span><span style="color: #0000FF;">setq</span> my:proxy-toggle-p proxy<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span>
+  <span style="color: #7388D6;">(</span><span style="color: #0000FF;">pcase</span> my:proxy-toggle-p
+    <span style="color: #909183;">(</span><span style="color: #008000;">"socks"</span>
+     <span style="color: #709870;">(</span><span style="color: #0000FF;">setq</span> url-gateway-method 'socks
+           socks-noproxy '<span style="color: #907373;">(</span><span style="color: #008000;">"localhost"</span><span style="color: #907373;">)</span>
+           socks-server '<span style="color: #907373;">(</span><span style="color: #008000;">"Default server"</span> <span style="color: #008000;">"127.0.0.1"</span> 1086 5<span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span>
+    <span style="color: #909183;">(</span><span style="color: #008000;">"url_proxy_services"</span>
+     <span style="color: #709870;">(</span><span style="color: #0000FF;">setq</span> url-proxy-services
+           '<span style="color: #907373;">(</span><span style="color: #6276BA;">(</span><span style="color: #008000;">"http"</span>  . <span style="color: #008000;">"127.0.0.1:8118"</span><span style="color: #6276BA;">)</span>
+             <span style="color: #6276BA;">(</span><span style="color: #008000;">"https"</span> . <span style="color: #008000;">"127.0.0.1:8118"</span><span style="color: #6276BA;">)</span>
+             <span style="color: #6276BA;">(</span><span style="color: #008000;">"ftp"</span>   . <span style="color: #008000;">"127.0.0.1:8118"</span><span style="color: #6276BA;">)</span>
+             <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">don't use `</span><span style="color: #D0372D; font-style: italic;">localhost</span><span style="color: #8D8D84; font-style: italic;">', avoid robe server (For Ruby) can't response.</span>
+             <span style="color: #6276BA;">(</span><span style="color: #008000;">"no_proxy"</span> . <span style="color: #008000;">"127.0.0.1"</span><span style="color: #6276BA;">)</span>
+             <span style="color: #6276BA;">(</span><span style="color: #008000;">"no_proxy"</span> . <span style="color: #008000;">"^.*</span><span style="color: #008000; font-weight: bold;">\\</span><span style="color: #008000; font-weight: bold;">(</span><span style="color: #008000;">baidu</span><span style="color: #008000; font-weight: bold;">\\</span><span style="color: #008000; font-weight: bold;">|</span><span style="color: #008000;">sina)\\.com"</span><span style="color: #6276BA;">)</span>
+             <span style="color: #907373;">)</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span>
+    <span style="color: #909183;">(</span><span style="color: #008000;">"env HTTP_PROXY"</span>
+     <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Privoxy</span>
+     <span style="color: #709870;">(</span>setenv <span style="color: #008000;">"HTTP_PROXY"</span>  <span style="color: #008000;">"http://localhost:8118"</span><span style="color: #709870;">)</span>
+     <span style="color: #709870;">(</span>setenv <span style="color: #008000;">"HTTPS_PROXY"</span> <span style="color: #008000;">"http://localhost:8118"</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span>
+    <span style="color: #909183;">(</span>_
+     <span style="color: #709870;">(</span><span style="color: #0000FF;">setq</span> url-gateway-method 'native<span style="color: #709870;">)</span>
+     <span style="color: #709870;">(</span><span style="color: #0000FF;">setq</span> url-proxy-services nil<span style="color: #709870;">)</span>
+     <span style="color: #709870;">(</span>setenv <span style="color: #008000;">"HTTP_PROXY"</span>  nil<span style="color: #709870;">)</span>
+     <span style="color: #709870;">(</span>setenv <span style="color: #008000;">"HTTPS_PROXY"</span> nil<span style="color: #709870;">)</span><span style="color: #909183;">)</span>
+    <span style="color: #7388D6;">)</span><span style="color: #707183;">)                             </span>
 </pre>
 </div>
 </div>
@@ -591,12 +591,12 @@ For now, you can simply use my helper function:
 </div>
 
 
-<div id="outline-container-org9aee4ff" class="outline-2">
-<h2 id="org9aee4ff"><span class="section-number-2">4</span> Some issues</h2>
+<div id="outline-container-org47db642" class="outline-2">
+<h2 id="org47db642"><span class="section-number-2">4</span> Some issues</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org5f675d0" class="outline-3">
-<h3 id="org5f675d0"><span class="section-number-3">4.1</span> the Babel result output type is table</h3>
+<div id="outline-container-org3bec7ae" class="outline-3">
+<h3 id="org3bec7ae"><span class="section-number-3">4.1</span> the Babel result output type is table</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 The Babel result output type is table, it seems is forced, I will try to figure
@@ -605,8 +605,8 @@ a way to fix this problem. Might add an PR to "ob-translate".
 </div>
 </div>
 
-<div id="outline-container-org39bce3a" class="outline-3">
-<h3 id="org39bce3a"><span class="section-number-3">4.2</span> ob-translate can't be used anywhere in Org-mode buffer</h3>
+<div id="outline-container-orgafbeed4" class="outline-3">
+<h3 id="orgafbeed4"><span class="section-number-3">4.2</span> ob-translate can't be used anywhere in Org-mode buffer</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 Like headlines, ob-translate can't apply on them. But google-translate does not
@@ -619,8 +619,8 @@ current buffer (insert at point).
 </div>
 
 
-<div id="outline-container-orgfadafb2" class="outline-2">
-<h2 id="orgfadafb2"><span class="section-number-2">5</span> Any updates will updated in this post</h2>
+<div id="outline-container-org0ac2e91" class="outline-2">
+<h2 id="org0ac2e91"><span class="section-number-2">5</span> Any updates will updated in this post</h2>
 </div>
 </div>
 <div id="postamble" class="status">
@@ -654,6 +654,16 @@ current buffer (insert at point).
 </div>
 
 <!-- Google Analytics -->
+<script async src="//www.google-analytics.com/analytics.js"></script>
+<script type="text/javascript">
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ ga('create', 'UA-63992234-1', 'auto');
+ ga('send', 'pageview');
+</script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-63992234-1"></script>
 <script>

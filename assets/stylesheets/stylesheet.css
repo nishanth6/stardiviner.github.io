@@ -44,7 +44,8 @@ body {
 
   /* line height */
   /* line-height: 1.5; */
-  
+
+  /* background */
   background-image: url('/assets/images/background.jpg');
   background-color: #FFFFFF; /* white background to compatible with background image. */
   /* background: rgba(255, 255, 255, 0.6) none repeat scroll 0% 0%; */  /* semi-transparent */
@@ -54,11 +55,16 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed, scroll;
 
+  color: #444;
   /* text effect */
   text-shadow: 1px 1px 3px rgba(50, 50, 50, .15);
 }
 
-
+/* selection */
+::moz-selection {
+  background: #C74451;
+  color: white;
+}
 
 /* content */
 #content {
@@ -308,23 +314,28 @@ kbd {
 
 /* blockquote */
 blockquote {
-  font-style: italic;
-  font-size: 15px;
-  padding: 0 0 0 20px;
-  margin: 0 30px 20px -22.5px;
+  padding: .75em .5em .75em 1em;
+  margin: 1.5em 0 1.5em -1.5em;
 
-  /* color: gray; */
-  /* border-left: 4px solid gray; */
+  display: block;
+  width: 60%;
 
-  color: #999;
-  border-left: 8px solid #e5e5e5;
+  color: #444;
+  background: #fff;
+  border-left: 0.5em solid #DDD;
+  box-shadow: 0 0 6px rgba(0,0,0,0.5);
+  border-radius: 0.5em;
 
-  text-shadow: 2px 2px 3px rgba(50, 50, 50, .15);
+  /* auto wrap */
+  word-wrap: break-word;
 }
 blockquote::before {
-  content: "☞";
-  color: gray;
-  position: relative;
+  display: block;
+  content: "“";
+  font: italic 400%/1 Cochin,Georgia,"Times New Roman", serif;
+  height: 0;                    /* don't leave blockquote top empty space because of `content:`. */
+  margin-left: -1.2em;
+  color: #999;
 }
 blockquote::after {
 }
@@ -351,11 +362,7 @@ pre {
   /* shadow */
   box-shadow: inset 2px 2px 2px #80808080;
 
-  /* auto wrap */
-  white-space: pre-wrap;
-
   /* word wrap */
-  word-break: break-all;
   word-wrap: break-word;
   
   /* scroll bar */
@@ -404,7 +411,7 @@ pre.src::before, pre.src:hover::before {
   opacity: 0.9;
   color: black;
   border: 1px solid black;
-  background-colo: transparent;
+  background-color: transparent;
 
   white-space: nowrap;
 }
@@ -420,24 +427,52 @@ pre > code {
 
 /* table */
 table {
-  margin-bottom: 15px;
-  max-width: 100%;
-  width: 100%;
+  box-shadow: 0 0 6px rgba(0,0,0,0.5);
+  width: 80%;
+  margin-bottom: 1.5em;
+  border-radius: 8px 8px 0 0;
+  border-collapse: collapse;
+  border-bottom: 1px solid #999;
 }
+/* table caption */
+table caption {
+  margin-bottom: 0.75em;
+  text-align: center;
+  font-style: italic;
+}
+/* table head */
 table thead {
-  background-color: #7575751a;
+  background-color: #444;
+  color: #fff;
 }
-table td, table th {
-  padding: 2px 5px;
-  border-style: solid;
-  border-width: thin;
-  border-color: #ccc;
+/* table head text */
+tbale thead th {
+  border: none;
+  padding: 0.4em;
+  background: transparent;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
 }
-table th.left, table td.left {
+/* table body */
+table tbody th {
+  border-top: 1px solid #999;
+  padding: 0.4em;
+  color: #444;
+  background-color: #ddd;
   text-align: left;
+  font-weight: normal;
 }
-table th.right, table td.right {
-  text-align: right;
+table tbody td {
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  padding: 0.4em 0.8em;
+  background-color: #fff;
+  color: #444;
+}
+/* transition animation */
+th, td {
+  transition: background 0.2s linear;
 }
 
 /* org-verse */
