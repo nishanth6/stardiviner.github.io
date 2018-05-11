@@ -1,5 +1,5 @@
-# Created 2018-05-09 Wed 14:30
-#+TITLE: Blog
+# Created 2018-05-11 Fri 10:38
+#+TITLE: stardiviner's Blog
 #+AUTHOR: stardiviner
 
 * multilingual support with ob-translate and google-translate
