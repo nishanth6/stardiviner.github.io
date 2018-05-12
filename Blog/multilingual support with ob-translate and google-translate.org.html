@@ -6,160 +6,136 @@
     <style type="text/css">
     <!--
       body {
-        color: #333333;
-        background-color: #FFFFFF;
+        color: #b2b2b2;
+        background-color: #292b2e;
       }
       .bold {
         /* bold */
-        color: #000000;
+        color: #ffffff;
         font-weight: bold;
       }
       .builtin {
         /* font-lock-builtin-face */
-        color: #006FE0;
+        color: #4f97d7;
       }
       .comment {
         /* font-lock-comment-face */
-        color: #8D8D84;
-        font-style: italic;
+        color: #2aa1ae;
+        background-color: #292e34;
       }
       .comment-delimiter {
         /* font-lock-comment-delimiter-face */
-        color: #8D8D84;
+        color: #2aa1ae;
+        background-color: #292e34;
       }
       .constant {
         /* font-lock-constant-face */
-        color: #D0372D;
+        color: #a45bad;
       }
       .custom {
-        /* (:foreground "#FFFFFF") */
-        color: #FFFFFF;
+        /* (:foreground "#292b2e") */
+        color: #292b2e;
       }
       .doc {
         /* font-lock-doc-face */
-        color: #036A07;
+        color: #9f8766;
       }
       .function-name {
         /* font-lock-function-name-face */
-        color: #006699;
+        color: #bc6ec5;
+        font-weight: bold;
       }
       .keyword {
         /* font-lock-keyword-face */
-        color: #0000FF;
+        color: #4f97d7;
+        font-weight: bold;
       }
       .org-block {
         /* org-block */
-        color: #000088;
-        background-color: #f9e1f9e1f9e1;
+        color: #cbc1d5;
+        background-color: #303d3297361f;
       }
       .org-block-begin-line {
         /* org-block-begin-line */
-        color: #555555;
-        background-color: #f4c2f4c2f4c2;
+        color: #827591;
+        background-color: #4d3150f5569b;
       }
       .org-block-end-line {
         /* org-block-end-line */
-        color: #555555;
-        background-color: #f4c2f4c2f4c2;
+        color: #827591;
+        background-color: #4d3150f5569b;
       }
       .org-code {
         /* org-code */
-        color: #ff6347;
-        background-color: #ed14ed14ed14;
+        color: #00ffff;
+        background-color: #303d3297361f;
       }
       .org-document-info-keyword {
         /* org-document-info-keyword */
-        color: #008ED1;
-        background-color: #EAEAFF;
+        color: #9f8766;
       }
       .org-document-title {
         /* org-document-title */
-        color: #000000;
+        color: #bc6ec5;
         font-size: 150%;
         font-weight: bold;
         text-decoration: underline;
       }
       .org-level-1 {
         /* org-level-1 */
-        color: #3C3C3C;
-        background-color: #f233f233f233;
+        color: #4f97d7;
+        background-color: #303d3297361f;
         font-weight: bold;
-        text-decoration: overline;
       }
       .org-level-2 {
         /* org-level-2 */
-        color: #123555;
-        background-color: #E5F4FB;
+        color: #2d9574;
+        background-color: #303d3297361f;
         font-weight: bold;
-        text-decoration: overline;
       }
       .org-level-3 {
         /* org-level-3 */
-        color: #005522;
-        background-color: #EFFFEF;
-        font-weight: bold;
-        text-decoration: overline;
+        color: #67b11d;
+        background-color: #303d3297361f;
       }
       .org-link {
         /* org-link */
-        color: #006DAF;
-        background-color: #e566e566e566;
+        color: #2aa1ae;
+        background-color: #351037a73b89;
         text-decoration: underline;
       }
       .org-meta-line {
         /* org-meta-line */
-        color: #008ED1;
-        background-color: #FFFFFF;
+        color: #9f8766;
+        background-color: #292b2e;
       }
       .org-table {
         /* org-table */
-        color: #006400;
-        background-color: #f233f233f233;
-      }
-      .rainbow-delimiters-depth-1 {
-        /* rainbow-delimiters-depth-1-face */
-        color: #707183;
-      }
-      .rainbow-delimiters-depth-2 {
-        /* rainbow-delimiters-depth-2-face */
-        color: #7388D6;
-      }
-      .rainbow-delimiters-depth-3 {
-        /* rainbow-delimiters-depth-3-face */
-        color: #909183;
-      }
-      .rainbow-delimiters-depth-4 {
-        /* rainbow-delimiters-depth-4-face */
-        color: #709870;
-      }
-      .rainbow-delimiters-depth-5 {
-        /* rainbow-delimiters-depth-5-face */
-        color: #907373;
-      }
-      .rainbow-delimiters-depth-6 {
-        /* rainbow-delimiters-depth-6-face */
-        color: #6276BA;
+        color: #b2b2b2;
+        background-color: #351037a73b89;
       }
       .regexp-grouping-backslash {
         /* font-lock-regexp-grouping-backslash */
+        color: #ffffff;
         font-weight: bold;
       }
       .regexp-grouping-construct {
         /* font-lock-regexp-grouping-construct */
+        color: #ffffff;
         font-weight: bold;
       }
       .string {
         /* font-lock-string-face */
-        color: #008000;
+        color: #2d9574;
       }
       .variable-name {
         /* font-lock-variable-name-face */
-        color: #BA36A5;
+        color: #7590db;
       }
       .warning {
         /* font-lock-warning-face */
-        color: #ff0000;
-        font-weight: bold;
+        color: #dc752f;
+        background-color: #292b2e;
       }
 
       a {
@@ -222,13 +198,13 @@ and Org-mode. I remember a great tool "ob-translate" which use
 My sample config here:
 
 <span class="org-block-begin-line">#+begin_src emacs-lisp
-</span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block"><span class="keyword">use-package</span></span><span class="org-block"> </span><span class="org-block"><span class="constant">ob-translate</span></span><span class="org-block">
+</span><span class="org-block">(</span><span class="org-block"><span class="keyword">use-package</span></span><span class="org-block"> </span><span class="org-block"><span class="constant">ob-translate</span></span><span class="org-block">
   </span><span class="org-block"><span class="builtin">:ensure</span></span><span class="org-block"> t
   </span><span class="org-block"><span class="builtin">:init</span></span><span class="org-block">
-  </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block">add-to-list 'org-babel-load-languages '</span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block">translate . t</span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block">
-  </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block">org-babel-do-load-languages 'org-babel-load-languages org-babel-load-languages</span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block">
+  (add-to-list 'org-babel-load-languages '(translate . t))
+  (org-babel-do-load-languages 'org-babel-load-languages org-babel-load-languages)
   </span><span class="org-block"><span class="comment-delimiter">;; </span></span><span class="org-block"><span class="comment">add translate special block into structure template alist.
-</span></span><span class="org-block">  </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block">add-to-list 'org-structure-template-alist '</span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block"><span class="string">"t"</span></span><span class="org-block"> . </span><span class="org-block"><span class="string">"src translate"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
+</span></span><span class="org-block">  (add-to-list 'org-structure-template-alist '(</span><span class="org-block"><span class="string">"t"</span></span><span class="org-block"> . </span><span class="org-block"><span class="string">"src translate"</span></span><span class="org-block">)))
 </span><span class="org-block-end-line">#+end_src
 </span>
 I added ob-translate src block into Org-mode new structure template alist.
@@ -236,8 +212,8 @@ I added ob-translate src block into Org-mode new structure template alist.
 <span class="custom">**</span><span class="org-level-3">* require org-mode export src blocks export with results
 </span>
 <span class="org-block-begin-line">#+begin_src emacs-lisp
-</span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block">add-to-list 'org-babel-default-header-args '</span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block"><span class="builtin">:eval</span></span><span class="org-block"> . </span><span class="org-block"><span class="string">"never-export"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
-</span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block">add-to-list 'org-babel-default-header-args '</span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block"><span class="builtin">:exports</span></span><span class="org-block"> . </span><span class="org-block"><span class="string">"both"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
+</span><span class="org-block">(add-to-list 'org-babel-default-header-args '(</span><span class="org-block"><span class="builtin">:eval</span></span><span class="org-block"> . </span><span class="org-block"><span class="string">"never-export"</span></span><span class="org-block">))
+(add-to-list 'org-babel-default-header-args '(</span><span class="org-block"><span class="builtin">:exports</span></span><span class="org-block"> . </span><span class="org-block"><span class="string">"both"</span></span><span class="org-block">))
 </span><span class="org-block-end-line">#+end_src
 </span>
 - The first let Org-mode don't evaluate src blocks when exporting.
@@ -262,20 +238,20 @@ I added ob-translate src block into Org-mode new structure template alist.
 Here is my config example:
 
 <span class="org-block-begin-line">#+begin_src emacs-lisp
-</span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block"><span class="keyword">use-package</span></span><span class="org-block"> </span><span class="org-block"><span class="constant">google-translate</span></span><span class="org-block">
+</span><span class="org-block">(</span><span class="org-block"><span class="keyword">use-package</span></span><span class="org-block"> </span><span class="org-block"><span class="constant">google-translate</span></span><span class="org-block">
   </span><span class="org-block"><span class="builtin">:ensure</span></span><span class="org-block"> t
   </span><span class="org-block"><span class="builtin">:defer</span></span><span class="org-block"> t
-  </span><span class="org-block"><span class="builtin">:bind</span></span><span class="org-block"> </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block"><span class="builtin">:map</span></span><span class="org-block"> dictionary-prefix
-              </span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block"><span class="string">"t"</span></span><span class="org-block"> . google-translate-smooth-translate</span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block">
-              </span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block"><span class="string">"C-t"</span></span><span class="org-block"> . google-translate-at-point</span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block">
-              </span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block"><span class="string">"M-t"</span></span><span class="org-block"> . google-translate-query-translate</span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block">
-              </span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block"><span class="string">"C-r"</span></span><span class="org-block"> . google-translate-at-point-reverse</span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block">
-              </span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block"><span class="string">"M-r"</span></span><span class="org-block"> . google-translate-query-translate-reverse</span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block">
+  </span><span class="org-block"><span class="builtin">:bind</span></span><span class="org-block"> (</span><span class="org-block"><span class="builtin">:map</span></span><span class="org-block"> dictionary-prefix
+              (</span><span class="org-block"><span class="string">"t"</span></span><span class="org-block"> . google-translate-smooth-translate)
+              (</span><span class="org-block"><span class="string">"C-t"</span></span><span class="org-block"> . google-translate-at-point)
+              (</span><span class="org-block"><span class="string">"M-t"</span></span><span class="org-block"> . google-translate-query-translate)
+              (</span><span class="org-block"><span class="string">"C-r"</span></span><span class="org-block"> . google-translate-at-point-reverse)
+              (</span><span class="org-block"><span class="string">"M-r"</span></span><span class="org-block"> . google-translate-query-translate-reverse))
   </span><span class="org-block"><span class="builtin">:init</span></span><span class="org-block">
-  </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block">add-to-list 'display-buffer-alist
-               '</span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block"><span class="string">"^\\*Google Translate\\*"</span></span><span class="org-block"> . </span><span class="org-block"><span class="rainbow-delimiters-depth-4">(</span></span><span class="org-block">display-buffer-below-selected</span><span class="org-block"><span class="rainbow-delimiters-depth-4">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block">
+  (add-to-list 'display-buffer-alist
+               '(</span><span class="org-block"><span class="string">"^\\*Google Translate\\*"</span></span><span class="org-block"> . (display-buffer-below-selected)))
   </span><span class="org-block"><span class="builtin">:config</span></span><span class="org-block">
-  </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block"><span class="keyword">setq</span></span><span class="org-block"> google-translate-enable-ido-completion nil
+  (</span><span class="org-block"><span class="keyword">setq</span></span><span class="org-block"> google-translate-enable-ido-completion nil
         google-translate-show-phonetic t
         </span><span class="org-block"><span class="comment-delimiter">;; </span></span><span class="org-block"><span class="comment">google-translate-listen-program
 </span></span><span class="org-block">        google-translate-output-destination nil </span><span class="org-block"><span class="comment-delimiter">; </span></span><span class="org-block"><span class="comment">'echo-area, 'popup
@@ -283,11 +259,11 @@ Here is my config example:
         </span><span class="org-block"><span class="comment-delimiter">;; </span></span><span class="org-block"><span class="comment">`</span></span><span class="org-block"><span class="comment"><span class="constant">google-translate-supported-languages</span></span></span><span class="org-block"><span class="comment">'
 </span></span><span class="org-block">        google-translate-default-target-language </span><span class="org-block"><span class="string">"zh-CN"</span></span><span class="org-block">
         </span><span class="org-block"><span class="comment-delimiter">;; </span></span><span class="org-block"><span class="comment">for `</span></span><span class="org-block"><span class="comment"><span class="constant">google-translate-smooth-translate</span></span></span><span class="org-block"><span class="comment">' + [C-n/p]
-</span></span><span class="org-block">        google-translate-translation-directions-alist '</span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block"><span class="rainbow-delimiters-depth-4">(</span></span><span class="org-block"><span class="string">"en"</span></span><span class="org-block"> . </span><span class="org-block"><span class="string">"zh-CN"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-4">)</span></span><span class="org-block">
-                                                        </span><span class="org-block"><span class="rainbow-delimiters-depth-4">(</span></span><span class="org-block"><span class="string">"zh-CN"</span></span><span class="org-block"> . </span><span class="org-block"><span class="string">"en"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-4">)</span></span><span class="org-block">
-                                                        </span><span class="org-block"><span class="rainbow-delimiters-depth-4">(</span></span><span class="org-block"><span class="string">"zh-CN"</span></span><span class="org-block"> . </span><span class="org-block"><span class="string">"ja"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-4">)</span></span><span class="org-block">
-                                                        </span><span class="org-block"><span class="rainbow-delimiters-depth-4">(</span></span><span class="org-block"><span class="string">"zh-CN"</span></span><span class="org-block"> . </span><span class="org-block"><span class="string">"ko"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-4">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block">
-        </span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
+</span></span><span class="org-block">        google-translate-translation-directions-alist '((</span><span class="org-block"><span class="string">"en"</span></span><span class="org-block"> . </span><span class="org-block"><span class="string">"zh-CN"</span></span><span class="org-block">)
+                                                        (</span><span class="org-block"><span class="string">"zh-CN"</span></span><span class="org-block"> . </span><span class="org-block"><span class="string">"en"</span></span><span class="org-block">)
+                                                        (</span><span class="org-block"><span class="string">"zh-CN"</span></span><span class="org-block"> . </span><span class="org-block"><span class="string">"ja"</span></span><span class="org-block">)
+                                                        (</span><span class="org-block"><span class="string">"zh-CN"</span></span><span class="org-block"> . </span><span class="org-block"><span class="string">"ko"</span></span><span class="org-block">))
+        ))
 </span><span class="org-block-end-line">#+end_src
 </span>
 You should explore google-translate features on its readme page, really convinient.
@@ -300,41 +276,41 @@ from inside of Emacs, instead of system global.
 For now, you can simply use my helper function:
 
 <span class="org-block-begin-line">#+begin_src emacs-lisp
-</span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block"><span class="keyword">defvar</span></span><span class="org-block"> </span><span class="org-block"><span class="variable-name">my:proxy-toggle-p</span></span><span class="org-block"> nil
+</span><span class="org-block">(</span><span class="org-block"><span class="keyword">defvar</span></span><span class="org-block"> </span><span class="org-block"><span class="variable-name">my:proxy-toggle-p</span></span><span class="org-block"> nil
   </span><span class="org-block"><span class="doc">"A global variable indicate current proxy toggle status.
-Used by function `</span></span><span class="org-block"><span class="doc"><span class="constant">my:proxy-toggle</span></span></span><span class="org-block"><span class="doc">'."</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
+Used by function `</span></span><span class="org-block"><span class="doc"><span class="constant">my:proxy-toggle</span></span></span><span class="org-block"><span class="doc">'."</span></span><span class="org-block">)
 
-</span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block"><span class="keyword">defun</span></span><span class="org-block"> </span><span class="org-block"><span class="function-name">my:proxy-toggle</span></span><span class="org-block"> </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block">proxy</span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block">
+(</span><span class="org-block"><span class="keyword">defun</span></span><span class="org-block"> </span><span class="org-block"><span class="function-name">my:proxy-toggle</span></span><span class="org-block"> (proxy)
   </span><span class="org-block"><span class="doc">"A command to toggle `</span></span><span class="org-block"><span class="doc"><span class="constant">PROXY</span></span></span><span class="org-block"><span class="doc">' for Emacs."</span></span><span class="org-block">
-  </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block"><span class="keyword">interactive</span></span><span class="org-block"> </span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block">list </span><span class="org-block"><span class="rainbow-delimiters-depth-4">(</span></span><span class="org-block"><span class="keyword">unless</span></span><span class="org-block"> my:proxy-toggle-p
-                       </span><span class="org-block"><span class="rainbow-delimiters-depth-5">(</span></span><span class="org-block">completing-read </span><span class="org-block"><span class="string">"Select a proxy routine: "</span></span><span class="org-block"> '</span><span class="org-block"><span class="rainbow-delimiters-depth-6">(</span></span><span class="org-block"><span class="string">"socks"</span></span><span class="org-block"> </span><span class="org-block"><span class="string">"url_proxy_services"</span></span><span class="org-block"> </span><span class="org-block"><span class="string">"env HTTP_PROXY"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-6">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-5">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-4">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block">
-  </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block"><span class="keyword">if</span></span><span class="org-block"> my:proxy-toggle-p
-      </span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block"><span class="keyword">setq</span></span><span class="org-block"> my:proxy-toggle-p nil</span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block">
-    </span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block"><span class="keyword">setq</span></span><span class="org-block"> my:proxy-toggle-p proxy</span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block">
-  </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block"><span class="keyword">pcase</span></span><span class="org-block"> my:proxy-toggle-p
-    </span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block"><span class="string">"socks"</span></span><span class="org-block">
-     </span><span class="org-block"><span class="rainbow-delimiters-depth-4">(</span></span><span class="org-block"><span class="keyword">setq</span></span><span class="org-block"> url-gateway-method 'socks
-           socks-noproxy '</span><span class="org-block"><span class="rainbow-delimiters-depth-5">(</span></span><span class="org-block"><span class="string">"localhost"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-5">)</span></span><span class="org-block">
-           socks-server '</span><span class="org-block"><span class="rainbow-delimiters-depth-5">(</span></span><span class="org-block"><span class="string">"Default server"</span></span><span class="org-block"> </span><span class="org-block"><span class="string">"127.0.0.1"</span></span><span class="org-block"> 1086 5</span><span class="org-block"><span class="rainbow-delimiters-depth-5">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-4">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block">
-    </span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block"><span class="string">"url_proxy_services"</span></span><span class="org-block">
-     </span><span class="org-block"><span class="rainbow-delimiters-depth-4">(</span></span><span class="org-block"><span class="keyword">setq</span></span><span class="org-block"> url-proxy-services
-           '</span><span class="org-block"><span class="rainbow-delimiters-depth-5">(</span></span><span class="org-block"><span class="rainbow-delimiters-depth-6">(</span></span><span class="org-block"><span class="string">"http"</span></span><span class="org-block">  . </span><span class="org-block"><span class="string">"127.0.0.1:8118"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-6">)</span></span><span class="org-block">
-             </span><span class="org-block"><span class="rainbow-delimiters-depth-6">(</span></span><span class="org-block"><span class="string">"https"</span></span><span class="org-block"> . </span><span class="org-block"><span class="string">"127.0.0.1:8118"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-6">)</span></span><span class="org-block">
-             </span><span class="org-block"><span class="rainbow-delimiters-depth-6">(</span></span><span class="org-block"><span class="string">"ftp"</span></span><span class="org-block">   . </span><span class="org-block"><span class="string">"127.0.0.1:8118"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-6">)</span></span><span class="org-block">
+  (</span><span class="org-block"><span class="keyword">interactive</span></span><span class="org-block"> (list (</span><span class="org-block"><span class="keyword">unless</span></span><span class="org-block"> my:proxy-toggle-p
+                       (completing-read </span><span class="org-block"><span class="string">"Select a proxy routine: "</span></span><span class="org-block"> '(</span><span class="org-block"><span class="string">"socks"</span></span><span class="org-block"> </span><span class="org-block"><span class="string">"url_proxy_services"</span></span><span class="org-block"> </span><span class="org-block"><span class="string">"env HTTP_PROXY"</span></span><span class="org-block">)))))
+  (</span><span class="org-block"><span class="keyword">if</span></span><span class="org-block"> my:proxy-toggle-p
+      (</span><span class="org-block"><span class="keyword">setq</span></span><span class="org-block"> my:proxy-toggle-p nil)
+    (</span><span class="org-block"><span class="keyword">setq</span></span><span class="org-block"> my:proxy-toggle-p proxy))
+  (</span><span class="org-block"><span class="keyword">pcase</span></span><span class="org-block"> my:proxy-toggle-p
+    (</span><span class="org-block"><span class="string">"socks"</span></span><span class="org-block">
+     (</span><span class="org-block"><span class="keyword">setq</span></span><span class="org-block"> url-gateway-method 'socks
+           socks-noproxy '(</span><span class="org-block"><span class="string">"localhost"</span></span><span class="org-block">)
+           socks-server '(</span><span class="org-block"><span class="string">"Default server"</span></span><span class="org-block"> </span><span class="org-block"><span class="string">"127.0.0.1"</span></span><span class="org-block"> 1086 5)))
+    (</span><span class="org-block"><span class="string">"url_proxy_services"</span></span><span class="org-block">
+     (</span><span class="org-block"><span class="keyword">setq</span></span><span class="org-block"> url-proxy-services
+           '((</span><span class="org-block"><span class="string">"http"</span></span><span class="org-block">  . </span><span class="org-block"><span class="string">"127.0.0.1:8118"</span></span><span class="org-block">)
+             (</span><span class="org-block"><span class="string">"https"</span></span><span class="org-block"> . </span><span class="org-block"><span class="string">"127.0.0.1:8118"</span></span><span class="org-block">)
+             (</span><span class="org-block"><span class="string">"ftp"</span></span><span class="org-block">   . </span><span class="org-block"><span class="string">"127.0.0.1:8118"</span></span><span class="org-block">)
              </span><span class="org-block"><span class="comment-delimiter">;; </span></span><span class="org-block"><span class="comment">don't use `</span></span><span class="org-block"><span class="comment"><span class="constant">localhost</span></span></span><span class="org-block"><span class="comment">', avoid robe server (For Ruby) can't response.
-</span></span><span class="org-block">             </span><span class="org-block"><span class="rainbow-delimiters-depth-6">(</span></span><span class="org-block"><span class="string">"no_proxy"</span></span><span class="org-block"> . </span><span class="org-block"><span class="string">"127.0.0.1"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-6">)</span></span><span class="org-block">
-             </span><span class="org-block"><span class="rainbow-delimiters-depth-6">(</span></span><span class="org-block"><span class="string">"no_proxy"</span></span><span class="org-block"> . </span><span class="org-block"><span class="string">"^.*</span></span><span class="org-block"><span class="string"><span class="regexp-grouping-backslash">\\</span></span></span><span class="org-block"><span class="string"><span class="regexp-grouping-construct">(</span></span></span><span class="org-block"><span class="string">baidu</span></span><span class="org-block"><span class="string"><span class="regexp-grouping-backslash">\\</span></span></span><span class="org-block"><span class="string"><span class="regexp-grouping-construct">|</span></span></span><span class="org-block"><span class="string">sina)\\.com"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-6">)</span></span><span class="org-block">
-             </span><span class="org-block"><span class="rainbow-delimiters-depth-5">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-4">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block">
-    </span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block"><span class="string">"env HTTP_PROXY"</span></span><span class="org-block">
+</span></span><span class="org-block">             (</span><span class="org-block"><span class="string">"no_proxy"</span></span><span class="org-block"> . </span><span class="org-block"><span class="string">"127.0.0.1"</span></span><span class="org-block">)
+             (</span><span class="org-block"><span class="string">"no_proxy"</span></span><span class="org-block"> . </span><span class="org-block"><span class="string">"^.*</span></span><span class="org-block"><span class="string"><span class="regexp-grouping-backslash">\\</span></span></span><span class="org-block"><span class="string"><span class="regexp-grouping-construct">(</span></span></span><span class="org-block"><span class="string">baidu</span></span><span class="org-block"><span class="string"><span class="regexp-grouping-backslash">\\</span></span></span><span class="org-block"><span class="string"><span class="regexp-grouping-construct">|</span></span></span><span class="org-block"><span class="string">sina)\\.com"</span></span><span class="org-block">)
+             )))
+    (</span><span class="org-block"><span class="string">"env HTTP_PROXY"</span></span><span class="org-block">
      </span><span class="org-block"><span class="comment-delimiter">;; </span></span><span class="org-block"><span class="comment">Privoxy
-</span></span><span class="org-block">     </span><span class="org-block"><span class="rainbow-delimiters-depth-4">(</span></span><span class="org-block">setenv </span><span class="org-block"><span class="string">"HTTP_PROXY"</span></span><span class="org-block">  </span><span class="org-block"><span class="string">"<a href="http://localhost:8118">http://localhost:8118</a>"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-4">)</span></span><span class="org-block">
-     </span><span class="org-block"><span class="rainbow-delimiters-depth-4">(</span></span><span class="org-block">setenv </span><span class="org-block"><span class="string">"HTTPS_PROXY"</span></span><span class="org-block"> </span><span class="org-block"><span class="string">"<a href="http://localhost:8118">http://localhost:8118</a>"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-4">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block">
-    </span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block">_
-     </span><span class="org-block"><span class="rainbow-delimiters-depth-4">(</span></span><span class="org-block"><span class="keyword">setq</span></span><span class="org-block"> url-gateway-method 'native</span><span class="org-block"><span class="rainbow-delimiters-depth-4">)</span></span><span class="org-block">
-     </span><span class="org-block"><span class="rainbow-delimiters-depth-4">(</span></span><span class="org-block"><span class="keyword">setq</span></span><span class="org-block"> url-proxy-services nil</span><span class="org-block"><span class="rainbow-delimiters-depth-4">)</span></span><span class="org-block">
-     </span><span class="org-block"><span class="rainbow-delimiters-depth-4">(</span></span><span class="org-block">setenv </span><span class="org-block"><span class="string">"HTTP_PROXY"</span></span><span class="org-block">  nil</span><span class="org-block"><span class="rainbow-delimiters-depth-4">)</span></span><span class="org-block">
-     </span><span class="org-block"><span class="rainbow-delimiters-depth-4">(</span></span><span class="org-block">setenv </span><span class="org-block"><span class="string">"HTTPS_PROXY"</span></span><span class="org-block"> nil</span><span class="org-block"><span class="rainbow-delimiters-depth-4">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block">
-    </span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
+</span></span><span class="org-block">     (setenv </span><span class="org-block"><span class="string">"HTTP_PROXY"</span></span><span class="org-block">  </span><span class="org-block"><span class="string">"<a href="http://localhost:8118">http://localhost:8118</a>"</span></span><span class="org-block">)
+     (setenv </span><span class="org-block"><span class="string">"HTTPS_PROXY"</span></span><span class="org-block"> </span><span class="org-block"><span class="string">"<a href="http://localhost:8118">http://localhost:8118</a>"</span></span><span class="org-block">))
+    (_
+     (</span><span class="org-block"><span class="keyword">setq</span></span><span class="org-block"> url-gateway-method 'native)
+     (</span><span class="org-block"><span class="keyword">setq</span></span><span class="org-block"> url-proxy-services nil)
+     (setenv </span><span class="org-block"><span class="string">"HTTP_PROXY"</span></span><span class="org-block">  nil)
+     (setenv </span><span class="org-block"><span class="string">"HTTPS_PROXY"</span></span><span class="org-block"> nil))
+    ))
 </span><span class="org-block-end-line">#+end_src
 </span>
 
