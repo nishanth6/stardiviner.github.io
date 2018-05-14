@@ -53,22 +53,21 @@
       .org-block {
         /* org-block */
         color: #cbc1d5;
-        background-color: #303d3297361f;
+        background-color: #2f2b33;
       }
       .org-block-begin-line {
         /* org-block-begin-line */
         color: #827591;
-        background-color: #4d3150f5569b;
+        background-color: #373040;
       }
       .org-block-end-line {
         /* org-block-end-line */
         color: #827591;
-        background-color: #4d3150f5569b;
+        background-color: #373040;
       }
       .org-code {
         /* org-code */
-        color: #00ffff;
-        background-color: #303d3297361f;
+        color: #28def0;
       }
       .org-document-info-keyword {
         /* org-document-info-keyword */
@@ -77,7 +76,7 @@
       .org-document-title {
         /* org-document-title */
         color: #bc6ec5;
-        font-size: 150%;
+        font-size: 140%;
         font-weight: bold;
         text-decoration: underline;
       }
@@ -101,18 +100,20 @@
       .org-link {
         /* org-link */
         color: #2aa1ae;
-        background-color: #351037a73b89;
         text-decoration: underline;
       }
       .org-meta-line {
         /* org-meta-line */
         color: #9f8766;
-        background-color: #292b2e;
       }
       .org-table {
         /* org-table */
         color: #b2b2b2;
-        background-color: #351037a73b89;
+        background-color: #293239;
+      }
+      .org-verbatim {
+        /* org-verbatim */
+        color: #4f97d7;
       }
       .regexp-grouping-backslash {
         /* font-lock-regexp-grouping-backslash */
@@ -331,6 +332,34 @@ current buffer (insert at point).
 
 <span class="org-level-1">* Any updates will updated in this post
 </span>
+<span class="org-level-1">* use external tools to translate with ob-shell
+</span>
+There are some command-lines tools can translate text. For example, <span class="org-link"><a href="https://github.com/afc163/fanyi">fanyi</a></span>. Unfortunally,
+some tools use online service which only support Chinese&lt;-&gt;English.
+
+For ob-shell, want to get raw text instead of org-code result, then you need to specify
+header argument <span class="org-code">:results raw</span>.
+
+Another problem is that the result usually formatted by command-line tools separately. You
+might need other text processing commands like <span class="org-verbatim">sed</span>, <span class="org-verbatim">awk</span> etc to strip some text.
+
+<span class="custom">*</span><span class="org-level-2">* fanyi
+</span>
+<span class="org-block-begin-line">#+begin_src shell :results raw
+</span><span class="org-block">fanyi </span><span class="org-block"><span class="string">"&#20320;&#22909;&#65292;&#19990;&#30028;"</span></span><span class="org-block">
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+RESULTS[&lt;2018-05-14 21:50:44&gt; 048f42580fce295f1dc0ecb3bb62f05755d5a8f6]:</span>
+
+ &#20320;&#22909;&#65292;&#19990;&#30028;  ~  iciba.com
+ 
+  -------- 
+ 
+ &#20320;&#22909;&#65292;&#19990;&#30028;  ~  fanyi.youdao.com
+ 
+  -------- 
+ 
+
 </pre>
   </body>
 </html>
