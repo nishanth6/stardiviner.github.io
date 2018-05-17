@@ -1,4 +1,4 @@
-# Created 2018-05-17 Thu 09:06
+# Created 2018-05-17 Thu 09:25
 #+TITLE: How to Read Code in Emacs
 #+AUTHOR: stardiviner
 
