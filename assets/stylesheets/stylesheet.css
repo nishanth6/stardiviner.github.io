@@ -114,11 +114,12 @@ h5, h6 {
 
 /* drawers: properties, logbook, */
 pre.example {
+  display: block;
   color: #7b7b7b;
   border-color: #ccc;
   font-size: 7px;
   padding: 1px 5px 1px 5px;
-  margin: 0 0 0px 20px;
+  margin: 0 0 10px 20px;
   border-radius: unset;
   box-shadow: none;
   text-shadow: unset;
@@ -621,6 +622,28 @@ span.timestamp-wrapper {
   background-color: #f3f3f3cc;
   border: #ccc solid 1px;
   padding: 4px 2px 2px 0px;
+}
+
+/* audio */
+audio {
+  -webkit-transition:all 0.5s linear;
+  -moz-transition:all 0.5s linear;
+  -o-transition:all 0.5s linear;
+  transition:all 0.5s linear;
+  -moz-box-shadow: 2px 2px 4px 0px #006773;
+  -webkit-box-shadow:  2px 2px 4px 0px #006773;
+  box-shadow: 2px 2px 4px 0px #006773;
+  -moz-border-radius:7px 7px 7px 7px ;
+  -webkit-border-radius:7px 7px 7px 7px ;
+  border-radius:7px 7px 7px 7px ;
+}
+audio:hover, audio:focus, audio:active {
+  -webkit-box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+  -moz-box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+  box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 /* footer */

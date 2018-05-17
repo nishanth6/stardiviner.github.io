@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2018-05-17 Thu 08:59 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Literate Programming with Org Mode</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="stardiviner">
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="/assets/stylesheets/stylesheet.css"/><link rel="stylesheet" type="text/css" href="/assets/stylesheets/syntax-highlight.css"/><link rel="alternate" type="application/rss+xml" href="https://stardiviner.github.io/Blog/index.xml"><link ref="icon" type="image/png" href="/assets/images/favicon-16x16.png" sizes="16x16"><link ref="icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32"><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+<script type="text/javascript" src="https://orgmode.org/org-info.js">
+/**
+ *
+ * @source: https://orgmode.org/org-info.js
+ *
+ * @licstart  The following is the entire license notice for the
+ *  JavaScript code in https://orgmode.org/org-info.js.
+ *
+ * Copyright (C) 2012-2018 Free Software Foundation, Inc.
+ *
+ *
+ * The JavaScript code in this tag is free software: you can
+ * redistribute it and/or modify it under the terms of the GNU
+ * General Public License (GNU GPL) as published by the Free Software
+ * Foundation, either version 3 of the License, or (at your option)
+ * any later version.  The code is distributed WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+ *
+ * As additional permission under GNU GPL version 3 section 7, you
+ * may distribute non-source (e.g., minimized or compacted) forms of
+ * that code without the copy of the GNU GPL normally required by
+ * section 4, provided you include this license notice and a URL
+ * through which recipients can access the Corresponding Source.
+ *
+ * @licend  The above is the entire license notice
+ * for the JavaScript code in https://orgmode.org/org-info.js.
+ *
+ */
+</script>
+
+<script type="text/javascript">
+
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+
+<!--/*--><![CDATA[/*><!--*/
+org_html_manager.set("TOC_DEPTH", "3");
+org_html_manager.set("LINK_HOME", "https://stardiviner.github.io/");
+org_html_manager.set("LINK_UP", "");
+org_html_manager.set("LOCAL_TOC", "3");
+org_html_manager.set("VIEW_BUTTONS", "0");
+org_html_manager.set("MOUSE_HINT", "underline");
+org_html_manager.set("FIXED_TOC", "2");
+org_html_manager.set("TOC", "0");
+org_html_manager.set("VIEW", "showall");
+org_html_manager.setup();  // activate after the parameters are set
+/*]]>*///-->
+</script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=""> UP </a>
+ |
+ <a accesskey="H" href="https://stardiviner.github.io/"> HOME </a>
+</div><div id="preamble" class="status">
+<div class='nav'>
+  <ul>
+    <li><a href='/'>Home</a></li>
+    <li><a href='/Blog/index.html'>Blog</a></li>
+    <li><a href='/Poem/index.html'>诗词</a></li>
+    <li><a href='/Slides/index.html'>Slides</a></li>
+    <li><a href='/About/index.html'>About</a></li>
+  </ul>
+</div>
+</div>
+<div id="content">
+<header>
+<h1 class="title">Literate Programming with Org Mode</h1>
+</header><nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org7b1d60c">1. Why Literate Programming?</a></li>
+<li><a href="#orgc2233c2">2. How to Literate Programming with Org Mode?</a>
+<ul>
+<li><a href="#org6d6715b">2.1. LP: organize things in text and code</a></li>
+<li><a href="#orge37784e">2.2. LP: organize logic with "headlines" and "tags"</a></li>
+<li><a href="#orgf46a046">2.3. LP: write code with Org Babel source code blocks</a>
+<ul>
+<li><a href="#orgf0042fd">2.3.1. LP: support many different languages with Babel languages</a></li>
+<li><a href="#org1ad3a34">2.3.2. LP: Babel header arguments</a></li>
+</ul>
+</li>
+<li><a href="#orgeb6b6a1">2.4. LP: separate code logic and reference with "noweb"</a></li>
+<li><a href="#org7702c1e">2.5. LP: export to source code with "tangling"</a>
+<ul>
+<li><a href="#orge540317">2.5.1. LP: tangle single source code block</a></li>
+<li><a href="#org87f6265">2.5.2. LP: tangle the section of headline</a></li>
+<li><a href="#orgfd1f24f">2.5.3. LP: tangle whole file</a></li>
+</ul>
+</li>
+<li><a href="#orgd1b7999">2.6. LP: display result</a>
+<ul>
+<li><a href="#orgaf5a75e">2.6.1. LP: display image result with Org inline image display</a></li>
+<li><a href="#orgfa80147">2.6.2. LP: display table result with Org table</a></li>
+</ul>
+</li>
+<li><a href="#org8498710">2.7. LP: reference to text, code and each other</a>
+<ul>
+<li><a href="#org1c54b4f">2.7.1. text-&gt;code with coderef</a></li>
+<li><a href="#org045a3e4">2.7.2. text-&gt;text with link</a></li>
+<li><a href="#orgffac4b9">2.7.3. code-&gt;code with noweb</a></li>
+<li><a href="#org8628517">2.7.4. code-&gt;text with link</a></li>
+</ul>
+</li>
+<li><a href="#orgc06b19d">2.8. LP: navigation in text and code</a></li>
+</ul>
+</li>
+<li><a href="#org062eed5">3. <span class="todo TODO">TODO</span> complete this post</a></li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-org7b1d60c" class="outline-2">
+<h2 id="org7b1d60c"><span class="section-number-2">1</span> Why Literate Programming?</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+There are lot of data on internet about "Literate Programming" already, I blog about this
+just for personal opinion.
+</p>
+
+<p>
+It can organize things better with literal document style. Code is just another kind of
+text or meta-text used to generate other data like text results, tables, images, JSON, XML
+data etc.
+</p>
+
+<p>
+Anyway, the start point is that I like Emacs and Org-mode very much, they are powerful,
+organize anything with them can be very flexible. I use Org-mode as the ultimate tool to
+organize knowledge and data as my external brain database, and my other applications of
+Org Mode.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgc2233c2" class="outline-2">
+<h2 id="orgc2233c2"><span class="section-number-2">2</span> How to Literate Programming with Org Mode?</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org6d6715b" class="outline-3">
+<h3 id="org6d6715b"><span class="section-number-3">2.1</span> LP: organize things in text and code</h3>
+</div>
+
+<div id="outline-container-orge37784e" class="outline-3">
+<h3 id="orge37784e"><span class="section-number-3">2.2</span> LP: organize logic with "headlines" and "tags"</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+You can navigation and filter Literate Programming document logic with headlines and tags.
+When a file grows large, organize your document with clear structure and better tags group
+is very necessary.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf46a046" class="outline-3">
+<h3 id="orgf46a046"><span class="section-number-3">2.3</span> LP: write code with Org Babel source code blocks</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Org Mode Babel are technology that can evaluate source code blocks and insert result into
+Org buffer. Babel is powerful by backend with many different programming languages and
+tools. On essention, Babel is send source code block text to another binary to be
+evaluated, then return the result to be inserted in Org buffer.
+</p>
+</div>
+
+<div id="outline-container-orgf0042fd" class="outline-4">
+<h4 id="orgf0042fd"><span class="section-number-4">2.3.1</span> LP: support many different languages with Babel languages</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+For now, Org Babel has many languages supported now. Official support in Org-mode packages
+has a lot. Here is my loaded languages alist. They are many more, and you can search in
+Org source code, and GitHub, and maybe somewhere else.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">org-babel-load-languages
+</pre>
+</div>
+
+<pre class="example">
+- (sclang . t)
+- (spice . t)
+- (lilypond . t)
+- (smiles . t)
+- (coq . t)
+- (arduino . t)
+- (http . t)
+- (restclient . t)
+- (elasticsearch . t)
+- (prolog . t)
+- (matlab . t)
+- (octave . t)
+- (gnuplot . t)
+- (julia . t)
+- (R . t)
+- (haskell . t)
+- (redis . t)
+- (mongo . t)
+- (sqlite . t)
+- (sql . t)
+- (js . t)
+- (css . t)
+- (php . t)
+- (java . t)
+- (swift . t)
+- (lua . t)
+- (rust . t)
+- (go . t)
+- (C . t)
+- (ruby . t)
+- (python . t)
+- (clojurescript . t)
+- (scheme . t)
+- (lisp . t)
+- (emacs-lisp . t)
+- (makefile . t)
+- (ledger . t)
+- (blockdiag . t)
+- (ditaa . t)
+- (dot . t)
+- (clojure . t)
+- (asymptote . t)
+- (translate . t)
+- (latex . t)
+- (org . t)
+- (shell . t)
+- (calc . t)
+</pre>
+</div>
+
+<ol class="org-ol">
+<li><a id="orgf31c114" name="orgf31c114"></a>LP: use different languages to processing data in mixture<br>
+<div class="outline-text-5" id="text-2-3-1-1">
+<p>
+You can process JSON data with JavaScript, then pass result data to Python to process to
+generate XML data, then pass the XML data to gnuplot to generate image result.
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org1ad3a34" class="outline-4">
+<h4 id="org1ad3a34"><span class="section-number-4">2.3.2</span> LP: Babel header arguments</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<p>
+There are many source code block header arguments, you can check out Org Mode Info
+document. And I after some years usage of Org Mode, I found there are some merely used
+header arguments are not mentioned in Org Mode Manual. And some header arguments are
+language specific only.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgeb6b6a1" class="outline-3">
+<h3 id="orgeb6b6a1"><span class="section-number-3">2.4</span> LP: separate code logic and reference with "noweb"</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Tangling functionality is controlled by the tangle family of tangle header
+arguments. These arguments can be used to turn tangling on or off (the default),
+either for the code block or the Org-mode heading level.
+</p>
+
+<p>
+The following code blocks demonstrate how to tangle them into a single source
+code file using <code>org-babel-tangle</code>.
+</p>
+
+<p>
+The following two code blocks have no tangle header arguments and so will not,
+by themselves, create source code files. They are included in the source code
+file by the third code block, which does have a tangle header argument.
+</p>
+
+<p>
+In the Org-mode file:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span style="color: #008ED1; background-color: #EAEAFF;">#+name: hello-world-prefix</span>
+<span style="color: #555555; background-color: #E2E1D5; text-decoration: underline;">#+begin_src shell :exports none</span>
+<span style="color: #000088; background-color: #FFFFE0;">  </span><span style="color: #006FE0; background-color: #FFFFE0;">echo</span><span style="color: #000088; background-color: #FFFFE0;"> </span><span style="color: #008000; background-color: #FFFFE0;">"/-----------------------------------------------------------\\"</span>
+<span style="color: #555555; background-color: #E2E1D5; text-decoration: overline;">#+end_src</span>
+</pre>
+</div>
+
+<p>
+HTML export of code: In the Org-mode file
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span style="color: #008ED1; background-color: #EAEAFF;">#+name: hello-world-postfix</span>
+<span style="color: #555555; background-color: #E2E1D5; text-decoration: underline;">#+begin_src shell :exports none</span>
+<span style="color: #000088; background-color: #FFFFE0;">  </span><span style="color: #006FE0; background-color: #FFFFE0;">echo</span><span style="color: #000088; background-color: #FFFFE0;"> </span><span style="color: #008000; background-color: #FFFFE0;">"\-----------------------------------------------------------/"</span>
+<span style="color: #555555; background-color: #E2E1D5; text-decoration: overline;">#+end_src</span>
+</pre>
+</div>
+
+<p>
+HTML export of code: The third code block does have a tangle header argument
+indicating the name of the file to which the tangled source code will be
+written. It also has Noweb style references to the two previous code blocks.
+These references will be expanded during tangling to include them in the output
+file as well.
+</p>
+
+<p>
+In the Org-mode file:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span style="color: #008ED1; background-color: #EAEAFF;">#+name: hello-world</span>
+<span style="color: #555555; background-color: #E2E1D5; text-decoration: underline;">#+begin_src shell :tangle hello.sh :exports none :noweb yes</span>
+<span style="color: #000088; background-color: #FFFFE0;">  &lt;&lt;hello-world-prefix&gt;&gt;</span>
+<span style="color: #000088; background-color: #FFFFE0;">  echo "|                       hello world                         |"</span>
+<span style="color: #000088; background-color: #FFFFE0;">  &lt;&lt;hello-world-postfix&gt;&gt;</span>
+<span style="color: #555555; background-color: #E2E1D5; text-decoration: overline;">#+end_src</span>
+</pre>
+</div>
+
+<p>
+HTML export of code: Calling <code>org-babel-tangle</code> will result in the following shell
+source code being written to the <code>hello.sh</code> file:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell" id="org9ab6c5c"><span style="color: #006FE0;">echo</span> <span style="color: #008000;">"/-----------------------------------------------------------\\"</span>
+<span style="color: #006FE0;">echo</span> <span style="color: #008000;">"|                       hello world                         |"</span>
+<span style="color: #006FE0;">echo</span> <span style="color: #008000;">"\-----------------------------------------------------------/"</span>
+</pre>
+</div>
+
+
+<div class="org-src-container">
+<pre class="src src-shell" id="orgf75f706"><span style="color: #8D8D84;">#</span><span style="color: #8D8D84; font-style: italic;">!/usr/bin/</span><span style="color: #0000FF;">env</span><span style="color: #8D8D84; font-style: italic;"> sh</span>
+
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">[[file:~/org/temp/index.org::*Noweb%20test][hello-world]]</span>
+
+<span style="color: #006FE0;">echo</span> <span style="color: #008000;">"/-----------------------------------------------------------\\"</span>
+<span style="color: #006FE0;">echo</span> <span style="color: #008000;">"|                       hello world                         |"</span>
+<span style="color: #006FE0;">echo</span> <span style="color: #008000;">"\-----------------------------------------------------------/"</span>
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">hello-world ends here</span>
+</pre>
+</div>
+
+<p>
+In addition, the following syntax can be used to insert the results of
+evaluating a code block, in this case one named example-block.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span style="color: #8D8D84; font-style: italic;"># &lt;&lt;example-block()&gt;&gt;</span>
+</pre>
+</div>
+
+<p>
+Any optional arguments can be passed to <code>example-block()</code> by placing the arguments
+inside the parentheses following the convention defined when calling source
+block functions (see the Library of babel). For example,
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span style="color: #8D8D84; font-style: italic;"># &lt;&lt;example-block(a=9)&gt;&gt;</span>
+</pre>
+</div>
+
+<p>
+sets the value of argument <code>a</code> equal to <code>9</code>. Note that these arguments are not
+evaluated in the current source-code block but are passed literally to
+<code>example-block()</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7702c1e" class="outline-3">
+<h3 id="org7702c1e"><span class="section-number-3">2.5</span> LP: export to source code with "tangling"</h3>
+<div class="outline-text-3" id="text-2-5">
+</div>
+<div id="outline-container-orge540317" class="outline-4">
+<h4 id="orge540317"><span class="section-number-4">2.5.1</span> LP: tangle single source code block</h4>
+</div>
+
+<div id="outline-container-org87f6265" class="outline-4">
+<h4 id="org87f6265"><span class="section-number-4">2.5.2</span> LP: tangle the section of headline</h4>
+</div>
+
+<div id="outline-container-orgfd1f24f" class="outline-4">
+<h4 id="orgfd1f24f"><span class="section-number-4">2.5.3</span> LP: tangle whole file</h4>
+</div>
+</div>
+
+<div id="outline-container-orgd1b7999" class="outline-3">
+<h3 id="orgd1b7999"><span class="section-number-3">2.6</span> LP: display result</h3>
+<div class="outline-text-3" id="text-2-6">
+</div>
+<div id="outline-container-orgaf5a75e" class="outline-4">
+<h4 id="orgaf5a75e"><span class="section-number-4">2.6.1</span> LP: display image result with Org inline image display</h4>
+<div class="outline-text-4" id="text-2-6-1">
+<p>
+You can manually insert a file link to image file as inline image. You also can let source
+code block generate a file link to plot image file. Toggle inline image display in
+Org-mode with <code>[M-x org-display-inline-images]</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfa80147" class="outline-4">
+<h4 id="orgfa80147"><span class="section-number-4">2.6.2</span> LP: display table result with Org table</h4>
+<div class="outline-text-4" id="text-2-6-2">
+<p>
+Org-mode supports table. Support many manipulations. Also there are many advanced usage of
+Org table, like use table as data input for source code block, radio table, etc.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8498710" class="outline-3">
+<h3 id="org8498710"><span class="section-number-3">2.7</span> LP: reference to text, code and each other</h3>
+<div class="outline-text-3" id="text-2-7">
+</div>
+<div id="outline-container-org1c54b4f" class="outline-4">
+<h4 id="org1c54b4f"><span class="section-number-4">2.7.1</span> text-&gt;code with coderef</h4>
+<div class="outline-text-4" id="text-2-7-1">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp" id="org3dea0cc"><span id="coderef-define function hello" class="coderef-off"><span style="color: #707183;">(</span><span style="color: #0000FF;">defun</span> <span style="color: #006699;">hello</span> <span style="color: #7388D6;">(</span>name<span style="color: #7388D6;">)</span>                               <span style="color: #8D8D84;">;</span> (define function hello)</span>
+  <span style="color: #7388D6;">(</span>print <span style="color: #909183;">(</span>format <span style="color: #008000;">"Hello, %s"</span> name<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+
+<p>
+<a href="#coderef-define function hello" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-define function hello');" onmouseout="CodeHighlightOff(this, 'coderef-define function hello');">define function hello</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org045a3e4" class="outline-4">
+<h4 id="org045a3e4"><span class="section-number-4">2.7.2</span> text-&gt;text with link</h4>
+</div>
+
+<div id="outline-container-orgffac4b9" class="outline-4">
+<h4 id="orgffac4b9"><span class="section-number-4">2.7.3</span> code-&gt;code with noweb</h4>
+<div class="outline-text-4" id="text-2-7-3">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span id="coderef-define function hello" class="coderef-off"><span style="color: #707183;">(</span><span style="color: #0000FF;">defun</span> <span style="color: #006699;">hello</span> <span style="color: #7388D6;">(</span>name<span style="color: #7388D6;">)</span>                               <span style="color: #8D8D84;">;</span> (define function hello)</span>
+  <span style="color: #7388D6;">(</span>print <span style="color: #909183;">(</span>format <span style="color: #008000;">"Hello, %s"</span> name<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #707183;">(</span>hello <span style="color: #008000;">"stardiviner"</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+Hello, stardiviner
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org8628517" class="outline-4">
+<h4 id="org8628517"><span class="section-number-4">2.7.4</span> code-&gt;text with link</h4>
+<div class="outline-text-4" id="text-2-7-4">
+</div>
+<ol class="org-ol">
+<li><a id="org43cedeb" name="org43cedeb"></a>org-link in source code block comment<br></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgc06b19d" class="outline-3">
+<h3 id="orgc06b19d"><span class="section-number-3">2.8</span> LP: navigation in text and code</h3>
+<div class="outline-text-3" id="text-2-8">
+<ul class="org-ul">
+<li><code>org-babel-goto-named-src-block</code></li>
+<li><code>org-babel-goto-named-result</code></li>
+<li><code>org-babel-goto-src-block-head</code></li>
+</ul>
+
+<p>
+You can jump back in mark ring with <code>[M-,]</code> / <code>org-mark-ring-goto</code>.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org062eed5" class="outline-2">
+<h2 id="org062eed5"><span class="section-number-2">3</span> <span class="todo TODO">TODO</span> complete this post</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Still there are many things need to write. But temporary like this for now.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<footer>
+  Copyright 2011, Author: stardiviner (<a href="mailto:numbchild@gmail.com">numbchild@gmail.com</a>).<br>
+  Last update date: 2018-05-17 Thu 08:59.<br>
+  Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.0.50 (<a href="https://orgmode.org">Org</a> mode 9.1.13). <a href="http://orgmode.org" alt="Made with Emacs Org-Mode" style="float:left; margin 20px 0px 20px 20px;"><img src="/assets/images/made_with_emacs_org-mode.jpg"></a> (<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML)
+  
+  <!-- Show Org Source -->
+  <script>
+   var url = document.location.href;
+   var orgsource = url.substring(0, url.lastIndexOf("."))+".org.html";
+   function show_org_source(){
+     document.location.href = orgsource;
+   }
+  </script>
+  <div id="show_source"><input type="button" value="Show Org source" onClick='show_org_source()'></div>
+
+</footer>
+
+<!-- payment -->
+<div class='payment'>
+  <!-- use two inline aligned small thumb QR code image -->
+  <!-- <div id='alipay-payment'><a href="/About/index.html#Payment"><img src="/assets/images/alipay_payment.jpg" title="打赏" /></a></div>
+       <div id='wechat-payment'><a href="/About/index.html#Payment"><img src="/assets/images/wechat_payment.png" title="打赏" /></a></div> -->
+  
+  <!-- use a custom reward image to be more friendly -->
+  <div id="payment-icon">
+    <a href="/About/index.html#Payment"><img src="/assets/images/reward-icon.png" title="谢谢打赏" /></a>
+  </div>
+</div>
+
+<!-- Google Analytics -->
+<script async src="//www.google-analytics.com/analytics.js"></script>
+<script type="text/javascript">
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ ga('create', 'UA-63992234-1', 'auto');
+ ga('send', 'pageview');
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-63992234-1"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+
+ gtag('config', 'UA-63992234-1');
+</script>
+
+<!-- Disqus -->
+<div class="comments">
+  <div id="disqus_thread"></div>
+  <script>
+   (function() {
+     var d = document, s = d.createElement('script');
+     s.src = 'https://stardiviner.disqus.com/embed.js';
+     s.setAttribute('data-timestamp', +new Date());
+     (d.head || d.body).appendChild(s);
+   })();
+  </script>
+</div>
+</div>
+<script>window.klipse_settings = {selector_eval_html: '.src-html',
+                             selector_eval_js: '.src-js',
+                             selector_eval_python_client: '.src-python',
+                             selector_eval_scheme: '.src-scheme',
+                             selector: '.src-clojure',
+                             selector_eval_ruby: '.src-ruby'};</script><script src="https://storage.googleapis.com/app.klipse.tech/plugin_prod/js/klipse_plugin.min.js"></script><link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"/></body>
+</html>
