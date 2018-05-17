@@ -14,8 +14,8 @@
   <link>https://stardiviner.github.io/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Thu, 17 May 2018 09:33:29 +0800</pubDate>
-  <lastBuildDate>Thu, 17 May 2018 09:33:29 +0800</lastBuildDate>
+  <pubDate>Thu, 17 May 2018 11:47:37 +0800</pubDate>
+  <lastBuildDate>Thu, 17 May 2018 11:47:37 +0800</lastBuildDate>
   <generator>Emacs 27.0 Org-mode 9.1.13</generator>
   <webMaster>numbchild@gmail.com (stardiviner)</webMaster>
   <image>
@@ -28,6 +28,7 @@
     <h2>Table of Contents</h2>
     <div id="text-table-of-contents">
       <ul>
+        <li><a href="#orga501281">Clojure Plotting to Org inline image in ob-clojure</a></li>
         <li><a href="#org6541198">How to Read Code in Emacs</a></li>
         <li><a href="#org50bfc9a">Literate Programming with Org Mode</a></li>
         <li><a href="#orge31daf4">multilingual support with ob-translate and google-translate</a></li>
@@ -38,6 +39,25 @@
       </ul>
     </div>
   </nav>
+
+  <item>
+    <title>Clojure Plotting to Org inline image in ob-clojure</title>
+    <link>https://stardiviner.github.io/index.html#orga501281</link>
+    <author>numbchild@gmail.com (stardiviner)</author>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#orga501281</guid>
+    <pubDate>Thu, 17 May 2018 11:47:00 +0800</pubDate>
+
+    <description><![CDATA[<pre class="example">
+    DATE: [2018-05-17 Thu 10:01]
+    ID: e1e67b92-9153-4ec2-8c59-df4619a0c994
+    PUBDATE: <2018-05-17 Thu 11:47>
+    </pre>
+
+    <p>
+    <a href="Clojure Plotting to Org inline image in ob-clojure.html">Clojure Plotting to Org inline image in ob-clojure</a>
+    </p>
+    ]]></description>
+  </item>
 
   <item>
     <title>How to Read Code in Emacs</title>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2018-05-17 Thu 16:26 -->
+<!-- 2018-05-17 Thu 11:47 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>stardiviner's Blog</title>
+<title>Clojure Plotting to Org inline image in ob-clojure</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="stardiviner">
 <style type="text/css">
@@ -328,147 +328,188 @@ for the JavaScript code in this tag.
 </div>
 <div id="content">
 <header>
-<h1 class="title">stardiviner's Blog</h1>
+<h1 class="title">Clojure Plotting to Org inline image in ob-clojure</h1>
 </header><nav id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3ac987d">1. Clojure Plotting to Org inline image in ob-clojure</a></li>
-<li><a href="#org9272a80">2. How to Read Code in Emacs</a></li>
-<li><a href="#org1e292d3">3. Literate Programming with Org Mode</a></li>
-<li><a href="#org1b8f931">4. multilingual support with ob-translate and google-translate</a></li>
-<li><a href="#orgdca728c">5. Learned basic skateboard</a></li>
-<li><a href="#org1e521d5">6. Needlework: Setup the sewing machine</a></li>
-<li><a href="#orga16d6ad">7. How to BANISH myself</a></li>
-<li><a href="#org476e433">8. test org-mode ox-publish</a></li>
+<li><a href="#orgf6b0d0f">1. The Process of my Clojure Plotting</a>
+<ul>
+<li><a href="#org1cefc04">1.1. ask whether Clojure/JVM can change working directory</a></li>
+<li><a href="#orgbf2427c">1.2. I create Org-mode library "<code>ob-clojure-literate</code>" and improve Org Babel "<code>ob-core.el</code>" for plotting support</a></li>
+<li><a href="#org8c5ff6d">1.3. use more better solution by passing target path into Clojure with header argument <code>:var</code></a></li>
+<li><a href="#org79cb492">1.4. use final solution by move image file to target path with Clojure function</a></li>
+</ul>
+</li>
+<li><a href="#orgc7f0ec4">2. Incanter</a></li>
+<li><a href="#org2a072b6">3. clj-xchart</a></li>
+<li><a href="#org3d3cc81">4. ggplot2</a></li>
+<li><a href="#org4797dce">5. jutsu</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org3ac987d" class="outline-2">
-<h2 id="org3ac987d"><span class="section-number-2">1</span> Clojure Plotting to Org inline image in ob-clojure</h2>
+<div id="outline-container-orgf6b0d0f" class="outline-2">
+<h2 id="orgf6b0d0f"><span class="section-number-2">1</span> The Process of my Clojure Plotting</h2>
 <div class="outline-text-2" id="text-1">
-<pre class="example">
-DATE: [2018-05-17 Thu 10:01]
-ID: e1e67b92-9153-4ec2-8c59-df4619a0c994
-PUBDATE: <2018-05-17 Thu 11:47>
-</pre>
+</div>
+<div id="outline-container-org1cefc04" class="outline-3">
+<h3 id="org1cefc04"><span class="section-number-3">1.1</span> ask whether Clojure/JVM can change working directory</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+I did some hard search, found some links
+</p>
+
+<ul class="org-ul">
+<li><a href="https://stackoverflow.com/questions/840190/changing-the-current-working-directory-in-java">https://stackoverflow.com/questions/840190/changing-the-current-working-directory-in-java</a></li>
+<li><a href="https://stackoverflow.com/questions/19008592/java-change-file-working-directory">https://stackoverflow.com/questions/19008592/java-change-file-working-directory</a></li>
+</ul>
 
 <p>
-<a href="Clojure Plotting to Org inline image in ob-clojure.html">Clojure Plotting to Org inline image in ob-clojure</a>
+Then I found JVM does not allow to change working directory because of security reason
+<a href="https://bugs.java.com/bugdatabase/view_bug.do?bug_id=4045688">https://bugs.java.com/bugdatabase/view_bug.do?bug_id=4045688</a>.
+</p>
+
+<p>
+So, there is no reliable way to do this in pure Java. Setting the <code>user.dir</code> <i>property</i> via
+<code>System.setProperty()</code> or <code>java -Duser.dir=...</code> does seem to affect subsequent creations of
+Files, but not e.g. <code>FileOutputStreams</code>.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org9272a80" class="outline-2">
-<h2 id="org9272a80"><span class="section-number-2">2</span> How to Read Code in Emacs</h2>
+<div id="outline-container-orgbf2427c" class="outline-3">
+<h3 id="orgbf2427c"><span class="section-number-3">1.2</span> I create Org-mode library "<code>ob-clojure-literate</code>" and improve Org Babel "<code>ob-core.el</code>" for plotting support</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Because changing Clojure/JVM working directory is not available, so I find method on Emacs
+side, Org-mode other Babel lanaguages like R, Python have good image file result support.
+So I dive into source code, and try to add similar function to "<code>ob-clojure</code>". But I found
+some limites, then I created "<a href="https://github.com/stardiviner/ob-clojure-literate">ob-clojure-literate (GitHub repo)</a>" (Now it is in <a href="https://code.orgmode.org/bzg/org-mode/src/master/contrib/lisp/ob-clojure-literate.el">Org-mode
+contrib lib</a>).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8c5ff6d" class="outline-3">
+<h3 id="org8c5ff6d"><span class="section-number-3">1.3</span> use more better solution by passing target path into Clojure with header argument <code>:var</code></h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+You can fake change Clojure REPL working directory by passing header argument variable
+into Clojure code. Like this:
+</p>
+
+<div class="org-src-container">
+<pre><code class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #006FE0;">str</span> dir <span style="color: #008000;">"ob-clojure-literate.png"</span><span style="color: #707183;">)                             </span>
+</code></pre>
+</div>
+
+<pre class="example">
+"/home/stardiviner/Org/Website/Blog/data/images/ob-clojure-literate.png"
+
+</pre>
+
+<p>
+Then you can use Clojure funciton to save graphics object to target file with correct
+absolute path:
+</p>
+
+<div class="org-src-container">
+<pre><code class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #006FE0;">use</span> '<span style="color: #7388D6;">(</span>incanter core stats datasets charts io pdf<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">def</span> <span style="color: #BA36A5;">hist</span> <span style="color: #7388D6;">(</span>histogram <span style="color: #909183;">(</span>sample-normal 1000<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>save hist <span style="color: #7388D6;">(</span><span style="color: #006FE0;">str</span> dir <span style="color: #008000;">"ob-clojure-literate.png"</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)                             </span>
+</code></pre>
+</div>
+
+
+<figure>
+<img src="data/images/ob-clojure-literate.png" alt="ob-clojure-literate.png">
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-org79cb492" class="outline-3">
+<h3 id="org79cb492"><span class="section-number-3">1.4</span> use final solution by move image file to target path with Clojure function</h3>
+<div class="outline-text-3" id="text-1-4">
+<div class="org-src-container">
+<pre><code class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #006FE0;">use</span> '<span style="color: #7388D6;">(</span>incanter core stats datasets charts io pdf<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>import '<span style="color: #7388D6;">(</span>java.io File<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #707183;">(</span><span style="color: #0000FF;">def</span> <span style="color: #BA36A5;">hist</span> <span style="color: #7388D6;">(</span>histogram <span style="color: #909183;">(</span>sample-normal 1000<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>save hist <span style="color: #008000;">"ob-clojure-incanter-move.png"</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>.renameTo <span style="color: #7388D6;">(</span>File. <span style="color: #008000;">"ob-clojure-incanter-move.png"</span><span style="color: #7388D6;">)</span> <span style="color: #7388D6;">(</span>File. <span style="color: #909183;">(</span><span style="color: #006FE0;">str</span> dir <span style="color: #008000;">"ob-clojure-incanter-move.png"</span><span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)                             </span>
+</code></pre>
+</div>
+
+
+<figure>
+<img src="data/images/ob-clojure-incanter-move.png" alt="ob-clojure-incanter-move.png">
+
+</figure>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgc7f0ec4" class="outline-2">
+<h2 id="orgc7f0ec4"><span class="section-number-2">2</span> Incanter</h2>
 <div class="outline-text-2" id="text-2">
-<pre class="example">
-DATE: [2018-05-17 Thu 08:31]
-ID: 42d79395-841e-4e5c-81a9-d586e70ed44a
-PUBDATE: <2018-05-17 Thu 09:00>
-</pre>
+<div class="org-src-container">
+<pre><code class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #006FE0;">use</span> '<span style="color: #7388D6;">(</span>incanter core stats datasets charts io pdf<span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">def</span> <span style="color: #BA36A5;">hist</span> <span style="color: #7388D6;">(</span>histogram <span style="color: #909183;">(</span>sample-normal 1000<span style="color: #909183;">)</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span>save hist <span style="color: #7388D6;">(</span><span style="color: #006FE0;">str</span> dir <span style="color: #008000;">"ob-clojure-literate.png"</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)                             </span>
+</code></pre>
+</div>
 
-<p>
-<a href="How%20to%20Read%20Code%20in%20Emacs.html">How to Read Code in Emacs</a>
-</p>
+
+<figure>
+<img src="data/images/ob-clojure-literate.png" alt="ob-clojure-literate.png">
+
+</figure>
 </div>
 </div>
 
-<div id="outline-container-org1e292d3" class="outline-2">
-<h2 id="org1e292d3"><span class="section-number-2">3</span> Literate Programming with Org Mode</h2>
+
+<div id="outline-container-org2a072b6" class="outline-2">
+<h2 id="org2a072b6"><span class="section-number-2">3</span> clj-xchart</h2>
 <div class="outline-text-2" id="text-3">
-<pre class="example">
-DATE: [2018-05-15 Tue 17:40]
-ID: f7e17854-2da5-4530-a2d4-dc896c963fd6
-PUBDATE: <2018-05-17 Thu 09:00>
-</pre>
+<div class="org-src-container">
+<pre><code class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #006FE0;">require</span> '<span style="color: #7388D6;">[</span>com.hypirion.clj-xchart <span style="color: #D0372D;">:as</span> xchart<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
 
-<p>
-<a href="Literate Programming with Org Mode.html">Literate Programming with Org Mode</a>
-</p>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">def</span> <span style="color: #BA36A5;">ob-clojure-clj-xchart</span>
+  <span style="color: #7388D6;">(</span><span style="color: #6434A3;">xchart</span>/xy-chart <span style="color: #909183;">{</span><span style="color: #008000;">"Expected rate"</span> <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #006FE0;">range</span> 10<span style="color: #907373;">)</span> <span style="color: #907373;">(</span><span style="color: #006FE0;">range</span> 10<span style="color: #907373;">)</span><span style="color: #709870;">]</span>
+                    <span style="color: #008000;">"Actual rate"</span>   <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #006FE0;">range</span> 10<span style="color: #907373;">)</span> <span style="color: #907373;">(</span><span style="color: #006FE0;">map</span> #<span style="color: #6276BA;">(</span>+ <span style="color: #BA36A5;">%</span> <span style="color: #858580;">(</span><span style="color: #006FE0;">rand-int</span> 5<span style="color: #858580;">)</span> -2<span style="color: #6276BA;">)</span> <span style="color: #6276BA;">(</span><span style="color: #006FE0;">range</span> 10<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">}</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">(xchart/view ob-clojure-clj-xchart)</span>
+<span style="color: #707183;">(</span><span style="color: #6434A3;">xchart</span>/<span style="color: #006FE0;">spit</span> ob-clojure-clj-xchart <span style="color: #7388D6;">(</span><span style="color: #006FE0;">str</span> dir <span style="color: #008000;">"ob-clojure-clj-xchart.png"</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)                             </span>
+</code></pre>
+</div>
+
+
+<figure>
+<img src="data/images/ob-clojure-clj-xchart.png" alt="ob-clojure-clj-xchart.png">
+
+</figure>
 </div>
 </div>
 
-<div id="outline-container-org1b8f931" class="outline-2">
-<h2 id="org1b8f931"><span class="section-number-2">4</span> multilingual support with ob-translate and google-translate</h2>
-<div class="outline-text-2" id="text-4">
-<pre class="example">
-DATE: [2018-04-21 Sat 15:57]
-ID: b7e86ca8-367c-4ba0-8ebb-ba37860958c0
-PUBDATE: <2018-04-21 Sat 16:30>
-</pre>
 
-<p>
-<a href="multilingual support with ob-translate and google-translate.html">multilingual support with ob-translate and google-translate</a>
-</p>
-</div>
+<div id="outline-container-org3d3cc81" class="outline-2">
+<h2 id="org3d3cc81"><span class="section-number-2">4</span> ggplot2</h2>
 </div>
 
-<div id="outline-container-orgdca728c" class="outline-2">
-<h2 id="orgdca728c"><span class="section-number-2">5</span> Learned basic skateboard</h2>
-<div class="outline-text-2" id="text-5">
-<pre class="example">
-DATE: [2018-04-21 Sat 11:15]
-ID: dc0b9dbc-8abd-42ba-834d-e5205a99910b
-PUBDATE: <2018-04-21 Sat 11:32>
-</pre>
 
-<p>
-<a href="Learned basic skateboard.html">Learned basic skateboard</a>
-</p>
-</div>
-</div>
 
-<div id="outline-container-org1e521d5" class="outline-2">
-<h2 id="org1e521d5"><span class="section-number-2">6</span> Needlework: Setup the sewing machine</h2>
-<div class="outline-text-2" id="text-6">
-<pre class="example">
-DATE: [2018-04-20 Fri 11:41]
-ID: 62bcea74-3133-4a44-adda-bd71f977c8fc
-PUBDATE: <2018-04-20 Fri 12:32>
-</pre>
 
-<p>
-<a href="setup%20the%20sewing%20machine%20for%20needlework.html">setup the sewing machine for needlework</a>
-</p>
-</div>
-</div>
-
-<div id="outline-container-orga16d6ad" class="outline-2">
-<h2 id="orga16d6ad"><span class="section-number-2">7</span> How to BANISH myself</h2>
-<div class="outline-text-2" id="text-7">
-<pre class="example">
-DATE: [2018-04-18 Wed]
-ID: ecd128b5-33b0-42f8-bfa1-8a9134d697fa
-PUBDATE: <2018-04-18 Wed 14:13>
-</pre>
-
-<p>
-<a href="How%20to%20BANISH%20myself.html">How to BANISH myself</a>
-</p>
-</div>
-</div>
-
-<div id="outline-container-org476e433" class="outline-2">
-<h2 id="org476e433"><span class="section-number-2">8</span> test org-mode ox-publish</h2>
-<div class="outline-text-2" id="text-8">
-<pre class="example">
-TIME: [2016-04-22 Fri 22:54]
-ID: b80c8cad-9403-4533-9cd4-cb2fd5b92678
-PUBDATE: <2018-04-18 Wed 14:13>
-</pre>
-
-<p>
-<a href="2016-04-22 22:54.html">test org-mode ox-publish</a>
-</p>
-</div>
+<div id="outline-container-org4797dce" class="outline-2">
+<h2 id="org4797dce"><span class="section-number-2">5</span> jutsu</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <footer>
   Copyright 2011, Author: stardiviner (<a href="mailto:numbchild@gmail.com">numbchild@gmail.com</a>).<br>
-  Last update date: 2018-05-17 Thu 11:47.<br>
+  Last update date: 2018-05-17 Thu 11:46.<br>
   Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.0.50 (<a href="https://orgmode.org">Org</a> mode 9.1.13). <a href="http://orgmode.org" alt="Made with Emacs Org-Mode" style="float:left; margin 20px 0px 20px 20px;"><img src="/assets/images/made_with_emacs_org-mode.jpg"></a> (<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML)
   
   <!-- Show Org Source -->

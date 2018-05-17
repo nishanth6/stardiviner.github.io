@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.54 in css mode. -->
+<html>
+  <head>
+    <title>Clojure Plotting to Org inline image in ob-clojure.org</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #333333;
+        background-color: #FFFFFF;
+      }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #006FE0;
+      }
+      .clojure-keyword {
+        /* clojure-keyword-face */
+        color: #D0372D;
+      }
+      .comment {
+        /* font-lock-comment-face */
+        color: #8D8D84;
+        font-style: italic;
+      }
+      .comment-delimiter {
+        /* font-lock-comment-delimiter-face */
+        color: #8D8D84;
+      }
+      .custom {
+        /* (:foreground "#FFFFFF") */
+        color: #FFFFFF;
+      }
+      .italic {
+        /* italic */
+        color: #000000;
+        background-color: #e566e566e566;
+        font-style: italic;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #0000FF;
+      }
+      .org-block {
+        /* org-block */
+        color: #000088;
+        background-color: #FFFFE0;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #555555;
+        background-color: #E2E1D5;
+        text-decoration: underline;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #555555;
+        background-color: #E2E1D5;
+        text-decoration: overline;
+      }
+      .org-code {
+        /* org-code */
+        color: #006400;
+        background-color: #E2E9CB;
+      }
+      .org-document-info-keyword {
+        /* org-document-info-keyword */
+        color: #008ED1;
+        background-color: #EAEAFF;
+      }
+      .org-document-title {
+        /* org-document-title */
+        color: #000000;
+        font-weight: bold;
+      }
+      .org-level-1 {
+        /* org-level-1 */
+        color: #3C3C3C;
+        background-color: #f233f233f233;
+        font-weight: bold;
+        text-decoration: overline;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #123555;
+        background-color: #E5F4FB;
+        font-weight: bold;
+        text-decoration: overline;
+      }
+      .org-link {
+        /* org-link */
+        color: #006DAF;
+        text-decoration: underline;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #008ED1;
+        background-color: #EAEAFF;
+      }
+      .org-verbatim {
+        /* org-verbatim */
+        color: #0066CC;
+        background-color: #F7FDFF;
+      }
+      .rainbow-delimiters-depth-1 {
+        /* rainbow-delimiters-depth-1-face */
+        color: #707183;
+      }
+      .rainbow-delimiters-depth-2 {
+        /* rainbow-delimiters-depth-2-face */
+        color: #7388D6;
+      }
+      .rainbow-delimiters-depth-3 {
+        /* rainbow-delimiters-depth-3-face */
+        color: #909183;
+      }
+      .rainbow-delimiters-depth-4 {
+        /* rainbow-delimiters-depth-4-face */
+        color: #709870;
+      }
+      .rainbow-delimiters-depth-5 {
+        /* rainbow-delimiters-depth-5-face */
+        color: #907373;
+      }
+      .rainbow-delimiters-depth-6 {
+        /* rainbow-delimiters-depth-6-face */
+        color: #6276BA;
+      }
+      .rainbow-delimiters-depth-7 {
+        /* rainbow-delimiters-depth-7-face */
+        color: #858580;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #008000;
+      }
+      .type {
+        /* font-lock-type-face */
+        color: #6434A3;
+      }
+      .variable-name {
+        /* font-lock-variable-name-face */
+        color: #BA36A5;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+<span class="org-document-info-keyword">#+TITLE:</span> <span class="org-document-title">Clojure Plotting to Org inline image in ob-clojure
+</span>
+<span class="org-level-1">* The Process of my Clojure Plotting
+</span>
+<span class="custom">*</span><span class="org-level-2">* ask whether Clojure/JVM can change working directory
+</span>
+I did some hard search, found some links
+
+- <span class="org-link"><a href="https://stackoverflow.com/questions/840190/changing-the-current-working-directory-in-java">https://stackoverflow.com/questions/840190/changing-the-current-working-directory-in-java</a></span>
+- <span class="org-link"><a href="https://stackoverflow.com/questions/19008592/java-change-file-working-directory">https://stackoverflow.com/questions/19008592/java-change-file-working-directory</a></span>
+
+Then I found JVM does not allow to change working directory because of security reason
+<span class="org-link"><a href="https://bugs.java.com/bugdatabase/view_bug.do?bug_id=4045688">https://bugs.java.com/bugdatabase/view_bug.do?bug_id=4045688</a></span>.
+
+So, there is no reliable way to do this in pure Java. Setting the <span class="org-code">user.dir</span> <span class="italic">property</span> via
+<span class="org-code">System.setProperty()</span> or <span class="org-code">java -Duser.dir=...</span> does seem to affect subsequent creations of
+Files, but not e.g. <span class="org-code">FileOutputStreams</span>.
+
+<span class="custom">*</span><span class="org-level-2">* I create Org-mode library "</span><span class="org-level-2"><span class="org-verbatim">ob-clojure-literate</span></span><span class="org-level-2">" and improve Org Babel "</span><span class="org-level-2"><span class="org-verbatim">ob-core.el</span></span><span class="org-level-2">" for plotting support
+</span>
+Because changing Clojure/JVM working directory is not available, so I find method on Emacs
+side, Org-mode other Babel lanaguages like R, Python have good image file result support.
+So I dive into source code, and try to add similar function to "<span class="org-verbatim">ob-clojure</span>". But I found
+some limites, then I created "<span class="org-link"><a href="https://github.com/stardiviner/ob-clojure-literate">ob-clojure-literate (GitHub repo)</a></span>" (Now it is in <span class="org-link"><a href="https://code.orgmode.org/bzg/org-mode/src/master/contrib/lisp/ob-clojure-literate.el">Org-mode
+contrib lib</a></span>).
+
+<span class="custom">*</span><span class="org-level-2">* use more better solution by passing target path into Clojure with header argument </span><span class="org-level-2"><span class="org-code">:var</span></span><span class="org-level-2">
+</span>
+You can fake change Clojure REPL working directory by passing header argument variable
+into Clojure code. Like this:
+
+<span class="org-block-begin-line">#+begin_src clojure :results value :var dir=(concat (file-name-directory (buffer-file-name)) "data/images/")
+</span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block"><span class="builtin">str</span></span><span class="org-block"> dir </span><span class="org-block"><span class="string">"ob-clojure-literate.png"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+RESULTS[&lt;2018-05-17 01:12:55&gt; 73be0ca9a40a4f1e4fdee8e535991955f77b034a]:</span>
+<span class="org-code">: "/home/stardiviner/Org/Wiki/Computer Technology/Programming/Emacs/Data/Emacs Packages/Org mode/data/images/ob-clojure-literate.png"
+</span>
+Then you can use Clojure funciton to save graphics object to target file with correct
+absolute path:
+
+<span class="org-block-begin-line">#+begin_src clojure :results graphics :dir "data/images" :file "ob-clojure-literate.png" :var dir=(concat (file-name-directory (buffer-file-name)) "data/images/")
+</span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block"><span class="builtin">use</span></span><span class="org-block"> '</span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block">incanter core stats datasets charts io pdf</span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
+</span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block"><span class="keyword">def</span></span><span class="org-block"> </span><span class="org-block"><span class="variable-name">hist</span></span><span class="org-block"> </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block">histogram </span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block">sample-normal 1000</span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
+</span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block">save hist </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block"><span class="builtin">str</span></span><span class="org-block"> dir </span><span class="org-block"><span class="string">"ob-clojure-literate.png"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+RESULTS[&lt;2018-05-17 10:40:29&gt; bbff27177a545feba5ed98a467689eb91ce7e501]:</span>
+<span class="org-link"><a href="file:data/images/ob-clojure-literate.png">file:data/images/ob-clojure-literate.png</a></span>
+
+<span class="custom">*</span><span class="org-level-2">* use final solution by move image file to target path with Clojure function
+</span>
+<span class="org-block-begin-line">#+begin_src clojure :results graphics :dir "data/images" :file "ob-clojure-incanter-move.png" :var dir=(concat (file-name-directory (buffer-file-name)) "data/images/")
+</span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block"><span class="builtin">use</span></span><span class="org-block"> '</span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block">incanter core stats datasets charts io pdf</span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
+</span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block">import '</span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block">java.io File</span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
+
+</span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block"><span class="keyword">def</span></span><span class="org-block"> </span><span class="org-block"><span class="variable-name">hist</span></span><span class="org-block"> </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block">histogram </span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block">sample-normal 1000</span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
+</span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block">save hist </span><span class="org-block"><span class="string">"ob-clojure-incanter-move.png"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
+</span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block">.renameTo </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block">File. </span><span class="org-block"><span class="string">"ob-clojure-incanter-move.png"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"> </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block">File. </span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block"><span class="builtin">str</span></span><span class="org-block"> dir </span><span class="org-block"><span class="string">"ob-clojure-incanter-move.png"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+RESULTS[&lt;2018-05-17 11:46:15&gt; ff75cfacbf1e10441f0349531db625b77acc7368]:</span>
+<span class="org-link"><a href="file:data/images/ob-clojure-incanter-move.png">file:data/images/ob-clojure-incanter-move.png</a></span>
+
+
+<span class="org-level-1">* Incanter
+</span>
+<span class="org-block-begin-line">#+begin_src clojure :results graphics :dir "data/images" :file "ob-clojure-literate.png" :var dir=(concat (file-name-directory (buffer-file-name)) "data/images/")
+</span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block"><span class="builtin">use</span></span><span class="org-block"> '</span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block">incanter core stats datasets charts io pdf</span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
+</span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block"><span class="keyword">def</span></span><span class="org-block"> </span><span class="org-block"><span class="variable-name">hist</span></span><span class="org-block"> </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block">histogram </span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block">sample-normal 1000</span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
+</span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block">save hist </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block"><span class="builtin">str</span></span><span class="org-block"> dir </span><span class="org-block"><span class="string">"ob-clojure-literate.png"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+RESULTS[&lt;2018-05-17 10:40:29&gt; bbff27177a545feba5ed98a467689eb91ce7e501]:</span>
+<span class="org-link"><a href="file:data/images/ob-clojure-literate.png">file:data/images/ob-clojure-literate.png</a></span>
+
+
+<span class="org-level-1">* clj-xchart
+</span>
+<span class="org-block-begin-line">#+begin_src clojure :results graphics :dir "data/images" :file "ob-clojure-clj-xchart.png" :var dir=(concat (file-name-directory (buffer-file-name)) "data/images/")
+</span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block"><span class="builtin">require</span></span><span class="org-block"> '</span><span class="org-block"><span class="rainbow-delimiters-depth-2">[</span></span><span class="org-block">com.hypirion.clj-xchart </span><span class="org-block"><span class="clojure-keyword">:as</span></span><span class="org-block"> xchart</span><span class="org-block"><span class="rainbow-delimiters-depth-2">]</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
+
+</span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block"><span class="keyword">def</span></span><span class="org-block"> </span><span class="org-block"><span class="variable-name">ob-clojure-clj-xchart</span></span><span class="org-block">
+  </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block"><span class="type">xchart</span></span><span class="org-block">/xy-chart </span><span class="org-block"><span class="rainbow-delimiters-depth-3">{</span></span><span class="org-block"><span class="string">"Expected rate"</span></span><span class="org-block"> </span><span class="org-block"><span class="rainbow-delimiters-depth-4">[</span></span><span class="org-block"><span class="rainbow-delimiters-depth-5">(</span></span><span class="org-block"><span class="builtin">range</span></span><span class="org-block"> 10</span><span class="org-block"><span class="rainbow-delimiters-depth-5">)</span></span><span class="org-block"> </span><span class="org-block"><span class="rainbow-delimiters-depth-5">(</span></span><span class="org-block"><span class="builtin">range</span></span><span class="org-block"> 10</span><span class="org-block"><span class="rainbow-delimiters-depth-5">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-4">]</span></span><span class="org-block">
+                    </span><span class="org-block"><span class="string">"Actual rate"</span></span><span class="org-block">   </span><span class="org-block"><span class="rainbow-delimiters-depth-4">[</span></span><span class="org-block"><span class="rainbow-delimiters-depth-5">(</span></span><span class="org-block"><span class="builtin">range</span></span><span class="org-block"> 10</span><span class="org-block"><span class="rainbow-delimiters-depth-5">)</span></span><span class="org-block"> </span><span class="org-block"><span class="rainbow-delimiters-depth-5">(</span></span><span class="org-block"><span class="builtin">map</span></span><span class="org-block"> #</span><span class="org-block"><span class="rainbow-delimiters-depth-6">(</span></span><span class="org-block">+ </span><span class="org-block"><span class="variable-name">%</span></span><span class="org-block"> </span><span class="org-block"><span class="rainbow-delimiters-depth-7">(</span></span><span class="org-block"><span class="builtin">rand-int</span></span><span class="org-block"> 5</span><span class="org-block"><span class="rainbow-delimiters-depth-7">)</span></span><span class="org-block"> -2</span><span class="org-block"><span class="rainbow-delimiters-depth-6">)</span></span><span class="org-block"> </span><span class="org-block"><span class="rainbow-delimiters-depth-6">(</span></span><span class="org-block"><span class="builtin">range</span></span><span class="org-block"> 10</span><span class="org-block"><span class="rainbow-delimiters-depth-6">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-5">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-4">]</span></span><span class="org-block"><span class="rainbow-delimiters-depth-3">}</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
+
+</span><span class="org-block"><span class="comment-delimiter">;; </span></span><span class="org-block"><span class="comment">(xchart/view ob-clojure-clj-xchart)
+</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block"><span class="type">xchart</span></span><span class="org-block">/</span><span class="org-block"><span class="builtin">spit</span></span><span class="org-block"> ob-clojure-clj-xchart </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block"><span class="builtin">str</span></span><span class="org-block"> dir </span><span class="org-block"><span class="string">"ob-clojure-clj-xchart.png"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+RESULTS[&lt;2018-05-17 10:52:37&gt; 0ada10eaeabcc1c8431c9805a3bc03c9c388fbd9]:</span>
+<span class="org-link"><a href="file:data/images/ob-clojure-clj-xchart.png">file:data/images/ob-clojure-clj-xchart.png</a></span>
+
+
+<span class="org-level-1">* ggplot2
+</span>
+
+
+
+<span class="org-level-1">* jutsu
+</span></pre>
+  </body>
+</html>
