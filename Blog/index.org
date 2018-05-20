@@ -1,6 +1,13 @@
-# Created 2018-05-17 Thu 16:26
+# Created 2018-05-20 Sun 18:06
 #+TITLE: stardiviner's Blog
 #+AUTHOR: stardiviner
+
+* Make company-mode support for nginx-mode
+:PROPERTIES:
+:DATE:     [2018-05-20 Sun 16:43]
+:END:
+
+[[file:Make company-mode support for nginx-mode.org][Make company-mode support for nginx-mode]]
 
 * Clojure Plotting to Org inline image in ob-clojure
 :PROPERTIES:

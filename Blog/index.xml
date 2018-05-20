@@ -14,8 +14,8 @@
   <link>https://stardiviner.github.io/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Thu, 17 May 2018 11:47:37 +0800</pubDate>
-  <lastBuildDate>Thu, 17 May 2018 11:47:37 +0800</lastBuildDate>
+  <pubDate>Sun, 20 May 2018 18:06:26 +0800</pubDate>
+  <lastBuildDate>Sun, 20 May 2018 18:06:26 +0800</lastBuildDate>
   <generator>Emacs 27.0 Org-mode 9.1.13</generator>
   <webMaster>numbchild@gmail.com (stardiviner)</webMaster>
   <image>
@@ -28,6 +28,7 @@
     <h2>Table of Contents</h2>
     <div id="text-table-of-contents">
       <ul>
+        <li><a href="#org5f4032b">Make company-mode support for nginx-mode</a></li>
         <li><a href="#orga501281">Clojure Plotting to Org inline image in ob-clojure</a></li>
         <li><a href="#org6541198">How to Read Code in Emacs</a></li>
         <li><a href="#org50bfc9a">Literate Programming with Org Mode</a></li>
@@ -39,6 +40,25 @@
       </ul>
     </div>
   </nav>
+
+  <item>
+    <title>Make company-mode support for nginx-mode</title>
+    <link>https://stardiviner.github.io/index.html#org5f4032b</link>
+    <author>numbchild@gmail.com (stardiviner)</author>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#org5f4032b</guid>
+    <pubDate>Sun, 20 May 2018 18:06:00 +0800</pubDate>
+
+    <description><![CDATA[<pre class="example">
+    DATE: [2018-05-20 Sun 16:43]
+    ID: 0de8004e-db90-4182-b07a-97f5acf0a513
+    PUBDATE: <2018-05-20 Sun 18:06>
+    </pre>
+
+    <p>
+    <a href="Make company-mode support for nginx-mode.html">Make company-mode support for nginx-mode</a>
+    </p>
+    ]]></description>
+  </item>
 
   <item>
     <title>Clojure Plotting to Org inline image in ob-clojure</title>
