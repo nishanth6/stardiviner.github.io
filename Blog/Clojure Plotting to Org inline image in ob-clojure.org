@@ -1,4 +1,4 @@
-# Created 2018-05-21 Mon 12:28
+# Created 2018-05-21 Mon 20:01
 #+TITLE: Clojure Plotting to Org inline image in ob-clojure
 #+AUTHOR: stardiviner
 
@@ -57,7 +57,7 @@ absolute path:
 (save hist (str dir "ob-clojure-literate.png"))
 #+end_src
 
-#+results[<2018-05-17 10:40:29> bbff27177a545feba5ed98a467689eb91ce7e501]: 
+#+results[<2018-05-21 20:01:09> 03d08655f359242cb7d9f8d7d3a45388c0e82b21]: 
 [[file:data/images/ob-clojure-literate.png]]
 
 ** use final solution by move image file to target path with Clojure function
@@ -82,7 +82,7 @@ absolute path:
 (.renameTo (File. "ob-clojure-incanter-move.png") (File. (str dir "ob-clojure-incanter-move.png")))
 #+end_src
 
-#+results[<2018-05-17 11:46:15> ff75cfacbf1e10441f0349531db625b77acc7368]: 
+#+results[<2018-05-21 20:01:09> 222cfe37f9da055b04e6798887c77d52ca61fda7]: 
 [[file:data/images/ob-clojure-incanter-move.png]]
 
 
@@ -102,7 +102,7 @@ absolute path:
 (save hist (str dir "ob-clojure-literate.png"))
 #+end_src
 
-#+results[<2018-05-17 10:40:29> bbff27177a545feba5ed98a467689eb91ce7e501]: 
+#+results[<2018-05-21 20:01:10> 03d08655f359242cb7d9f8d7d3a45388c0e82b21]: 
 [[file:data/images/ob-clojure-literate.png]]
 
 
@@ -132,7 +132,7 @@ absolute path:
 (xchart/spit ob-clojure-clj-xchart (str dir "ob-clojure-clj-xchart.png"))
 #+end_src
 
-#+results[<2018-05-21 12:28:01> 18a99cbd223052e95ca7216943590579f306c6a5]: 
+#+results[<2018-05-21 20:01:10> fa7394ab005de0c9528feb464aabb0a61c41bb75]: 
 [[file:data/images/ob-clojure-clj-xchart.png]]
 
 

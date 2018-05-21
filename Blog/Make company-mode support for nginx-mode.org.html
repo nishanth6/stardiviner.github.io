@@ -6,107 +6,102 @@
     <style type="text/css">
     <!--
       body {
-        color: #333333;
-        background-color: #FFFFFF;
+        color: #b2b2b2;
+        background-color: #292b2e;
       }
       .bold {
         /* bold */
-        color: #000000;
+        color: #ffffff;
         font-weight: bold;
       }
       .comment {
         /* font-lock-comment-face */
-        color: #8D8D84;
-        font-style: italic;
+        color: #2aa1ae;
+        background-color: #292e34;
       }
       .comment-delimiter {
         /* font-lock-comment-delimiter-face */
-        color: #8D8D84;
+        color: #2aa1ae;
+        background-color: #292e34;
       }
       .constant {
         /* font-lock-constant-face */
-        color: #D0372D;
+        color: #a45bad;
       }
       .custom {
       }
       .custom-1 {
-        /* (:foreground "#FFFFFF") */
-        color: #FFFFFF;
+        /* (:foreground "#292b2e") */
+        color: #292b2e;
       }
       .function-name {
         /* font-lock-function-name-face */
-        color: #006699;
+        color: #bc6ec5;
+        font-weight: bold;
       }
       .keyword {
         /* font-lock-keyword-face */
-        color: #0000FF;
+        color: #4f97d7;
+        font-weight: bold;
       }
       .org-block {
         /* org-block */
-        color: #000088;
-        background-color: #FFFFE0;
+        color: #cbc1d5;
+        background-color: #2f2b33;
       }
       .org-block-begin-line {
         /* org-block-begin-line */
-        color: #555555;
-        background-color: #E2E1D5;
-        text-decoration: underline;
+        color: #827591;
+        background-color: #373040;
       }
       .org-block-end-line {
         /* org-block-end-line */
-        color: #555555;
-        background-color: #E2E1D5;
-        text-decoration: overline;
+        color: #827591;
+        background-color: #373040;
       }
       .org-code {
         /* org-code */
-        color: #006400;
-        background-color: #E2E9CB;
+        color: #28def0;
       }
       .org-date {
         /* org-date */
-        color: #00459E;
+        color: #7590db;
         text-decoration: underline;
       }
       .org-document-info-keyword {
         /* org-document-info-keyword */
-        color: #008ED1;
-        background-color: #EAEAFF;
+        color: #9f8766;
       }
       .org-document-title {
         /* org-document-title */
-        color: #000000;
+        color: #bc6ec5;
         font-weight: bold;
+        text-decoration: underline;
       }
       .org-level-1 {
         /* org-level-1 */
-        color: #3C3C3C;
-        background-color: #f233f233f233;
+        color: #4f97d7;
+        background-color: #303d3297361f;
         font-weight: bold;
-        text-decoration: overline;
       }
       .org-level-2 {
         /* org-level-2 */
-        color: #123555;
-        background-color: #E5F4FB;
+        color: #2d9574;
+        background-color: #303d3297361f;
         font-weight: bold;
-        text-decoration: overline;
       }
       .org-link {
         /* org-link */
-        color: #006DAF;
+        color: #2aa1ae;
         text-decoration: underline;
       }
       .org-meta-line {
         /* org-meta-line */
-        color: #008ED1;
-        background-color: #EAEAFF;
+        color: #9f8766;
       }
       .org-special-keyword {
         /* org-special-keyword */
-        color: #00BB00;
-        background-color: #EAFFEA;
-        font-weight: bold;
+        color: #bc6ec5;
       }
       .org-todo-keyword-todo {
         /* org-todo-keyword-todo-face */
@@ -115,34 +110,30 @@
       }
       .org-verbatim {
         /* org-verbatim */
-        color: #0066CC;
-        background-color: #F7FDFF;
-      }
-      .py-import-from {
-        /* py-import-from-face */
-        color: #0000FF;
-      }
-      .py-variable-name {
-        /* py-variable-name-face */
-        color: #333333;
-        background-color: #FFFFFF;
+        color: #4f97d7;
       }
       .regexp-grouping-backslash {
         /* font-lock-regexp-grouping-backslash */
+        color: #ffffff;
         font-weight: bold;
       }
       .regexp-grouping-construct {
         /* font-lock-regexp-grouping-construct */
+        color: #ffffff;
         font-weight: bold;
       }
       .string {
         /* font-lock-string-face */
-        color: #008000;
+        color: #2d9574;
+      }
+      .variable-name {
+        /* font-lock-variable-name-face */
+        color: #7590db;
       }
       .warning {
         /* font-lock-warning-face */
-        color: #ff0000;
-        font-weight: bold;
+        color: #dc752f;
+        background-color: #292b2e;
       }
 
       a {
@@ -204,21 +195,21 @@ too.
 </span>
 <span class="org-meta-line">#+NAME: get-directives</span>
 <span class="org-block-begin-line">#+begin_src python :session
-</span><span class="org-block"><span class="py-import-from">import</span></span><span class="org-block"> urllib.request
-</span><span class="org-block"><span class="py-import-from">import</span></span><span class="org-block"> urllib.parse
-</span><span class="org-block"><span class="py-import-from">import</span></span><span class="org-block"> bs4
+</span><span class="org-block"><span class="keyword">import</span></span><span class="org-block"> urllib.request
+</span><span class="org-block"><span class="keyword">import</span></span><span class="org-block"> urllib.parse
+</span><span class="org-block"><span class="keyword">import</span></span><span class="org-block"> bs4
 
-</span><span class="org-block"><span class="py-variable-name">req</span></span><span class="org-block"> = urllib.request.Request(</span><span class="org-block"><span class="string">"<a href="https://nginx.org/en/docs/dirindex.html">https://nginx.org/en/docs/dirindex.html</a>"</span></span><span class="org-block">)
-</span><span class="org-block"><span class="py-variable-name">respond</span></span><span class="org-block"> = urllib.request.urlopen(req)
-</span><span class="org-block"><span class="py-variable-name">html_page</span></span><span class="org-block"> = respond.read().decode(</span><span class="org-block"><span class="string">"utf-8"</span></span><span class="org-block">)
-</span><span class="org-block"><span class="py-variable-name">parsed_html</span></span><span class="org-block"> = bs4.BeautifulSoup(html_page, </span><span class="org-block"><span class="string">"html"</span></span><span class="org-block">)
-</span><span class="org-block"><span class="py-variable-name">p</span></span><span class="org-block"> = parsed_html.find(</span><span class="org-block"><span class="string">'div'</span></span><span class="org-block">, </span><span class="org-block"><span class="py-variable-name">attrs</span></span><span class="org-block">={</span><span class="org-block"><span class="string">'id'</span></span><span class="org-block">: </span><span class="org-block"><span class="string">'content'</span></span><span class="org-block">}).find(</span><span class="org-block"><span class="string">'p'</span></span><span class="org-block">)
+</span><span class="org-block"><span class="variable-name">req</span></span><span class="org-block"> = urllib.request.Request(</span><span class="org-block"><span class="string">"<a href="https://nginx.org/en/docs/dirindex.html">https://nginx.org/en/docs/dirindex.html</a>"</span></span><span class="org-block">)
+</span><span class="org-block"><span class="variable-name">respond</span></span><span class="org-block"> = urllib.request.urlopen(req)
+</span><span class="org-block"><span class="variable-name">html_page</span></span><span class="org-block"> = respond.read().decode(</span><span class="org-block"><span class="string">"utf-8"</span></span><span class="org-block">)
+</span><span class="org-block"><span class="variable-name">parsed_html</span></span><span class="org-block"> = bs4.BeautifulSoup(html_page, </span><span class="org-block"><span class="string">"html"</span></span><span class="org-block">)
+</span><span class="org-block"><span class="variable-name">p</span></span><span class="org-block"> = parsed_html.find(</span><span class="org-block"><span class="string">'div'</span></span><span class="org-block">, attrs={</span><span class="org-block"><span class="string">'id'</span></span><span class="org-block">: </span><span class="org-block"><span class="string">'content'</span></span><span class="org-block">}).find(</span><span class="org-block"><span class="string">'p'</span></span><span class="org-block">)
 </span><span class="org-block"><span class="comment-delimiter"># </span></span><span class="org-block"><span class="comment">print(p)
 </span></span><span class="org-block">
-</span><span class="org-block"><span class="py-variable-name">a</span></span><span class="org-block"> = p.find_all(</span><span class="org-block"><span class="string">'a'</span></span><span class="org-block">)
+</span><span class="org-block"><span class="variable-name">a</span></span><span class="org-block"> = p.find_all(</span><span class="org-block"><span class="string">'a'</span></span><span class="org-block">)
 </span><span class="org-block"><span class="comment-delimiter"># </span></span><span class="org-block"><span class="comment">print(a)
 </span></span><span class="org-block">
-</span><span class="org-block"><span class="py-variable-name">directives</span></span><span class="org-block"> = []
+</span><span class="org-block"><span class="variable-name">directives</span></span><span class="org-block"> = []
 
 </span><span class="org-block"><span class="keyword">for</span></span><span class="org-block"> x </span><span class="org-block"><span class="keyword">in</span></span><span class="org-block"> a:
     directives.append(x.text)
