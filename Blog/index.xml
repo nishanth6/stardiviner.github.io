@@ -14,8 +14,8 @@
   <link>https://stardiviner.github.io/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Mon, 21 May 2018 20:01:12 +0800</pubDate>
-  <lastBuildDate>Mon, 21 May 2018 20:01:12 +0800</lastBuildDate>
+  <pubDate>Tue, 22 May 2018 11:58:06 +0800</pubDate>
+  <lastBuildDate>Tue, 22 May 2018 11:58:06 +0800</lastBuildDate>
   <generator>Emacs 27.0 Org-mode 9.1.13</generator>
   <webMaster>numbchild@gmail.com (stardiviner)</webMaster>
   <image>
@@ -28,24 +28,44 @@
     <h2>Table of Contents</h2>
     <div id="text-table-of-contents">
       <ul>
-        <li><a href="#org18d3087">Make company-mode support for nginx-mode</a></li>
-        <li><a href="#orgdfce307">Clojure Plotting to Org inline image in ob-clojure</a></li>
-        <li><a href="#org05a3533">How to Read Code in Emacs</a></li>
-        <li><a href="#org4f6b417">Literate Programming with Org Mode</a></li>
-        <li><a href="#orga19bd79">multilingual support with ob-translate and google-translate</a></li>
-        <li><a href="#orge74cdf4">Learned basic skateboard</a></li>
-        <li><a href="#org7f8b324">Needlework: Setup the sewing machine</a></li>
-        <li><a href="#orgc95086a">How to BANISH myself</a></li>
-        <li><a href="#orgf5b595a">test org-mode ox-publish</a></li>
+        <li><a href="#org0408bde">Learn a little basic of Nginx for setting up web server</a></li>
+        <li><a href="#orgee17b37">Make company-mode support for nginx-mode</a></li>
+        <li><a href="#orgaacdc97">Clojure Plotting to Org inline image in ob-clojure</a></li>
+        <li><a href="#org0f60c26">How to Read Code in Emacs</a></li>
+        <li><a href="#org180cb3a">Literate Programming with Org Mode</a></li>
+        <li><a href="#org1fb65f3">multilingual support with ob-translate and google-translate</a></li>
+        <li><a href="#org0946d06">Learned basic skateboard</a></li>
+        <li><a href="#org7028f16">Needlework: Setup the sewing machine</a></li>
+        <li><a href="#org7282e80">How to BANISH myself</a></li>
+        <li><a href="#orge15e8dc">test org-mode ox-publish</a></li>
       </ul>
     </div>
   </nav>
 
   <item>
-    <title>Make company-mode support for nginx-mode</title>
-    <link>https://stardiviner.github.io/index.html#org18d3087</link>
+    <title>Learn a little basic of Nginx for setting up web server</title>
+    <link>https://stardiviner.github.io/index.html#org0408bde</link>
     <author>numbchild@gmail.com (stardiviner)</author>
-    <guid isPermaLink="false">https://stardiviner.github.io/index.html#org18d3087</guid>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#org0408bde</guid>
+    <pubDate>Tue, 22 May 2018 11:13:00 +0800</pubDate>
+
+    <description><![CDATA[<pre class="example">
+    DATE: [2018-05-22 Tue 11:11]
+    ID: 2de740e7-d646-4ae3-88a9-2e4a7adca39a
+    PUBDATE: <2018-05-22 Tue 11:13>
+    </pre>
+
+    <p>
+    <a href="Learn-a-little-basic-of-Nginx-for-setting-up-web-server.html">Learn a little basic of Nginx for setting up web server</a>
+    </p>
+    ]]></description>
+  </item>
+
+  <item>
+    <title>Make company-mode support for nginx-mode</title>
+    <link>https://stardiviner.github.io/index.html#orgee17b37</link>
+    <author>numbchild@gmail.com (stardiviner)</author>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#orgee17b37</guid>
     <pubDate>Sun, 20 May 2018 18:06:00 +0800</pubDate>
 
     <description><![CDATA[<pre class="example">
@@ -55,16 +75,16 @@
     </pre>
 
     <p>
-    <a href="Make company-mode support for nginx-mode.html">Make company-mode support for nginx-mode</a>
+    <a href="Make-company-mode-support-for-nginx-mode.html">Make company-mode support for nginx-mode</a>
     </p>
     ]]></description>
   </item>
 
   <item>
     <title>Clojure Plotting to Org inline image in ob-clojure</title>
-    <link>https://stardiviner.github.io/index.html#orgdfce307</link>
+    <link>https://stardiviner.github.io/index.html#orgaacdc97</link>
     <author>numbchild@gmail.com (stardiviner)</author>
-    <guid isPermaLink="false">https://stardiviner.github.io/index.html#orgdfce307</guid>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#orgaacdc97</guid>
     <pubDate>Thu, 17 May 2018 11:47:00 +0800</pubDate>
 
     <description><![CDATA[<pre class="example">
@@ -74,16 +94,16 @@
     </pre>
 
     <p>
-    <a href="Clojure Plotting to Org inline image in ob-clojure.html">Clojure Plotting to Org inline image in ob-clojure</a>
+    <a href="Clojure-Plotting-to-Org-inline-image-in-ob-clojure.html">Clojure Plotting to Org inline image in ob-clojure</a>
     </p>
     ]]></description>
   </item>
 
   <item>
     <title>How to Read Code in Emacs</title>
-    <link>https://stardiviner.github.io/index.html#org05a3533</link>
+    <link>https://stardiviner.github.io/index.html#org0f60c26</link>
     <author>numbchild@gmail.com (stardiviner)</author>
-    <guid isPermaLink="false">https://stardiviner.github.io/index.html#org05a3533</guid>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#org0f60c26</guid>
     <pubDate>Thu, 17 May 2018 09:00:00 +0800</pubDate>
 
     <description><![CDATA[<pre class="example">
@@ -93,16 +113,16 @@
     </pre>
 
     <p>
-    <a href="How%20to%20Read%20Code%20in%20Emacs.html">How to Read Code in Emacs</a>
+    <a href="How-to-Read-Code-in-Emacs.html">How to Read Code in Emacs</a>
     </p>
     ]]></description>
   </item>
 
   <item>
     <title>Literate Programming with Org Mode</title>
-    <link>https://stardiviner.github.io/index.html#org4f6b417</link>
+    <link>https://stardiviner.github.io/index.html#org180cb3a</link>
     <author>numbchild@gmail.com (stardiviner)</author>
-    <guid isPermaLink="false">https://stardiviner.github.io/index.html#org4f6b417</guid>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#org180cb3a</guid>
     <pubDate>Thu, 17 May 2018 09:00:00 +0800</pubDate>
 
     <description><![CDATA[<pre class="example">
@@ -112,16 +132,16 @@
     </pre>
 
     <p>
-    <a href="Literate Programming with Org Mode.html">Literate Programming with Org Mode</a>
+    <a href="Literate-Programming-with-Org-Mode.html">Literate Programming with Org Mode</a>
     </p>
     ]]></description>
   </item>
 
   <item>
     <title>multilingual support with ob-translate and google-translate</title>
-    <link>https://stardiviner.github.io/index.html#orga19bd79</link>
+    <link>https://stardiviner.github.io/index.html#org1fb65f3</link>
     <author>numbchild@gmail.com (stardiviner)</author>
-    <guid isPermaLink="false">https://stardiviner.github.io/index.html#orga19bd79</guid>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#org1fb65f3</guid>
     <pubDate>Sat, 21 Apr 2018 16:30:00 +0800</pubDate>
 
     <description><![CDATA[<pre class="example">
@@ -131,16 +151,16 @@
     </pre>
 
     <p>
-    <a href="multilingual support with ob-translate and google-translate.html">multilingual support with ob-translate and google-translate</a>
+    <a href="multilingual-support-with-ob-translate-and-google-translate.html">multilingual support with ob-translate and google-translate</a>
     </p>
     ]]></description>
   </item>
 
   <item>
     <title>Learned basic skateboard</title>
-    <link>https://stardiviner.github.io/index.html#orge74cdf4</link>
+    <link>https://stardiviner.github.io/index.html#org0946d06</link>
     <author>numbchild@gmail.com (stardiviner)</author>
-    <guid isPermaLink="false">https://stardiviner.github.io/index.html#orge74cdf4</guid>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#org0946d06</guid>
     <pubDate>Sat, 21 Apr 2018 11:32:00 +0800</pubDate>
 
     <description><![CDATA[<pre class="example">
@@ -150,16 +170,16 @@
     </pre>
 
     <p>
-    <a href="Learned basic skateboard.html">Learned basic skateboard</a>
+    <a href="Learned-basic-skateboard.html">Learned basic skateboard</a>
     </p>
     ]]></description>
   </item>
 
   <item>
     <title>Needlework: Setup the sewing machine</title>
-    <link>https://stardiviner.github.io/index.html#org7f8b324</link>
+    <link>https://stardiviner.github.io/index.html#org7028f16</link>
     <author>numbchild@gmail.com (stardiviner)</author>
-    <guid isPermaLink="false">https://stardiviner.github.io/index.html#org7f8b324</guid>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#org7028f16</guid>
     <pubDate>Fri, 20 Apr 2018 12:32:00 +0800</pubDate>
 
     <description><![CDATA[<pre class="example">
@@ -169,16 +189,16 @@
     </pre>
 
     <p>
-    <a href="setup%20the%20sewing%20machine%20for%20needlework.html">setup the sewing machine for needlework</a>
+    <a href="setup-the-sewing-machine-for-needlework.html">setup the sewing machine for needlework</a>
     </p>
     ]]></description>
   </item>
 
   <item>
     <title>How to BANISH myself</title>
-    <link>https://stardiviner.github.io/index.html#orgc95086a</link>
+    <link>https://stardiviner.github.io/index.html#org7282e80</link>
     <author>numbchild@gmail.com (stardiviner)</author>
-    <guid isPermaLink="false">https://stardiviner.github.io/index.html#orgc95086a</guid>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#org7282e80</guid>
     <pubDate>Wed, 18 Apr 2018 14:13:00 +0800</pubDate>
 
     <description><![CDATA[<pre class="example">
@@ -188,16 +208,16 @@
     </pre>
 
     <p>
-    <a href="How%20to%20BANISH%20myself.html">How to BANISH myself</a>
+    <a href="How-to-BANISH-myself.html">How to BANISH myself</a>
     </p>
     ]]></description>
   </item>
 
   <item>
     <title>test org-mode ox-publish</title>
-    <link>https://stardiviner.github.io/index.html#orgf5b595a</link>
+    <link>https://stardiviner.github.io/index.html#orge15e8dc</link>
     <author>numbchild@gmail.com (stardiviner)</author>
-    <guid isPermaLink="false">https://stardiviner.github.io/index.html#orgf5b595a</guid>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#orge15e8dc</guid>
     <pubDate>Wed, 18 Apr 2018 14:13:00 +0800</pubDate>
 
     <description><![CDATA[<pre class="example">
@@ -207,7 +227,7 @@
     </pre>
 
     <p>
-    <a href="2016-04-22 22:54.html">test org-mode ox-publish</a>
+    <a href="2016-04-22%2022:54.html">test org-mode ox-publish</a>
     </p>
     ]]></description>
   </item>

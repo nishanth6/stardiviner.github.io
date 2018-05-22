@@ -6,47 +6,46 @@
     <style type="text/css">
     <!--
       body {
-        color: #b2b2b2;
-        background-color: #292b2e;
+        color: #333333;
+        background-color: #FFFFFF;
       }
       .bold {
         /* bold */
-        color: #ffffff;
+        color: #000000;
         font-weight: bold;
       }
       .comment {
         /* font-lock-comment-face */
-        color: #2aa1ae;
-        background-color: #292e34;
+        color: #8D8D84;
+        font-style: italic;
       }
       .comment-delimiter {
         /* font-lock-comment-delimiter-face */
-        color: #2aa1ae;
-        background-color: #292e34;
+        color: #8D8D84;
       }
       .constant {
         /* font-lock-constant-face */
-        color: #a45bad;
+        color: #D0372D;
       }
       .custom {
         /* (:strike-through t) */
         text-decoration: line-through;
       }
       .custom-1 {
-        /* (:foreground "#292b2e") */
-        color: #292b2e;
+        /* (:foreground "#FFFFFF") */
+        color: #FFFFFF;
       }
       .font-latex-math {
         /* font-latex-math-face */
-        color: #deb887;
+        color: #0000ff;
       }
       .font-latex-script-char {
         /* font-latex-script-char-face */
-        color: #8b0000;
+        color: #fa8072;
       }
       .font-latex-sedate {
         /* font-latex-sedate-face */
-        color: #d3d3d3;
+        color: #FF5500;
       }
       .font-latex-superscript {
         /* font-latex-superscript-face */
@@ -54,66 +53,68 @@
       }
       .function-name {
         /* font-lock-function-name-face */
-        color: #bc6ec5;
-        font-weight: bold;
+        color: #006699;
       }
       .italic {
         /* italic */
-        color: #ffffff;
-        background-color: #351037a73b89;
+        color: #000000;
+        background-color: #e566e566e566;
         font-style: italic;
       }
       .keyword {
         /* font-lock-keyword-face */
-        color: #4f97d7;
-        font-weight: bold;
+        color: #0000FF;
       }
       .org-block {
         /* org-block */
-        color: #cbc1d5;
-        background-color: #2f2b33;
+        color: #000088;
+        background-color: #FFFFE0;
       }
       .org-block-begin-line {
         /* org-block-begin-line */
-        color: #827591;
-        background-color: #373040;
+        color: #555555;
+        background-color: #E2E1D5;
+        text-decoration: underline;
       }
       .org-block-end-line {
         /* org-block-end-line */
-        color: #827591;
-        background-color: #373040;
+        color: #555555;
+        background-color: #E2E1D5;
+        text-decoration: overline;
       }
       .org-checkbox {
         /* org-checkbox */
-        color: #ffffff;
+        color: #123555;
+        background-color: #A3A3A3;
         font-weight: bold;
       }
       .org-code {
         /* org-code */
-        color: #28def0;
+        color: #006400;
+        background-color: #E2E9CB;
       }
       .org-date {
         /* org-date */
-        color: #7590db;
+        color: #00459E;
         text-decoration: underline;
       }
       .org-document-info {
         /* org-document-info */
-        color: #afeeee;
+        color: #484848;
       }
       .org-document-info-keyword {
         /* org-document-info-keyword */
-        color: #9f8766;
+        color: #008ED1;
+        background-color: #EAEAFF;
       }
       .org-document-title {
         /* org-document-title */
-        color: #bc6ec5;
+        color: #000000;
         font-weight: bold;
-        text-decoration: underline;
       }
       .org-footnote {
         /* org-footnote */
-        color: #b2b2b2;
+        color: #008ED1;
         text-decoration: underline;
       }
       .org-formula {
@@ -122,63 +123,76 @@
       }
       .org-latex-and-related {
         /* org-latex-and-related */
-        color: #deb887;
+        color: #336699;
+        background-color: #ffffff;
       }
       .org-level-1 {
         /* org-level-1 */
-        color: #4f97d7;
-        background-color: #303d3297361f;
+        color: #3C3C3C;
+        background-color: #f233f233f233;
         font-weight: bold;
+        text-decoration: overline;
       }
       .org-level-2 {
         /* org-level-2 */
-        color: #2d9574;
-        background-color: #303d3297361f;
+        color: #123555;
+        background-color: #E5F4FB;
         font-weight: bold;
+        text-decoration: overline;
       }
       .org-level-3 {
         /* org-level-3 */
-        color: #67b11d;
-        background-color: #303d3297361f;
+        color: #005522;
+        background-color: #EFFFEF;
+        font-weight: bold;
+        text-decoration: overline;
       }
       .org-level-4 {
         /* org-level-4 */
-        color: #b1951d;
-        background-color: #303d3297361f;
+        color: #EA6300;
+        background-color: #EFFFEF;
+        font-weight: bold;
+        text-decoration: overline;
       }
       .org-link {
         /* org-link */
-        color: #2aa1ae;
+        color: #006DAF;
         text-decoration: underline;
       }
       .org-list-dt {
         /* org-list-dt */
+        color: #335EA8;
         font-weight: bold;
       }
       .org-meta-line {
         /* org-meta-line */
-        color: #9f8766;
+        color: #008ED1;
+        background-color: #EAEAFF;
       }
       .org-property-value {
+        /* org-property-value */
+        color: #00A000;
       }
       .org-quote {
         /* org-quote */
-        color: #cbc1d5;
-        background-color: #2f2b33;
+        color: #696969;
+        background-color: #FFFFE0;
         font-style: italic;
       }
       .org-special-keyword {
         /* org-special-keyword */
-        color: #bc6ec5;
+        color: #00BB00;
+        background-color: #EAFFEA;
+        font-weight: bold;
       }
       .org-table {
         /* org-table */
-        color: #b2b2b2;
-        background-color: #293239;
+        color: #006400;
+        background-color: #EAFFEA;
       }
       .org-target {
         /* org-target */
-        text-decoration: underline;
+        color: #FF6DAF;
       }
       .org-todo-keyword-todo {
         /* org-todo-keyword-todo-face */
@@ -187,26 +201,27 @@
       }
       .org-verbatim {
         /* org-verbatim */
-        color: #4f97d7;
+        color: #0066CC;
+        background-color: #F7FDFF;
       }
       .string {
         /* font-lock-string-face */
-        color: #2d9574;
+        color: #008000;
       }
       .underline {
         /* underline */
-        color: #ffffff;
-        background-color: #351037a73b89;
+        color: #000000;
+        background-color: #e566e566e566;
         text-decoration: underline;
       }
       .variable-name {
         /* font-lock-variable-name-face */
-        color: #7590db;
+        color: #BA36A5;
       }
       .warning {
         /* font-lock-warning-face */
-        color: #dc752f;
-        background-color: #292b2e;
+        color: #ff0000;
+        font-weight: bold;
       }
 
       a {

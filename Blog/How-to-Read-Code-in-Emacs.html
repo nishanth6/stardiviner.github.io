@@ -4,7 +4,7 @@
 <!-- 2018-05-22 Tue 11:57 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>stardiviner's Blog</title>
+<title>How to Read Code in Emacs</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="stardiviner">
 <style type="text/css">
@@ -328,171 +328,153 @@ for the JavaScript code in this tag.
 </div>
 <div id="content">
 <header>
-<h1 class="title">stardiviner's Blog</h1>
+<h1 class="title">How to Read Code in Emacs</h1>
 </header><nav id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb98b462">1. Learn a little basic of Nginx for setting up web server</a></li>
-<li><a href="#orgb59f4fa">2. Make company-mode support for nginx-mode</a></li>
-<li><a href="#orga842761">3. Clojure Plotting to Org inline image in ob-clojure</a></li>
-<li><a href="#org6b81d81">4. How to Read Code in Emacs</a></li>
-<li><a href="#org1f2f45a">5. Literate Programming with Org Mode</a></li>
-<li><a href="#orga2db1bd">6. multilingual support with ob-translate and google-translate</a></li>
-<li><a href="#org57dc4f9">7. Learned basic skateboard</a></li>
-<li><a href="#orgb1f432d">8. Needlework: Setup the sewing machine</a></li>
-<li><a href="#org249322e">9. How to BANISH myself</a></li>
-<li><a href="#orgdfbb010">10. test org-mode ox-publish</a></li>
+<li><a href="#org9943398">1. View</a>
+<ul>
+<li><a href="#org6c9935e">1.1. Highlight Code</a></li>
+</ul>
+</li>
+<li><a href="#orgb4cfde6">2. Navigation</a>
+<ul>
+<li><a href="#org2300121">2.1. Jump to definition of any code</a></li>
+<li><a href="#org96bc3f6">2.2. Jump to definition of thing-at-point</a></li>
+</ul>
+</li>
+<li><a href="#org1247d9a">3. Figure out of Code by running it</a></li>
+<li><a href="#orgca3e368">4. <span class="todo TODO">TODO</span> Will add more tricks here in future</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgb98b462" class="outline-2">
-<h2 id="orgb98b462"><span class="section-number-2">1</span> Learn a little basic of Nginx for setting up web server</h2>
+<div id="outline-container-org9943398" class="outline-2">
+<h2 id="org9943398"><span class="section-number-2">1</span> View</h2>
 <div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org6c9935e" class="outline-3">
+<h3 id="org6c9935e"><span class="section-number-3">1.1</span> Highlight Code</h3>
+<div class="outline-text-3" id="text-1-1">
 <pre class="example">
-DATE: [2018-05-22 Tue 11:11]
-ID: 2de740e7-d646-4ae3-88a9-2e4a7adca39a
-PUBDATE: <2018-05-22 Tue 11:13>
+Attachments: highlight%20code.png
+ID: 98ca483b-70bd-4a8b-b1b9-d604672fb8f3
 </pre>
 
+
+<figure>
+<img src="data/98/ca483b-70bd-4a8b-b1b9-d604672fb8f3/highlight%20code.png" alt="highlight%20code.png" width="600px">
+
+</figure>
+
 <p>
-<a href="Learn-a-little-basic-of-Nginx-for-setting-up-web-server.html">Learn a little basic of Nginx for setting up web server</a>
+You can use highlighting tools to mark code with different colors like taking notes to
+distinguish code.
 </p>
+
+<ul class="org-ul">
+<li>I used Emacs package <a href="https://github.com/wolray/symbol-overlay/">symbol-overlay</a> or other similar highlighting packages.</li>
+</ul>
+</div>
 </div>
 </div>
 
-<div id="outline-container-orgb59f4fa" class="outline-2">
-<h2 id="orgb59f4fa"><span class="section-number-2">2</span> Make company-mode support for nginx-mode</h2>
+
+<div id="outline-container-orgb4cfde6" class="outline-2">
+<h2 id="orgb4cfde6"><span class="section-number-2">2</span> Navigation</h2>
 <div class="outline-text-2" id="text-2">
-<pre class="example">
-DATE: [2018-05-20 Sun 16:43]
-ID: 0de8004e-db90-4182-b07a-97f5acf0a513
-PUBDATE: <2018-05-20 Sun 18:06>
-</pre>
-
+</div>
+<div id="outline-container-org2300121" class="outline-3">
+<h3 id="org2300121"><span class="section-number-3">2.1</span> Jump to definition of any code</h3>
+<div class="outline-text-3" id="text-2-1">
 <p>
-<a href="Make-company-mode-support-for-nginx-mode.html">Make company-mode support for nginx-mode</a>
+There are some options to select:
+</p>
+
+<ul class="org-ul">
+<li>Use text searching tools directly, Emacs <code>isearch</code>, <code>grep</code>, <code>ag</code>, <code>pt</code>, <code>rg</code> etc.</li>
+<li>If you want advanced text searching, can use "<code>regexp</code> search", Emacs has built-in
+support, and has some packages to help you, even can use PCRE (Perl regexp) in Emacs
+with package "<code>pcre2el</code>".</li>
+<li>In current buffer, you can use <code>Imenu</code>, etc to jump.</li>
+<li>Or even open an class/functions definitions sidebar to have an overview of your code.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org96bc3f6" class="outline-3">
+<h3 id="org96bc3f6"><span class="section-number-3">2.2</span> Jump to definition of thing-at-point</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+When code definition is not in the same window page area, you want to jump to definition.
+You can use <code>xref.el</code> (which is Emacs built-in support now). If you want to keep current
+code viewing, you can create a function to accept universal prefix argument
+<kbd>C-u</kbd> for <code>[M-.]</code> to open code definition in other window. If you don't
+want to mess your windows up, you also can try Emacs new feature (from 26?) "child-frame".
+There is an existing package called "<a href="https://github.com/tumashu/posframe">posframe</a>" can be helpful.
 </p>
 </div>
 </div>
+</div>
 
-<div id="outline-container-orga842761" class="outline-2">
-<h2 id="orga842761"><span class="section-number-2">3</span> Clojure Plotting to Org inline image in ob-clojure</h2>
+
+<div id="outline-container-org1247d9a" class="outline-2">
+<h2 id="org1247d9a"><span class="section-number-2">3</span> Figure out of Code by running it</h2>
 <div class="outline-text-2" id="text-3">
 <pre class="example">
-DATE: [2018-05-17 Thu 10:01]
-ID: e1e67b92-9153-4ec2-8c59-df4619a0c994
-PUBDATE: <2018-05-17 Thu 11:47>
+Attachments: Edebug%20result%20at%20point.png
+ID: 6c961996-eff9-41fa-a420-9272520996af
 </pre>
 
 <p>
-<a href="Clojure-Plotting-to-Org-inline-image-in-ob-clojure.html">Clojure Plotting to Org inline image in ob-clojure</a>
+Sometimes I can't understand the code by reading, then I try to run code with debugger/tracer.
+</p>
+
+<p>
+For Elisp code, Emacs has built-in tool <code>Edebug</code>.
+</p>
+
+<p>
+Because Edebug show stop point result in echo-area (minibuffer). It is not convinient for
+me. I want it displayed at point.
+</p>
+
+
+<figure>
+<img src="data/6c/961996-eff9-41fa-a420-9272520996af/Edebug%20result%20at%20point.png" alt="Edebug%20result%20at%20point.png">
+
+</figure>
+
+<p>
+Here is my trick after I dive into Edebug source code:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #707183;">(</span><span style="color: #0000FF;">defun</span> <span style="color: #006699;">my:edebug-previous-result</span> <span style="color: #7388D6;">()</span>
+    <span style="color: #036A07;">"Print the previous result."</span>
+    <span style="color: #7388D6;">(</span><span style="color: #0000FF;">interactive</span><span style="color: #7388D6;">)</span>
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">(pos-tip-show edebug-previous-result 'popup-face) ; slow</span>
+    <span style="color: #7388D6;">(</span>popup-tip edebug-previous-result <span style="color: #006FE0;">:truncate</span> t <span style="color: #006FE0;">:height</span> 20 <span style="color: #006FE0;">:width</span> 45 <span style="color: #006FE0;">:nostrip</span> t <span style="color: #006FE0;">:margin</span> 1 <span style="color: #006FE0;">:nowait</span> nil<span style="color: #7388D6;">)</span>
+    <span style="color: #707183;">)</span>
+  <span style="color: #707183;">(</span>advice-add 'edebug-previous-result <span style="color: #006FE0;">:override</span> #'my:edebug-previous-result<span style="color: #707183;">)</span>
+</pre>
+</div>
+
+<p>
+<b>Tip</b>: Sometimes edebug will auto scroll down, when stop point moves to bottom of window,
+ the result popup is truncated, you can use <kbd>C-l</kbd> (<code>recenter-top-bottom</code>)
+ to recenter window. Then redisplay result popup with <code>[r]</code>.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org6b81d81" class="outline-2">
-<h2 id="org6b81d81"><span class="section-number-2">4</span> How to Read Code in Emacs</h2>
+
+<div id="outline-container-orgca3e368" class="outline-2">
+<h2 id="orgca3e368"><span class="section-number-2">4</span> <span class="todo TODO">TODO</span> Will add more tricks here in future</h2>
 <div class="outline-text-2" id="text-4">
-<pre class="example">
-DATE: [2018-05-17 Thu 08:31]
-ID: 42d79395-841e-4e5c-81a9-d586e70ed44a
-PUBDATE: <2018-05-17 Thu 09:00>
-</pre>
-
 <p>
-<a href="How-to-Read-Code-in-Emacs.html">How to Read Code in Emacs</a>
-</p>
-</div>
-</div>
-
-<div id="outline-container-org1f2f45a" class="outline-2">
-<h2 id="org1f2f45a"><span class="section-number-2">5</span> Literate Programming with Org Mode</h2>
-<div class="outline-text-2" id="text-5">
-<pre class="example">
-DATE: [2018-05-15 Tue 17:40]
-ID: f7e17854-2da5-4530-a2d4-dc896c963fd6
-PUBDATE: <2018-05-17 Thu 09:00>
-</pre>
-
-<p>
-<a href="Literate-Programming-with-Org-Mode.html">Literate Programming with Org Mode</a>
-</p>
-</div>
-</div>
-
-<div id="outline-container-orga2db1bd" class="outline-2">
-<h2 id="orga2db1bd"><span class="section-number-2">6</span> multilingual support with ob-translate and google-translate</h2>
-<div class="outline-text-2" id="text-6">
-<pre class="example">
-DATE: [2018-04-21 Sat 15:57]
-ID: b7e86ca8-367c-4ba0-8ebb-ba37860958c0
-PUBDATE: <2018-04-21 Sat 16:30>
-</pre>
-
-<p>
-<a href="multilingual-support-with-ob-translate-and-google-translate.html">multilingual support with ob-translate and google-translate</a>
-</p>
-</div>
-</div>
-
-<div id="outline-container-org57dc4f9" class="outline-2">
-<h2 id="org57dc4f9"><span class="section-number-2">7</span> Learned basic skateboard</h2>
-<div class="outline-text-2" id="text-7">
-<pre class="example">
-DATE: [2018-04-21 Sat 11:15]
-ID: dc0b9dbc-8abd-42ba-834d-e5205a99910b
-PUBDATE: <2018-04-21 Sat 11:32>
-</pre>
-
-<p>
-<a href="Learned-basic-skateboard.html">Learned basic skateboard</a>
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgb1f432d" class="outline-2">
-<h2 id="orgb1f432d"><span class="section-number-2">8</span> Needlework: Setup the sewing machine</h2>
-<div class="outline-text-2" id="text-8">
-<pre class="example">
-DATE: [2018-04-20 Fri 11:41]
-ID: 62bcea74-3133-4a44-adda-bd71f977c8fc
-PUBDATE: <2018-04-20 Fri 12:32>
-</pre>
-
-<p>
-<a href="setup-the-sewing-machine-for-needlework.html">setup the sewing machine for needlework</a>
-</p>
-</div>
-</div>
-
-<div id="outline-container-org249322e" class="outline-2">
-<h2 id="org249322e"><span class="section-number-2">9</span> How to BANISH myself</h2>
-<div class="outline-text-2" id="text-9">
-<pre class="example">
-DATE: [2018-04-18 Wed]
-ID: ecd128b5-33b0-42f8-bfa1-8a9134d697fa
-PUBDATE: <2018-04-18 Wed 14:13>
-</pre>
-
-<p>
-<a href="How-to-BANISH-myself.html">How to BANISH myself</a>
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgdfbb010" class="outline-2">
-<h2 id="orgdfbb010"><span class="section-number-2">10</span> test org-mode ox-publish</h2>
-<div class="outline-text-2" id="text-10">
-<pre class="example">
-TIME: [2016-04-22 Fri 22:54]
-ID: b80c8cad-9403-4533-9cd4-cb2fd5b92678
-PUBDATE: <2018-04-18 Wed 14:13>
-</pre>
-
-<p>
-<a href="2016-04-22%2022:54.html">test org-mode ox-publish</a>
+Record to My Org node "Read Code" too.
 </p>
 </div>
 </div>
@@ -500,7 +482,7 @@ PUBDATE: <2018-04-18 Wed 14:13>
 <div id="postamble" class="status">
 <footer>
   Copyright 2011, Author: stardiviner (<a href="mailto:numbchild@gmail.com">numbchild@gmail.com</a>).<br>
-  Last update date: 2018-05-22 Tue 11:16.<br>
+  Last update date: 2018-05-17 Thu 09:24.<br>
   Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.0.50 (<a href="https://orgmode.org">Org</a> mode 9.1.13). <a href="http://orgmode.org" alt="Made with Emacs Org-Mode" style="float:left; margin 20px 0px 20px 20px;"><img src="/assets/images/made_with_emacs_org-mode.jpg"></a> (<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML)
   
   <!-- Show Org Source -->

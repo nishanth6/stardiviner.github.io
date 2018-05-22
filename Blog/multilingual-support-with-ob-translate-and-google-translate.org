@@ -1,4 +1,4 @@
-# Created 2018-05-21 Mon 20:00
+# Created 2018-05-22 Tue 11:56
 #+TITLE: multilingual support with ob-translate and google-translate
 #+AUTHOR: stardiviner
 
