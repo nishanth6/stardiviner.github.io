@@ -179,46 +179,46 @@ Files, but not e.g. <span class="org-code">FileOutputStreams</span>.
 Because changing Clojure/JVM working directory is not available, so I find method on Emacs
 side, Org-mode other Babel lanaguages like R, Python have good image file result support.
 So I dive into source code, and try to add similar function to "<span class="org-verbatim">ob-clojure</span>". But I found
-some limites, then I created "<span class="org-link"><a href="https://github.com/stardiviner/ob-clojure-literate">ob-clojure-literate (GitHub repo)</a></span>" (Now it is in <span class="org-link"><a href="https://code.orgmode.org/bzg/org-mode/src/master/contrib/lisp/ob-clojure-literate.el">Org-mode
-contrib lib</a></span>).
+some limites, then I created "<span class="org-link"><a href="https://github.com/stardiviner/ob-clojure-literate">ob-clojure-literate (GitHub repo)</a></span>" (Now it is in [[<span class="org-link"><a href="https://code.orgmode.org/bzg/org-mode/src/master/contrib/lisp/ob-clojure-literate.el">https://code.orgmode.org/bzg/org-mode/src/master/contrib/lisp/ob-clojure-literate.el</a></span>][Org-mode
+contrib lib]]).
 
 <span class="custom">*</span><span class="org-level-2">* use more better solution by passing target path into Clojure with header argument </span><span class="org-level-2"><span class="org-code">:var</span></span><span class="org-level-2">
 </span>
 You can fake change Clojure REPL working directory by passing header argument variable
 into Clojure code. Like this:
 
-<span class="org-block-begin-line">#+begin_src org
+<span class="org-block-begin-line">#+BEGIN_SRC org
 </span><span class="org-block">,#+begin_src clojure :results value :var dir=(concat (file-name-directory (buffer-file-name)) "data/images/")
 (str dir "ob-clojure-literate.png")
 ,#+end_src
 
 ,#+RESULTS[&lt;2018-05-17 01:12:55&gt; 73be0ca9a40a4f1e4fdee8e535991955f77b034a]:
 </span><span class="org-block"><span class="org-code">: "/home/stardiviner/Org/Wiki/Computer Technology/Programming/Emacs/Data/Emacs Packages/Org mode/data/images/ob-clojure-literate.png"
-</span></span><span class="org-block-end-line">#+end_src
+</span></span><span class="org-block-end-line">#+END_SRC
 </span>
 Then you can use Clojure funciton to save graphics object to target file with correct
 absolute path:
 
-<span class="org-block-begin-line">#+begin_src org
+<span class="org-block-begin-line">#+BEGIN_SRC org
 </span><span class="org-block">,#+begin_src clojure :results graphics :dir "data/images" :file "ob-clojure-literate.png" :var dir=(concat (file-name-directory (buffer-file-name)) "data/images/")
 (use '(incanter core stats datasets charts io pdf))
 (def hist (histogram (sample-normal 1000)))
 (save hist (str dir "ob-clojure-literate.png"))
 ,#+end_src
-</span><span class="org-block-end-line">#+end_src
+</span><span class="org-block-end-line">#+END_SRC
 </span>
-<span class="org-block-begin-line">#+begin_src clojure :results graphics :dir "data/images" :file "ob-clojure-literate.png" :var dir=(concat (file-name-directory (buffer-file-name)) "data/images/")
+<span class="org-block-begin-line">#+BEGIN_SRC clojure :eval no-export
 </span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block"><span class="builtin">use</span></span><span class="org-block"> '</span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block">incanter core stats datasets charts io pdf</span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
 </span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block"><span class="keyword">def</span></span><span class="org-block"> </span><span class="org-block"><span class="variable-name">hist</span></span><span class="org-block"> </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block">histogram </span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block">sample-normal 1000</span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
 </span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block">save hist </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block"><span class="builtin">str</span></span><span class="org-block"> dir </span><span class="org-block"><span class="string">"ob-clojure-literate.png"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
-</span><span class="org-block-end-line">#+end_src
+</span><span class="org-block-end-line">#+END_SRC
 </span>
 <span class="org-meta-line">#+RESULTS[&lt;2018-05-17 10:40:29&gt; bbff27177a545feba5ed98a467689eb91ce7e501]:</span>
 <span class="org-link"><a href="file:data/images/ob-clojure-literate.png">file:data/images/ob-clojure-literate.png</a></span>
 
 <span class="custom">*</span><span class="org-level-2">* use final solution by move image file to target path with Clojure function
 </span>
-<span class="org-block-begin-line">#+begin_src org
+<span class="org-block-begin-line">#+BEGIN_SRC org
 </span><span class="org-block">,#+begin_src clojure :results graphics :dir "data/images" :file "ob-clojure-incanter-move.png" :var dir=(concat (file-name-directory (buffer-file-name)) "data/images/")
 (use '(incanter core stats datasets charts io pdf))
 (import '(java.io File))
@@ -227,16 +227,16 @@ absolute path:
 (save hist "ob-clojure-incanter-move.png")
 (.renameTo (File. "ob-clojure-incanter-move.png") (File. (str dir "ob-clojure-incanter-move.png")))
 ,#+end_src
-</span><span class="org-block-end-line">#+end_src
+</span><span class="org-block-end-line">#+END_SRC
 </span>
-<span class="org-block-begin-line">#+begin_src clojure :results graphics :dir "data/images" :file "ob-clojure-incanter-move.png" :var dir=(concat (file-name-directory (buffer-file-name)) "data/images/")
+<span class="org-block-begin-line">#+BEGIN_SRC clojure :eval no-export
 </span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block"><span class="builtin">use</span></span><span class="org-block"> '</span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block">incanter core stats datasets charts io pdf</span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
 </span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block">import '</span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block">java.io File</span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
 
 </span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block"><span class="keyword">def</span></span><span class="org-block"> </span><span class="org-block"><span class="variable-name">hist</span></span><span class="org-block"> </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block">histogram </span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block">sample-normal 1000</span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
 </span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block">save hist </span><span class="org-block"><span class="string">"ob-clojure-incanter-move.png"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
 </span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block">.renameTo </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block">File. </span><span class="org-block"><span class="string">"ob-clojure-incanter-move.png"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"> </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block">File. </span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block"><span class="builtin">str</span></span><span class="org-block"> dir </span><span class="org-block"><span class="string">"ob-clojure-incanter-move.png"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
-</span><span class="org-block-end-line">#+end_src
+</span><span class="org-block-end-line">#+END_SRC
 </span>
 <span class="org-meta-line">#+RESULTS[&lt;2018-05-17 11:46:15&gt; ff75cfacbf1e10441f0349531db625b77acc7368]:</span>
 <span class="org-link"><a href="file:data/images/ob-clojure-incanter-move.png">file:data/images/ob-clojure-incanter-move.png</a></span>
@@ -244,19 +244,19 @@ absolute path:
 
 <span class="org-level-1">* Incanter
 </span>
-<span class="org-block-begin-line">#+begin_src org
+<span class="org-block-begin-line">#+BEGIN_SRC org
 </span><span class="org-block">,#+begin_src clojure :results graphics :dir "data/images" :file "ob-clojure-literate.png" :var dir=(concat (file-name-directory (buffer-file-name)) "data/images/")
 (use '(incanter core stats datasets charts io pdf))
 (def hist (histogram (sample-normal 1000)))
 (save hist (str dir "ob-clojure-literate.png"))
 ,#+end_src
-</span><span class="org-block-end-line">#+end_src
+</span><span class="org-block-end-line">#+END_SRC
 </span>
-<span class="org-block-begin-line">#+begin_src clojure :results graphics :dir "data/images" :file "ob-clojure-literate.png" :var dir=(concat (file-name-directory (buffer-file-name)) "data/images/")
+<span class="org-block-begin-line">#+BEGIN_SRC clojure :eval no-export
 </span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block"><span class="builtin">use</span></span><span class="org-block"> '</span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block">incanter core stats datasets charts io pdf</span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
 </span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block"><span class="keyword">def</span></span><span class="org-block"> </span><span class="org-block"><span class="variable-name">hist</span></span><span class="org-block"> </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block">histogram </span><span class="org-block"><span class="rainbow-delimiters-depth-3">(</span></span><span class="org-block">sample-normal 1000</span><span class="org-block"><span class="rainbow-delimiters-depth-3">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
 </span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block">save hist </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block"><span class="builtin">str</span></span><span class="org-block"> dir </span><span class="org-block"><span class="string">"ob-clojure-literate.png"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
-</span><span class="org-block-end-line">#+end_src
+</span><span class="org-block-end-line">#+END_SRC
 </span>
 <span class="org-meta-line">#+RESULTS[&lt;2018-05-17 10:40:29&gt; bbff27177a545feba5ed98a467689eb91ce7e501]:</span>
 <span class="org-link"><a href="file:data/images/ob-clojure-literate.png">file:data/images/ob-clojure-literate.png</a></span>
@@ -264,7 +264,7 @@ absolute path:
 
 <span class="org-level-1">* clj-xchart
 </span>
-<span class="org-block-begin-line">#+begin_src org
+<span class="org-block-begin-line">#+BEGIN_SRC org
 </span><span class="org-block">,#+begin_src clojure :results graphics :dir "data/images" :file "ob-clojure-clj-xchart.png" :var dir=(concat (file-name-directory (buffer-file-name)) "data/images/")
 (require '[com.hypirion.clj-xchart :as xchart])
 
@@ -275,9 +275,9 @@ absolute path:
 ;; (xchart/view ob-clojure-clj-xchart)
 (xchart/spit ob-clojure-clj-xchart (str dir "ob-clojure-clj-xchart.png"))
 ,#+end_src
-</span><span class="org-block-end-line">#+end_src
+</span><span class="org-block-end-line">#+END_SRC
 </span>
-<span class="org-block-begin-line">#+begin_src clojure :results graphics :dir "data/images" :file "ob-clojure-clj-xchart.png" :var dir=(concat (file-name-directory (buffer-file-name)) "data/images/")
+<span class="org-block-begin-line">#+begin_src clojure :eval no-export :results graphics :dir "data/images" :file "ob-clojure-clj-xchart.png" :var dir=(concat (file-name-directory (buffer-file-name)) "data/images/")
 </span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block"><span class="builtin">require</span></span><span class="org-block"> '</span><span class="org-block"><span class="rainbow-delimiters-depth-2">[</span></span><span class="org-block">com.hypirion.clj-xchart </span><span class="org-block"><span class="clojure-keyword">:as</span></span><span class="org-block"> xchart</span><span class="org-block"><span class="rainbow-delimiters-depth-2">]</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
 
 </span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block"><span class="keyword">def</span></span><span class="org-block"> </span><span class="org-block"><span class="variable-name">ob-clojure-clj-xchart</span></span><span class="org-block">
@@ -299,6 +299,13 @@ absolute path:
 
 <span class="org-level-1">* jutsu
 </span>
+
+
+<span class="org-level-1">* References
+</span>
+I also posted this method on Org Mode Worg documentations:
+<span class="org-link"><a href="https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-clojure.html">https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-clojure.html</a></span>
+
 
 <span class="org-level-1">* Literaral Org-mode version
 </span>
