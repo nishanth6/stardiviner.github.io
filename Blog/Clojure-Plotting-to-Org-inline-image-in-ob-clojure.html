@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2018-05-28 Mon 07:48 -->
+<!-- 2018-05-28 Mon 11:09 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Clojure Plotting to Org inline image in ob-clojure</title>
@@ -333,30 +333,31 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org76208ae">1. The Process of my Clojure Plotting</a>
+<li><a href="#org9dd12bc">1. The Process of my Clojure Plotting</a>
 <ul>
-<li><a href="#org51c9d97">1.1. ask whether Clojure/JVM can change working directory</a></li>
-<li><a href="#org60c9d2d">1.2. I create Org-mode library "<code>ob-clojure-literate</code>" and improve Org Babel "<code>ob-core.el</code>" for plotting support</a></li>
-<li><a href="#orgeb35676">1.3. use more better solution by passing target path into Clojure with header argument <code>:var</code></a></li>
-<li><a href="#orga15e148">1.4. use final solution by move image file to target path with Clojure function</a></li>
+<li><a href="#org3ce2c0b">1.1. ask whether Clojure/JVM can change working directory</a></li>
+<li><a href="#org004fd26">1.2. I create Org-mode library "<code>ob-clojure-literate</code>" and improve Org Babel "<code>ob-core.el</code>" for plotting support</a></li>
+<li><a href="#orga2f8c17">1.3. use more better solution by passing target path into Clojure with header argument <code>:var</code></a></li>
+<li><a href="#org566d99d">1.4. use final solution by move image file to target path with Clojure function</a></li>
 </ul>
 </li>
-<li><a href="#orgf10f2a4">2. Incanter</a></li>
-<li><a href="#org58f9ee9">3. clj-xchart</a></li>
-<li><a href="#org87e634a">4. ggplot2</a></li>
-<li><a href="#org39567db">5. jutsu</a></li>
-<li><a href="#org1706cf7">6. References</a></li>
-<li><a href="#org7797cab">7. Literaral Org-mode version</a></li>
+<li><a href="#org883f5af">2. Incanter</a></li>
+<li><a href="#org699bc88">3. clj-xchart</a></li>
+<li><a href="#org75d27d4">4. ggplot2</a></li>
+<li><a href="#orgd733118">5. jutsu</a></li>
+<li><a href="#org4374d02">6. References</a></li>
+<li><a href="#org1c0e8fe">7. Make use of CIDER new support of image content-type</a></li>
+<li><a href="#orge84cbc0">8. Literaral Org-mode version</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org76208ae" class="outline-2">
-<h2 id="org76208ae"><span class="section-number-2">1</span> The Process of my Clojure Plotting</h2>
+<div id="outline-container-org9dd12bc" class="outline-2">
+<h2 id="org9dd12bc"><span class="section-number-2">1</span> The Process of my Clojure Plotting</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org51c9d97" class="outline-3">
-<h3 id="org51c9d97"><span class="section-number-3">1.1</span> ask whether Clojure/JVM can change working directory</h3>
+<div id="outline-container-org3ce2c0b" class="outline-3">
+<h3 id="org3ce2c0b"><span class="section-number-3">1.1</span> ask whether Clojure/JVM can change working directory</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 I did some hard search, found some links
@@ -380,8 +381,8 @@ Files, but not e.g. <code>FileOutputStreams</code>.
 </div>
 </div>
 
-<div id="outline-container-org60c9d2d" class="outline-3">
-<h3 id="org60c9d2d"><span class="section-number-3">1.2</span> I create Org-mode library "<code>ob-clojure-literate</code>" and improve Org Babel "<code>ob-core.el</code>" for plotting support</h3>
+<div id="outline-container-org004fd26" class="outline-3">
+<h3 id="org004fd26"><span class="section-number-3">1.2</span> I create Org-mode library "<code>ob-clojure-literate</code>" and improve Org Babel "<code>ob-core.el</code>" for plotting support</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Because changing Clojure/JVM working directory is not available, so I find method on Emacs
@@ -393,8 +394,8 @@ contrib lib</a>).
 </div>
 </div>
 
-<div id="outline-container-orgeb35676" class="outline-3">
-<h3 id="orgeb35676"><span class="section-number-3">1.3</span> use more better solution by passing target path into Clojure with header argument <code>:var</code></h3>
+<div id="outline-container-orga2f8c17" class="outline-3">
+<h3 id="orga2f8c17"><span class="section-number-3">1.3</span> use more better solution by passing target path into Clojure with header argument <code>:var</code></h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 You can fake change Clojure REPL working directory by passing header argument variable
@@ -440,8 +441,8 @@ absolute path:
 </div>
 </div>
 
-<div id="outline-container-orga15e148" class="outline-3">
-<h3 id="orga15e148"><span class="section-number-3">1.4</span> use final solution by move image file to target path with Clojure function</h3>
+<div id="outline-container-org566d99d" class="outline-3">
+<h3 id="org566d99d"><span class="section-number-3">1.4</span> use final solution by move image file to target path with Clojure function</h3>
 <div class="outline-text-3" id="text-1-4">
 <div class="org-src-container">
 <pre class="src src-org"><span style="color: #555555; background-color: #E2E1D5; text-decoration: underline;">#+begin_src clojure :results graphics :dir "data/images" :file "ob-clojure-incanter-move.png" :var dir=(concat (file-name-directory (buffer-file-name)) "data/images/")</span>
@@ -475,8 +476,8 @@ absolute path:
 </div>
 
 
-<div id="outline-container-orgf10f2a4" class="outline-2">
-<h2 id="orgf10f2a4"><span class="section-number-2">2</span> Incanter</h2>
+<div id="outline-container-org883f5af" class="outline-2">
+<h2 id="org883f5af"><span class="section-number-2">2</span> Incanter</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-org"><span style="color: #555555; background-color: #E2E1D5; text-decoration: underline;">#+begin_src clojure :results graphics :dir "data/images" :file "ob-clojure-literate.png" :var dir=(concat (file-name-directory (buffer-file-name)) "data/images/")</span>
@@ -503,8 +504,8 @@ absolute path:
 </div>
 
 
-<div id="outline-container-org58f9ee9" class="outline-2">
-<h2 id="org58f9ee9"><span class="section-number-2">3</span> clj-xchart</h2>
+<div id="outline-container-org699bc88" class="outline-2">
+<h2 id="org699bc88"><span class="section-number-2">3</span> clj-xchart</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-org"><span style="color: #555555; background-color: #E2E1D5; text-decoration: underline;">#+begin_src clojure :results graphics :dir "data/images" :file "ob-clojure-clj-xchart.png" :var dir=(concat (file-name-directory (buffer-file-name)) "data/images/")</span>
@@ -541,21 +542,21 @@ absolute path:
 </div>
 
 
-<div id="outline-container-org87e634a" class="outline-2">
-<h2 id="org87e634a"><span class="section-number-2">4</span> ggplot2</h2>
+<div id="outline-container-org75d27d4" class="outline-2">
+<h2 id="org75d27d4"><span class="section-number-2">4</span> ggplot2</h2>
 </div>
 
 
 
 
-<div id="outline-container-org39567db" class="outline-2">
-<h2 id="org39567db"><span class="section-number-2">5</span> jutsu</h2>
+<div id="outline-container-orgd733118" class="outline-2">
+<h2 id="orgd733118"><span class="section-number-2">5</span> jutsu</h2>
 </div>
 
 
 
-<div id="outline-container-org1706cf7" class="outline-2">
-<h2 id="org1706cf7"><span class="section-number-2">6</span> References</h2>
+<div id="outline-container-org4374d02" class="outline-2">
+<h2 id="org4374d02"><span class="section-number-2">6</span> References</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 I also posted this method on Org Mode Worg documentations:
@@ -565,9 +566,28 @@ I also posted this method on Org Mode Worg documentations:
 </div>
 
 
-<div id="outline-container-org7797cab" class="outline-2">
-<h2 id="org7797cab"><span class="section-number-2">7</span> Literaral Org-mode version</h2>
+<div id="outline-container-org1c0e8fe" class="outline-2">
+<h2 id="org1c0e8fe"><span class="section-number-2">7</span> Make use of CIDER new support of image content-type</h2>
 <div class="outline-text-2" id="text-7">
+<p>
+Since the PR <a href="https://github.com/clojure-emacs/cider-nrepl/pull/517">https://github.com/clojure-emacs/cider-nrepl/pull/517</a> got merged into CIDER.
+It is realsed in CIDER 0.17 (Andalucía).
+</p>
+
+<p>
+CIDER in Emacs can handle various image content-types now and render image in the REPL.
+</p>
+
+<p>
+I'm considering how to integrate this feature into <code>ob-clojure.el</code> to save image content-type as file.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orge84cbc0" class="outline-2">
+<h2 id="orge84cbc0"><span class="section-number-2">8</span> Literaral Org-mode version</h2>
+<div class="outline-text-2" id="text-8">
 <p>
 If you want to see Literal Org-mode version of this post, click the "Show Org Source" button!
 </p>
@@ -577,7 +597,7 @@ If you want to see Literal Org-mode version of this post, click the "Show Org So
 <div id="postamble" class="status">
 <footer>
   Copyright 2011, Author: stardiviner (<a href="mailto:numbchild@gmail.com">numbchild@gmail.com</a>).<br>
-  Last update date: 2018-05-28 Mon 07:48.<br>
+  Last update date: 2018-05-28 Mon 11:09.<br>
   Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.0.50 (<a href="https://orgmode.org">Org</a> mode 9.1.13). <a href="http://orgmode.org" alt="Made with Emacs Org-Mode" style="float:left; margin 20px 0px 20px 20px;"><img src="/assets/images/made_with_emacs_org-mode.jpg"></a> (<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML)
   
   <!-- Show Org Source -->
