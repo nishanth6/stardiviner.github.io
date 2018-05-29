@@ -52,13 +52,11 @@
         /* org-block-begin-line */
         color: #555555;
         background-color: #E2E1D5;
-        text-decoration: underline;
       }
       .org-block-end-line {
         /* org-block-end-line */
         color: #555555;
         background-color: #E2E1D5;
-        text-decoration: overline;
       }
       .org-code {
         /* org-code */
@@ -191,7 +189,7 @@ There is an existing package called "<span class="org-link"><a href="https://git
 
 Sometimes I can't understand the code by reading, then I try to run code with debugger/tracer.
 
-For Elisp code, Emacs has built-in tool <span class="org-verbatim">Edebug</span>.
+For example, Elisp code, Emacs has built-in tool <span class="org-verbatim">Edebug</span>.
 
 Because Edebug show stop point result in echo-area (minibuffer). It is not convinient for
 me. I want it displayed at point.
@@ -214,6 +212,11 @@ Here is my trick after I dive into Edebug source code:
  the result popup is truncated, you can use @@html:&lt;kbd&gt;C-l&lt;/kbd&gt;@@ (<span class="org-code">recenter-top-bottom</span>)
  to recenter window. Then redisplay result popup with <span class="org-verbatim">[r]</span>.
 
+About other programming languages, like C, C++, there are tools for static diagnostic as
+<span class="org-link"><a href="https://github.com/MaskRay/ccls/wiki/Emacs">@MaskRay wiki mentioned</a></span>, and dynamic diagnostic like <span class="org-link"><a href="http://cgdb.github.io/">cgdb</a></span> (<span class="org-link"><a href="https://emacs-china.org/t/topic/5855/27">@MaskRay mentioned</a></span>).
+
+More programming languages has more relative tools. I will not list them one by one at
+here. Just give out some examples that wish can inspire you. That's all.
 
 <span class="org-level-1">* </span><span class="org-todo-keyword-todo">TODO</span><span class="org-level-1"> Will add more tricks here in future
 </span><span class="org-special-keyword">  :LOGBOOK:</span>
