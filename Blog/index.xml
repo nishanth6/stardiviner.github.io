@@ -14,8 +14,8 @@
   <link>https://stardiviner.github.io/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Tue, 22 May 2018 11:58:06 +0800</pubDate>
-  <lastBuildDate>Tue, 22 May 2018 11:58:06 +0800</lastBuildDate>
+  <pubDate>Tue, 29 May 2018 08:40:51 +0800</pubDate>
+  <lastBuildDate>Tue, 29 May 2018 08:40:51 +0800</lastBuildDate>
   <generator>Emacs 27.0 Org-mode 9.1.13</generator>
   <webMaster>numbchild@gmail.com (stardiviner)</webMaster>
   <image>
@@ -28,6 +28,7 @@
     <h2>Table of Contents</h2>
     <div id="text-table-of-contents">
       <ul>
+        <li><a href="#orgda98c42">Learn Programming Language from Diving into Source Code</a></li>
         <li><a href="#org0408bde">Learn a little basic of Nginx for setting up web server</a></li>
         <li><a href="#orgee17b37">Make company-mode support for nginx-mode</a></li>
         <li><a href="#orgaacdc97">Clojure Plotting to Org inline image in ob-clojure</a></li>
@@ -41,6 +42,25 @@
       </ul>
     </div>
   </nav>
+
+  <item>
+    <title>Learn Programming Language from Diving into Source Code</title>
+    <link>https://stardiviner.github.io/index.html#orgda98c42</link>
+    <author>numbchild@gmail.com (stardiviner)</author>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#orgda98c42</guid>
+    <pubDate>Tue, 29 May 2018 08:40:00 +0800</pubDate>
+
+    <description><![CDATA[<pre class="example">
+    DATE: [2018-05-28 Mon 20:25]
+    ID: 187b85cb-b92d-49d7-b66e-e6c79b902266
+    PUBDATE: <2018-05-29 Tue 08:40>
+    </pre>
+
+    <p>
+    <a href="Learn-Programming-Language-from-Diving-into-Source-Code.html">Learn Programming Language from Diving into Source Code</a>
+    </p>
+    ]]></description>
+  </item>
 
   <item>
     <title>Learn a little basic of Nginx for setting up web server</title>

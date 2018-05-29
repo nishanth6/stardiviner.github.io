@@ -411,7 +411,6 @@ pre {
 }
 pre.src {
   background-color: transparent;
-  overflow: auto;
   display: block;
   border-style: solid;
   border-width: thin;
@@ -424,18 +423,9 @@ pre.src {
 
 /* src block hover language */
 pre.src::before, pre.src:hover::before {
-  /* always display in fixed postion */
-  /* display: inline; */
-  
   float: right;
   overflow: visible;
   position: relative;
-
-  top: 2px;
-  right: 0px;
-  z-index: 2;
-  padding: 1px;
-  margin: -5px 2px 0px 20px;
 
   opacity: 0.9;
   color: #ed1c1cb3;
