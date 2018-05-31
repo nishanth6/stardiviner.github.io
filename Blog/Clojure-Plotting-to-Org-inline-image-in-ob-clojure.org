@@ -1,4 +1,4 @@
-# Created 2018-05-28 Mon 11:09
+# Created 2018-05-31 Thu 08:48
 #+TITLE: Clojure Plotting to Org inline image in ob-clojure
 #+AUTHOR: stardiviner
 
