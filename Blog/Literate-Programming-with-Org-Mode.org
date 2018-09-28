@@ -1,4 +1,4 @@
-# Created 2018-05-31 Thu 08:47
+# Created 2018-09-28 Fri 12:39
 #+TITLE: Literate Programming with Org Mode
 #+AUTHOR: stardiviner
 
@@ -40,7 +40,7 @@ For now, Org Babel has many languages supported now. Official support in Org-mod
 has a lot. Here is my loaded languages alist. They are many more, and you can search in
 Org source code, and GitHub, and maybe somewhere else.
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :results list
 org-babel-load-languages
 #+end_src
 
@@ -234,9 +234,8 @@ Org table, like use table as data input for source code block, radio table, etc.
 
 *** code->code with noweb
 
-#+begin_src emacs-lisp
-(defun hello (name)                               ; (ref:define function hello)
-  (print (format "Hello, %s" name)))
+#+begin_src emacs-lisp :noweb yes
+<<hello>>
 
 (hello "stardiviner")
 #+end_src

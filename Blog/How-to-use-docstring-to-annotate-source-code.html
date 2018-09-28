@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2018-09-28 Fri 12:38 -->
+<!-- 2018-09-28 Fri 13:38 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How to Read Code in Emacs</title>
+<title>&lrm;</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="stardiviner">
 <style type="text/css">
@@ -328,163 +328,95 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div id="content">
-<header>
-<h1 class="title">How to Read Code in Emacs</h1>
-</header><nav id="table-of-contents">
+<nav id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga4ff182">1. View</a>
+<li><a href="#org04b518a">1. How does the idea comes up?</a></li>
+<li><a href="#org4e215ea">2. Emacs ElDoc</a></li>
+<li><a href="#org65a7af3">3. My idea details</a></li>
+<li><a href="#orgabb821d">4. Examples</a>
 <ul>
-<li><a href="#org822c139">1.1. Highlight Code</a></li>
+<li><a href="#orgb3eff99">4.1. Lisp dialects</a></li>
+<li><a href="#org1594b15">4.2. Python/Ruby/JavaScript</a></li>
+<li><a href="#orga708b78">4.3. C/C++/Java</a></li>
+<li><a href="#orgf5174a9">4.4. HTML</a></li>
+<li><a href="#orga18330e">4.5. CSS</a></li>
 </ul>
 </li>
-<li><a href="#org6c907ab">2. Navigation</a>
-<ul>
-<li><a href="#org41c8caf">2.1. Jump to definition of any code</a></li>
-<li><a href="#org33c5384">2.2. Jump to definition of thing-at-point</a></li>
-</ul>
-</li>
-<li><a href="#orge524113">3. Figure out of Code by running it</a></li>
-<li><a href="#org2f87422">4. <span class="todo TODO">TODO</span> Will add more tricks here in future</a></li>
+<li><a href="#org681bafc">5. Try to implement in Emacs as an extension</a></li>
 </ul>
 </div>
 </nav>
-
-<div id="outline-container-orga4ff182" class="outline-2">
-<h2 id="orga4ff182"><span class="section-number-2">1</span> View</h2>
+<div id="outline-container-org04b518a" class="outline-2">
+<h2 id="org04b518a"><span class="section-number-2">1</span> How does the idea comes up?</h2>
 <div class="outline-text-2" id="text-1">
-</div>
-<div id="outline-container-org822c139" class="outline-3">
-<h3 id="org822c139"><span class="section-number-3">1.1</span> Highlight Code</h3>
-<div class="outline-text-3" id="text-1-1">
-<pre class="example">
-Attachments: highlight%20code.png
-ID: 98ca483b-70bd-4a8b-b1b9-d604672fb8f3
-</pre>
-
-
-<figure>
-<img src="data/98/ca483b-70bd-4a8b-b1b9-d604672fb8f3/highlight%20code.png" alt="highlight%20code.png" width="600px">
-
-</figure>
-
 <p>
-You can use highlighting tools to mark code with different colors like taking notes to
-distinguish code.
+Sometimes I think what if the source code can be translated into human natural language in
+some way. Or display annotation beside of source code. It would help newbie (like me) to
+understand the program source code better and faster.
 </p>
-
-<ul class="org-ul">
-<li>I used Emacs package <a href="https://github.com/wolray/symbol-overlay/">symbol-overlay</a> or other similar highlighting packages.</li>
-</ul>
-</div>
 </div>
 </div>
 
-
-<div id="outline-container-org6c907ab" class="outline-2">
-<h2 id="org6c907ab"><span class="section-number-2">2</span> Navigation</h2>
+<div id="outline-container-org4e215ea" class="outline-2">
+<h2 id="org4e215ea"><span class="section-number-2">2</span> Emacs ElDoc</h2>
 <div class="outline-text-2" id="text-2">
-</div>
-<div id="outline-container-org41c8caf" class="outline-3">
-<h3 id="org41c8caf"><span class="section-number-3">2.1</span> Jump to definition of any code</h3>
-<div class="outline-text-3" id="text-2-1">
 <p>
-There are some options to select:
-</p>
-
-<ul class="org-ul">
-<li>Use text searching tools directly, Emacs <code>isearch</code>, <code>grep</code>, <code>ag</code>, <code>pt</code>, <code>rg</code> etc.</li>
-<li>If you want advanced text searching, can use "<code>regexp</code> search", Emacs has built-in
-support, and has some packages to help you, even can use PCRE (Perl regexp) in Emacs
-with package "<code>pcre2el</code>".</li>
-<li>In current buffer, you can use <code>Imenu</code>, etc to jump.</li>
-<li>Or even open an class/functions definitions sidebar to have an overview of your code.</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org33c5384" class="outline-3">
-<h3 id="org33c5384"><span class="section-number-3">2.2</span> Jump to definition of thing-at-point</h3>
-<div class="outline-text-3" id="text-2-2">
-<p>
-When code definition is not in the same window page area, you want to jump to definition.
-You can use <code>xref.el</code> (which is Emacs built-in support now). If you want to keep current
-code viewing, you can create a function to accept universal prefix argument
-<kbd>C-u</kbd> for <code>[M-.]</code> to open code definition in other window. If you don't
-want to mess your windows up, you also can try Emacs new feature (from 26?) "child-frame".
-There is an existing package called "<a href="https://github.com/tumashu/posframe">posframe</a>" can be helpful.
-</p>
-</div>
-</div>
-</div>
-
-
-<div id="outline-container-orge524113" class="outline-2">
-<h2 id="orge524113"><span class="section-number-2">3</span> Figure out of Code by running it</h2>
-<div class="outline-text-2" id="text-3">
-<pre class="example">
-Attachments: Edebug%20result%20at%20point.png
-ID: 6c961996-eff9-41fa-a420-9272520996af
-</pre>
-
-<p>
-Sometimes I can't understand the code by reading, then I try to run code with debugger/tracer.
-</p>
-
-<p>
-For example, Elisp code, Emacs has built-in tool <code>Edebug</code>.
-</p>
-
-<p>
-Because Edebug show stop point result in echo-area (minibuffer). It is not convinient for
-me. I want it displayed at point.
-</p>
-
-
-<figure>
-<img src="data/6c/961996-eff9-41fa-a420-9272520996af/Edebug%20result%20at%20point.png" alt="Edebug%20result%20at%20point.png">
-
-</figure>
-
-<p>
-Here is my trick after I dive into Edebug source code:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #707183;">(</span><span style="color: #0000FF;">defun</span> <span style="color: #006699;">my:edebug-previous-result</span> <span style="color: #7388D6;">()</span>
-    <span style="color: #036A07;">"Print the previous result."</span>
-    <span style="color: #7388D6;">(</span><span style="color: #0000FF;">interactive</span><span style="color: #7388D6;">)</span>
-    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">(pos-tip-show edebug-previous-result 'popup-face) ; slow</span>
-    <span style="color: #7388D6;">(</span>popup-tip edebug-previous-result <span style="color: #006FE0;">:truncate</span> t <span style="color: #006FE0;">:height</span> 20 <span style="color: #006FE0;">:width</span> 45 <span style="color: #006FE0;">:nostrip</span> t <span style="color: #006FE0;">:margin</span> 1 <span style="color: #006FE0;">:nowait</span> nil<span style="color: #7388D6;">)</span>
-    <span style="color: #707183;">)</span>
-  <span style="color: #707183;">(</span>advice-add 'edebug-previous-result <span style="color: #006FE0;">:override</span> #'my:edebug-previous-result<span style="color: #707183;">)</span>
-</pre>
-</div>
-
-<p>
-<b>Tip</b>: Sometimes edebug will auto scroll down, when stop point moves to bottom of window,
- the result popup is truncated, you can use <kbd>C-l</kbd> (<code>recenter-top-bottom</code>)
- to recenter window. Then redisplay result popup with <code>[r]</code>.
-</p>
-
-<p>
-About other programming languages, like C, C++, there are tools for static diagnostic as
-<a href="https://github.com/MaskRay/ccls/wiki/Emacs">@MaskRay wiki mentioned</a>, and dynamic diagnostic like <a href="http://cgdb.github.io/">cgdb</a> (<a href="https://emacs-china.org/t/topic/5855/27">@MaskRay mentioned</a>).
-</p>
-
-<p>
-More programming languages has more relative tools. I will not list them one by one at
-here. Just give out some examples that wish can inspire you. That's all.
+Emacs ElDoc already display docstring for symbol in minibuffer. There are some packages
+can change its display place like "eldoc-overlay". Can be displayed in context with popup,
+property-text or overlay etc.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org2f87422" class="outline-2">
-<h2 id="org2f87422"><span class="section-number-2">4</span> <span class="todo TODO">TODO</span> Will add more tricks here in future</h2>
+<div id="outline-container-org65a7af3" class="outline-2">
+<h2 id="org65a7af3"><span class="section-number-2">3</span> My idea details</h2>
+</div>
+
+
+<div id="outline-container-orgabb821d" class="outline-2">
+<h2 id="orgabb821d"><span class="section-number-2">4</span> Examples</h2>
 <div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orgb3eff99" class="outline-3">
+<h3 id="orgb3eff99"><span class="section-number-3">4.1</span> Lisp dialects</h3>
+<div class="outline-text-3" id="text-4-1">
+<div class="org-src-container">
+<pre class="src src-clojure"><span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">+--&gt; define a function named hello-world.</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">|   +--&gt; function name.</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">|   |          +--&gt; arguments.</span>
+<span style="color: #707183;">(</span><span style="color: #0000FF;">defn</span> <span style="color: #006699;">hello-world</span> <span style="color: #7388D6;">[]</span>
+  <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">+--&gt; print string "Hello, World!".</span>
+  <span style="color: #7388D6;">(</span><span style="color: #006FE0;">prn</span> <span style="color: #008000;">"Hello, World!"</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1594b15" class="outline-3">
+<h3 id="org1594b15"><span class="section-number-3">4.2</span> Python/Ruby/JavaScript</h3>
+</div>
+
+<div id="outline-container-orga708b78" class="outline-3">
+<h3 id="orga708b78"><span class="section-number-3">4.3</span> C/C++/Java</h3>
+</div>
+
+<div id="outline-container-orgf5174a9" class="outline-3">
+<h3 id="orgf5174a9"><span class="section-number-3">4.4</span> HTML</h3>
+</div>
+
+<div id="outline-container-orga18330e" class="outline-3">
+<h3 id="orga18330e"><span class="section-number-3">4.5</span> CSS</h3>
+</div>
+</div>
+
+<div id="outline-container-org681bafc" class="outline-2">
+<h2 id="org681bafc"><span class="section-number-2">5</span> Try to implement in Emacs as an extension</h2>
+<div class="outline-text-2" id="text-5">
 <p>
-Record to My Org node "Read Code" too.
+Here is an new created empty repository <a href="https://github.com/stardiviner/eldoc-annotation.el">https://github.com/stardiviner/eldoc-annotation.el</a>
+that I will add code in future.
 </p>
 </div>
 </div>
@@ -492,7 +424,7 @@ Record to My Org node "Read Code" too.
 <div id="postamble" class="status">
 <footer>
   Copyright 2011, Author: stardiviner (<a href="mailto:numbchild@gmail.com">numbchild@gmail.com</a>).<br>
-  Last update date: 2018-05-29 Tue 09:03.<br>
+  Last update date: 2018-09-28 Fri 13:37.<br>
   Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.1 (<a href="https://orgmode.org">Org</a> mode 9.1.13). <a href="http://orgmode.org" alt="Made with Emacs Org-Mode" style="float:left; margin 20px 0px 20px 20px;"><img src="/assets/images/made_with_emacs_org-mode.jpg"></a> (<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML)
   
   <!-- Show Org Source -->

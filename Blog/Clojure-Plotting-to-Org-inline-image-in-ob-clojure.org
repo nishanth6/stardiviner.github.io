@@ -1,4 +1,4 @@
-# Created 2018-05-31 Thu 08:48
+# Created 2018-09-28 Fri 12:40
 #+TITLE: Clojure Plotting to Org inline image in ob-clojure
 #+AUTHOR: stardiviner
 
@@ -51,7 +51,7 @@ absolute path:
 ,#+end_src
 #+end_src
 
-#+begin_src clojure
+#+begin_src clojure :eval no-export
 (use '(incanter core stats datasets charts io pdf))
 (def hist (histogram (sample-normal 1000)))
 (save hist (str dir "ob-clojure-literate.png"))
@@ -73,7 +73,7 @@ absolute path:
 ,#+end_src
 #+end_src
 
-#+begin_src clojure
+#+begin_src clojure :eval no-export
 (use '(incanter core stats datasets charts io pdf))
 (import '(java.io File))
 
@@ -96,7 +96,7 @@ absolute path:
 ,#+end_src
 #+end_src
 
-#+begin_src clojure
+#+begin_src clojure :eval no-export
 (use '(incanter core stats datasets charts io pdf))
 (def hist (histogram (sample-normal 1000)))
 (save hist (str dir "ob-clojure-literate.png"))
@@ -119,17 +119,6 @@ absolute path:
 ;; (xchart/view ob-clojure-clj-xchart)
 (xchart/spit ob-clojure-clj-xchart (str dir "ob-clojure-clj-xchart.png"))
 ,#+end_src
-#+end_src
-
-#+begin_src clojure
-(require '[com.hypirion.clj-xchart :as xchart])
-
-(def ob-clojure-clj-xchart
-  (xchart/xy-chart {"Expected rate" [(range 10) (range 10)]
-                    "Actual rate"   [(range 10) (map #(+ % (rand-int 5) -2) (range 10))]}))
-
-;; (xchart/view ob-clojure-clj-xchart)
-(xchart/spit ob-clojure-clj-xchart (str dir "ob-clojure-clj-xchart.png"))
 #+end_src
 
 #+results[<2018-05-17 10:52:37> 0ada10eaeabcc1c8431c9805a3bc03c9c388fbd9]: 

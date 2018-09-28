@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.55 in css mode. -->
+<html>
+  <head>
+    <title>How-to-use-docstring-to-annotate-source-code.org</title>
+    <style type="text/css">
+    <!--
+      body {
+        
+      }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #006FE0;
+      }
+      .comment {
+        /* font-lock-comment-face */
+        color: #8D8D84;
+        font-style: italic;
+      }
+      .comment-delimiter {
+        /* font-lock-comment-delimiter-face */
+        color: #8D8D84;
+      }
+      .custom {
+        /* (:foreground "#FFFFFF") */
+        color: #FFFFFF;
+      }
+      .function-name {
+        /* font-lock-function-name-face */
+        color: #006699;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #0000FF;
+      }
+      .org-block {
+        /* org-block */
+        color: #000088;
+        background-color: #FFFFE0;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #555555;
+        background-color: #E2E1D5;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #555555;
+        background-color: #E2E1D5;
+      }
+      .org-level-1 {
+        /* org-level-1 */
+        color: #3C3C3C;
+        background-color: #f233f233f233;
+        font-weight: bold;
+        text-decoration: overline;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #123555;
+        background-color: #E5F4FB;
+        font-weight: bold;
+        text-decoration: overline;
+      }
+      .org-link {
+        /* org-link */
+        color: #006DAF;
+        text-decoration: underline;
+      }
+      .rainbow-delimiters-depth-1 {
+        /* rainbow-delimiters-depth-1-face */
+        color: #707183;
+      }
+      .rainbow-delimiters-depth-2 {
+        /* rainbow-delimiters-depth-2-face */
+        color: #7388D6;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #008000;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+<span class="org-level-1">* How does the idea comes up?
+</span>
+Sometimes I think what if the source code can be translated into human natural language in
+some way. Or display annotation beside of source code. It would help newbie (like me) to
+understand the program source code better and faster.
+
+<span class="org-level-1">* Emacs ElDoc
+</span>
+Emacs ElDoc already display docstring for symbol in minibuffer. There are some packages
+can change its display place like "eldoc-overlay". Can be displayed in context with popup,
+property-text or overlay etc.
+
+<span class="org-level-1">* My idea details
+</span>
+
+<span class="org-level-1">* Examples
+</span>
+<span class="custom">*</span><span class="org-level-2">* Lisp dialects
+</span>
+<span class="org-block-begin-line">#+begin_src clojure :eval no
+</span><span class="org-block"><span class="comment-delimiter">;; </span></span><span class="org-block"><span class="comment">+--&gt; define a function named hello-world.
+</span></span><span class="org-block"><span class="comment-delimiter">;; </span></span><span class="org-block"><span class="comment">|   +--&gt; function name.
+</span></span><span class="org-block"><span class="comment-delimiter">;; </span></span><span class="org-block"><span class="comment">|   |          +--&gt; arguments.
+</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">(</span></span><span class="org-block"><span class="keyword">defn</span></span><span class="org-block"> </span><span class="org-block"><span class="function-name">hello-world</span></span><span class="org-block"> </span><span class="org-block"><span class="rainbow-delimiters-depth-2">[]</span></span><span class="org-block">
+  </span><span class="org-block"><span class="comment-delimiter">;; </span></span><span class="org-block"><span class="comment">+--&gt; print string "Hello, World!".
+</span></span><span class="org-block">  </span><span class="org-block"><span class="rainbow-delimiters-depth-2">(</span></span><span class="org-block"><span class="builtin">prn</span></span><span class="org-block"> </span><span class="org-block"><span class="string">"Hello, World!"</span></span><span class="org-block"><span class="rainbow-delimiters-depth-2">)</span></span><span class="org-block"><span class="rainbow-delimiters-depth-1">)</span></span><span class="org-block">
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="custom">*</span><span class="org-level-2">* Python/Ruby/JavaScript
+</span>
+<span class="custom">*</span><span class="org-level-2">* C/C++/Java
+</span>
+<span class="custom">*</span><span class="org-level-2">* HTML
+</span>
+<span class="custom">*</span><span class="org-level-2">* CSS
+</span>
+<span class="org-level-1">* Try to implement in Emacs as an extension
+</span>
+Here is an new created empty repository <span class="org-link"><a href="https://github.com/stardiviner/eldoc-annotation.el">https://github.com/stardiviner/eldoc-annotation.el</a></span>
+that I will add code in future.
+</pre>
+  </body>
+</html>

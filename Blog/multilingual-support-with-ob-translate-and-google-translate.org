@@ -1,10 +1,10 @@
-# Created 2018-05-31 Thu 08:47
+# Created 2018-09-28 Fri 12:38
 #+TITLE: multilingual support with ob-translate and google-translate
 #+AUTHOR: stardiviner
 
 * Why multilingual support?
 
-#+begin_src translate
+#+begin_src translate :src auto :dest zh-CN,zh-TW,ja,ko
 On the internet, English is the main language. But currently translation is good
 enough now. In my previous blog posts I use two languages to write, it is take
 much time. I want t a simpler automatic way to do this.
@@ -192,7 +192,7 @@ might need other text processing commands like =sed=, =awk= etc to strip some te
 
 ** fanyi
 
-#+begin_src shell
+#+begin_src shell :results raw
 fanyi "你好，世界"
 #+end_src
 

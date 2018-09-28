@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2018-05-31 Thu 08:48 -->
+<!-- 2018-09-28 Fri 12:40 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Clojure Plotting to Org inline image in ob-clojure</title>
@@ -192,13 +192,13 @@
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="/assets/stylesheets/stylesheet.css"/><link rel="stylesheet" type="text/css" href="/assets/stylesheets/syntax-highlight.css"/><link rel="alternate" type="application/rss+xml" href="https://stardiviner.github.io/Blog/index.xml"><link ref="icon" type="image/png" href="/assets/images/favicon-16x16.png" sizes="16x16"><link ref="icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32"><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
-<script type="text/javascript" src="assets/scripts/org-info-src.js">
+<script type="text/javascript" src="/assets/scripts/org-info-src.js">
 /**
  *
- * @source: assets/scripts/org-info-src.js
+ * @source: /assets/scripts/org-info-src.js
  *
  * @licstart  The following is the entire license notice for the
- *  JavaScript code in assets/scripts/org-info-src.js.
+ *  JavaScript code in /assets/scripts/org-info-src.js.
  *
  * Copyright (C) 2012-2018 Free Software Foundation, Inc.
  *
@@ -218,7 +218,7 @@
  * through which recipients can access the Corresponding Source.
  *
  * @licend  The above is the entire license notice
- * for the JavaScript code in assets/scripts/org-info-src.js.
+ * for the JavaScript code in /assets/scripts/org-info-src.js.
  *
  */
 </script>
@@ -334,31 +334,31 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd20fd8a">1. The Process of my Clojure Plotting</a>
+<li><a href="#org92fa39d">1. The Process of my Clojure Plotting</a>
 <ul>
-<li><a href="#orgd6e4fc3">1.1. ask whether Clojure/JVM can change working directory</a></li>
-<li><a href="#orgbf7079e">1.2. I create Org-mode library "<code>ob-clojure-literate</code>" and improve Org Babel "<code>ob-core.el</code>" for plotting support</a></li>
-<li><a href="#org66c131f">1.3. use more better solution by passing target path into Clojure with header argument <code>:var</code></a></li>
-<li><a href="#org33dd6d3">1.4. use final solution by move image file to target path with Clojure function</a></li>
+<li><a href="#orgdf4fa05">1.1. ask whether Clojure/JVM can change working directory</a></li>
+<li><a href="#orgdf7f902">1.2. I create Org-mode library "<code>ob-clojure-literate</code>" and improve Org Babel "<code>ob-core.el</code>" for plotting support</a></li>
+<li><a href="#org1e833fa">1.3. use more better solution by passing target path into Clojure with header argument <code>:var</code></a></li>
+<li><a href="#org05b073a">1.4. use final solution by move image file to target path with Clojure function</a></li>
 </ul>
 </li>
-<li><a href="#org4cc71b6">2. Incanter</a></li>
-<li><a href="#orgb68b980">3. clj-xchart</a></li>
-<li><a href="#org7a714e3">4. ggplot2</a></li>
-<li><a href="#org0b0a6e8">5. jutsu</a></li>
-<li><a href="#org5931020">6. References</a></li>
-<li><a href="#orgc507cf7">7. Make use of CIDER new support of image content-type</a></li>
-<li><a href="#orgf14e3b4">8. Literaral Org-mode version</a></li>
+<li><a href="#orgc7489e8">2. Incanter</a></li>
+<li><a href="#orge8bd272">3. clj-xchart</a></li>
+<li><a href="#org42be35b">4. ggplot2</a></li>
+<li><a href="#orga63110e">5. jutsu</a></li>
+<li><a href="#orgc548774">6. References</a></li>
+<li><a href="#org96a60c5">7. Make use of CIDER new support of image content-type</a></li>
+<li><a href="#org0d99821">8. Literaral Org-mode version</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgd20fd8a" class="outline-2">
-<h2 id="orgd20fd8a"><span class="section-number-2">1</span> The Process of my Clojure Plotting</h2>
+<div id="outline-container-org92fa39d" class="outline-2">
+<h2 id="org92fa39d"><span class="section-number-2">1</span> The Process of my Clojure Plotting</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgd6e4fc3" class="outline-3">
-<h3 id="orgd6e4fc3"><span class="section-number-3">1.1</span> ask whether Clojure/JVM can change working directory</h3>
+<div id="outline-container-orgdf4fa05" class="outline-3">
+<h3 id="orgdf4fa05"><span class="section-number-3">1.1</span> ask whether Clojure/JVM can change working directory</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 I did some hard search, found some links
@@ -382,8 +382,8 @@ Files, but not e.g. <code>FileOutputStreams</code>.
 </div>
 </div>
 
-<div id="outline-container-orgbf7079e" class="outline-3">
-<h3 id="orgbf7079e"><span class="section-number-3">1.2</span> I create Org-mode library "<code>ob-clojure-literate</code>" and improve Org Babel "<code>ob-core.el</code>" for plotting support</h3>
+<div id="outline-container-orgdf7f902" class="outline-3">
+<h3 id="orgdf7f902"><span class="section-number-3">1.2</span> I create Org-mode library "<code>ob-clojure-literate</code>" and improve Org Babel "<code>ob-core.el</code>" for plotting support</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Because changing Clojure/JVM working directory is not available, so I find method on Emacs
@@ -395,8 +395,8 @@ contrib lib</a>).
 </div>
 </div>
 
-<div id="outline-container-org66c131f" class="outline-3">
-<h3 id="org66c131f"><span class="section-number-3">1.3</span> use more better solution by passing target path into Clojure with header argument <code>:var</code></h3>
+<div id="outline-container-org1e833fa" class="outline-3">
+<h3 id="org1e833fa"><span class="section-number-3">1.3</span> use more better solution by passing target path into Clojure with header argument <code>:var</code></h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 You can fake change Clojure REPL working directory by passing header argument variable
@@ -442,8 +442,8 @@ absolute path:
 </div>
 </div>
 
-<div id="outline-container-org33dd6d3" class="outline-3">
-<h3 id="org33dd6d3"><span class="section-number-3">1.4</span> use final solution by move image file to target path with Clojure function</h3>
+<div id="outline-container-org05b073a" class="outline-3">
+<h3 id="org05b073a"><span class="section-number-3">1.4</span> use final solution by move image file to target path with Clojure function</h3>
 <div class="outline-text-3" id="text-1-4">
 <div class="org-src-container">
 <pre class="src src-org"><span style="color: #555555; background-color: #E2E1D5;">#+begin_src clojure :results graphics :dir "data/images" :file "ob-clojure-incanter-move.png" :var dir=(concat (file-name-directory (buffer-file-name)) "data/images/")</span>
@@ -477,8 +477,8 @@ absolute path:
 </div>
 
 
-<div id="outline-container-org4cc71b6" class="outline-2">
-<h2 id="org4cc71b6"><span class="section-number-2">2</span> Incanter</h2>
+<div id="outline-container-orgc7489e8" class="outline-2">
+<h2 id="orgc7489e8"><span class="section-number-2">2</span> Incanter</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-org"><span style="color: #555555; background-color: #E2E1D5;">#+begin_src clojure :results graphics :dir "data/images" :file "ob-clojure-literate.png" :var dir=(concat (file-name-directory (buffer-file-name)) "data/images/")</span>
@@ -505,8 +505,8 @@ absolute path:
 </div>
 
 
-<div id="outline-container-orgb68b980" class="outline-2">
-<h2 id="orgb68b980"><span class="section-number-2">3</span> clj-xchart</h2>
+<div id="outline-container-orge8bd272" class="outline-2">
+<h2 id="orge8bd272"><span class="section-number-2">3</span> clj-xchart</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-org"><span style="color: #555555; background-color: #E2E1D5;">#+begin_src clojure :results graphics :dir "data/images" :file "ob-clojure-clj-xchart.png" :var dir=(concat (file-name-directory (buffer-file-name)) "data/images/")</span>
@@ -522,18 +522,6 @@ absolute path:
 </pre>
 </div>
 
-<div class="org-src-container">
-<pre class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #006FE0;">require</span> '<span style="color: #7388D6;">[</span>com.hypirion.clj-xchart <span style="color: #D0372D;">:as</span> xchart<span style="color: #7388D6;">]</span><span style="color: #707183;">)</span>
-
-<span style="color: #707183;">(</span><span style="color: #0000FF;">def</span> <span style="color: #BA36A5;">ob-clojure-clj-xchart</span>
-  <span style="color: #7388D6;">(</span><span style="color: #6434A3;">xchart</span>/xy-chart <span style="color: #909183;">{</span><span style="color: #008000;">"Expected rate"</span> <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #006FE0;">range</span> 10<span style="color: #907373;">)</span> <span style="color: #907373;">(</span><span style="color: #006FE0;">range</span> 10<span style="color: #907373;">)</span><span style="color: #709870;">]</span>
-                    <span style="color: #008000;">"Actual rate"</span>   <span style="color: #709870;">[</span><span style="color: #907373;">(</span><span style="color: #006FE0;">range</span> 10<span style="color: #907373;">)</span> <span style="color: #907373;">(</span><span style="color: #006FE0;">map</span> #<span style="color: #6276BA;">(</span>+ <span style="color: #BA36A5;">%</span> <span style="color: #858580;">(</span><span style="color: #006FE0;">rand-int</span> 5<span style="color: #858580;">)</span> -2<span style="color: #6276BA;">)</span> <span style="color: #6276BA;">(</span><span style="color: #006FE0;">range</span> 10<span style="color: #6276BA;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">]</span><span style="color: #909183;">}</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
-
-<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">(xchart/view ob-clojure-clj-xchart)</span>
-<span style="color: #707183;">(</span><span style="color: #6434A3;">xchart</span>/<span style="color: #006FE0;">spit</span> ob-clojure-clj-xchart <span style="color: #7388D6;">(</span><span style="color: #006FE0;">str</span> dir <span style="color: #008000;">"ob-clojure-clj-xchart.png"</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span>
-</pre>
-</div>
-
 
 <figure>
 <img src="data/images/ob-clojure-clj-xchart.png" alt="ob-clojure-clj-xchart.png">
@@ -543,21 +531,21 @@ absolute path:
 </div>
 
 
-<div id="outline-container-org7a714e3" class="outline-2">
-<h2 id="org7a714e3"><span class="section-number-2">4</span> ggplot2</h2>
+<div id="outline-container-org42be35b" class="outline-2">
+<h2 id="org42be35b"><span class="section-number-2">4</span> ggplot2</h2>
 </div>
 
 
 
 
-<div id="outline-container-org0b0a6e8" class="outline-2">
-<h2 id="org0b0a6e8"><span class="section-number-2">5</span> jutsu</h2>
+<div id="outline-container-orga63110e" class="outline-2">
+<h2 id="orga63110e"><span class="section-number-2">5</span> jutsu</h2>
 </div>
 
 
 
-<div id="outline-container-org5931020" class="outline-2">
-<h2 id="org5931020"><span class="section-number-2">6</span> References</h2>
+<div id="outline-container-orgc548774" class="outline-2">
+<h2 id="orgc548774"><span class="section-number-2">6</span> References</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 I also posted this method on Org Mode Worg documentations:
@@ -567,8 +555,8 @@ I also posted this method on Org Mode Worg documentations:
 </div>
 
 
-<div id="outline-container-orgc507cf7" class="outline-2">
-<h2 id="orgc507cf7"><span class="section-number-2">7</span> Make use of CIDER new support of image content-type</h2>
+<div id="outline-container-org96a60c5" class="outline-2">
+<h2 id="org96a60c5"><span class="section-number-2">7</span> Make use of CIDER new support of image content-type</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 Since the PR <a href="https://github.com/clojure-emacs/cider-nrepl/pull/517">https://github.com/clojure-emacs/cider-nrepl/pull/517</a> got merged into CIDER.
@@ -586,8 +574,8 @@ I'm considering how to integrate this feature into <code>ob-clojure.el</code> to
 </div>
 
 
-<div id="outline-container-orgf14e3b4" class="outline-2">
-<h2 id="orgf14e3b4"><span class="section-number-2">8</span> Literaral Org-mode version</h2>
+<div id="outline-container-org0d99821" class="outline-2">
+<h2 id="org0d99821"><span class="section-number-2">8</span> Literaral Org-mode version</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 If you want to see Literal Org-mode version of this post, click the "Show Org Source" button!
@@ -599,7 +587,7 @@ If you want to see Literal Org-mode version of this post, click the "Show Org So
 <footer>
   Copyright 2011, Author: stardiviner (<a href="mailto:numbchild@gmail.com">numbchild@gmail.com</a>).<br>
   Last update date: 2018-05-28 Mon 11:09.<br>
-  Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.0.50 (<a href="https://orgmode.org">Org</a> mode 9.1.13). <a href="http://orgmode.org" alt="Made with Emacs Org-Mode" style="float:left; margin 20px 0px 20px 20px;"><img src="/assets/images/made_with_emacs_org-mode.jpg"></a> (<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML)
+  Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.1 (<a href="https://orgmode.org">Org</a> mode 9.1.13). <a href="http://orgmode.org" alt="Made with Emacs Org-Mode" style="float:left; margin 20px 0px 20px 20px;"><img src="/assets/images/made_with_emacs_org-mode.jpg"></a> (<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML)
   
   <!-- Show Org Source -->
   <script>
@@ -612,6 +600,20 @@ If you want to see Literal Org-mode version of this post, click the "Show Org So
   <div id="show_source"><input type="button" value="Show Org source" onClick='show_org_source()'></div>
 
 </footer>
+
+<!-- jump to beginning -->
+<div id="jumptobeginning">
+  <a href="#content">Jump to Beginning</a>
+  <style>
+   #jumptobeginning {
+     text-decoration: none;
+     display: block;
+     
+     float: right;
+     background-color: #D0D0D0;
+   }
+  </style>
+</div>
 
 <!-- payment -->
 <div class='payment'>

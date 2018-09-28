@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<!-- Created by htmlize-1.54 in css mode. -->
+<!-- Created by htmlize-1.55 in css mode. -->
 <html>
   <head>
     <title>2016-04-22 22:54.org</title>
@@ -34,22 +34,6 @@
       .custom-1 {
         /* (:foreground "#FFFFFF") */
         color: #FFFFFF;
-      }
-      .font-latex-math {
-        /* font-latex-math-face */
-        color: #0000ff;
-      }
-      .font-latex-script-char {
-        /* font-latex-script-char-face */
-        color: #fa8072;
-      }
-      .font-latex-sedate {
-        /* font-latex-sedate-face */
-        color: #FF5500;
-      }
-      .font-latex-superscript {
-        /* font-latex-superscript-face */
-        font-size: 85%;
       }
       .function-name {
         /* font-lock-function-name-face */
@@ -149,7 +133,6 @@
         /* org-level-4 */
         color: #EA6300;
         background-color: #EFFFEF;
-        font-weight: bold;
         text-decoration: overline;
       }
       .org-link {
@@ -700,9 +683,9 @@ const double pi = 3.1415926535
 <span class="custom-1">*</span><span class="org-level-2">* LaTeX export block
 </span>
 <span class="org-block-begin-line">#+begin_export latex
-</span><span class="org-block"><span class="font-latex-sedate"><span class="keyword">\begin</span></span></span><span class="org-block">{</span><span class="org-block"><span class="function-name">equation</span></span><span class="org-block">}</span><span class="org-block"><span class="font-latex-math"> </span></span><span class="org-block"><span class="font-latex-sedate"><span class="font-latex-math"><span class="keyword">\label</span></span></span></span><span class="org-block"><span class="font-latex-math">{</span></span><span class="org-block"><span class="font-latex-math"><span class="constant">sqrt equation</span></span></span><span class="org-block"><span class="font-latex-math">}
-y = </span></span><span class="org-block"><span class="font-latex-sedate"><span class="font-latex-math">\sqrt</span></span></span><span class="org-block"><span class="font-latex-math">{r</span></span><span class="org-block"><span class="font-latex-math"><span class="font-latex-script-char">^</span></span></span><span class="org-block"><span class="font-latex-superscript"><span class="font-latex-math">2</span></span></span><span class="org-block"><span class="font-latex-math"> - x</span></span><span class="org-block"><span class="font-latex-math"><span class="font-latex-script-char">^</span></span></span><span class="org-block"><span class="font-latex-superscript"><span class="font-latex-math">2</span></span></span><span class="org-block"><span class="font-latex-math">}
-</span></span><span class="org-block"><span class="font-latex-sedate"><span class="keyword">\end</span></span></span><span class="org-block">{</span><span class="org-block"><span class="function-name">equation</span></span><span class="org-block">}
+</span><span class="org-block"><span class="keyword">\begin</span></span><span class="org-block">{</span><span class="org-block"><span class="function-name">equation</span></span><span class="org-block">} </span><span class="org-block"><span class="keyword">\label</span></span><span class="org-block">{</span><span class="org-block"><span class="constant">sqrt equation</span></span><span class="org-block">}
+y = </span><span class="org-block"><span class="keyword">\sqrt</span></span><span class="org-block">{r^2 - x^2}
+</span><span class="org-block"><span class="keyword">\end</span></span><span class="org-block">{</span><span class="org-block"><span class="function-name">equation</span></span><span class="org-block">}
 </span><span class="org-block-end-line">#+end_export
 </span>
 <span class="custom-1">*</span><span class="org-level-2">* ASCII export block
