@@ -14,8 +14,8 @@
   <link>https://stardiviner.github.io/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Fri, 28 Sep 2018 13:38:12 +0800</pubDate>
-  <lastBuildDate>Fri, 28 Sep 2018 13:38:12 +0800</lastBuildDate>
+  <pubDate>Sat, 20 Oct 2018 20:00:23 +0800</pubDate>
+  <lastBuildDate>Sat, 20 Oct 2018 20:00:23 +0800</lastBuildDate>
   <generator>Emacs 26.1 Org-mode 9.1.13</generator>
   <webMaster>numbchild@gmail.com (stardiviner)</webMaster>
   <image>
@@ -28,6 +28,7 @@
     <h2>Table of Contents</h2>
     <div id="text-table-of-contents">
       <ul>
+        <li><a href="#orga41ca32">Emacs slow and heavy? Profile, Benchmark your Emacs, and speed it up</a></li>
         <li><a href="#org92fa626">How to use docstring to annotate source code</a></li>
         <li><a href="#orgc7c6bdc">Learn Programming Language from Diving into Source Code</a></li>
         <li><a href="#org014626d">Learn a little basic of Nginx for setting up web server</a></li>
@@ -43,6 +44,25 @@
       </ul>
     </div>
   </nav>
+
+  <item>
+    <title>Emacs slow and heavy? Profile, Benchmark your Emacs, and speed it up</title>
+    <link>https://stardiviner.github.io/index.html#orga41ca32</link>
+    <author>numbchild@gmail.com (stardiviner)</author>
+    <guid isPermaLink="false">https://stardiviner.github.io/index.html#orga41ca32</guid>
+    <pubDate>Sat, 20 Oct 2018 20:00:00 +0800</pubDate>
+
+    <description><![CDATA[<pre class="example">
+    DATE: [2018-10-20 Sat 19:43]
+    ID: 8879a709-020b-4b28-b32b-fa2e4bef3336
+    PUBDATE: <2018-10-20 Sat 20:00>
+    </pre>
+
+    <p>
+    <a href="Emacs-slow-and-heavy-Profile,-Benchmark-your-Emacs,-and-speed-it-up.html">Emacs slow and heavy? Profile, Benchmark your Emacs, and speed it up</a>
+    </p>
+    ]]></description>
+  </item>
 
   <item>
     <title>How to use docstring to annotate source code</title>
